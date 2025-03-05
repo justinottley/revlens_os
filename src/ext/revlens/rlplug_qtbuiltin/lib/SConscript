@@ -1,0 +1,13 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+lib_tools = [
+ 'RLQTMEDIA',
+ 'RLQTCNTRL',
+ 'RLQTDISP'
+]
+
+
+for lib_name in lib_tools:
+    buildsys.build(sftset_env, 'rlplug_qtbuiltin', lib_name)

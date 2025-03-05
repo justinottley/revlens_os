@@ -1,0 +1,35 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "GUI"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+'''
+
+benv.cpp_classes = \
+'''
+GridView
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

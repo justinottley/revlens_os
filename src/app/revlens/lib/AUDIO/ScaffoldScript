@@ -1,0 +1,53 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "AUDIO"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.SEQ
+core.NET
+core.CNTRL
+core.CRYPT
+revlens.DS
+revlens.MEDIA
+'''
+
+
+benv.cpp_classes_all = \
+'''
+AudioTime
+Cache
+Generator
+Mixer
+Waveform
+Manager
+'''
+
+benv.cpp_classes = \
+'''
+AudioTime
+WaveformCache
+Cache
+Generator
+Mixer
+Manager
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'Cache': {}
+    }
+}

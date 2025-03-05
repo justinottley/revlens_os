@@ -1,0 +1,19 @@
+
+import os
+import scaffold.variant
+
+Import('buildsys')
+
+buildsys.build_software_set('edb', 'edb', software_set_type='core')
+
+edb_packages = \
+'''
+rlp_entitydb
+rlp_fs
+'''
+
+
+for edb_package in Split(edb_packages):
+    SConscript(os.path.join(edb_package, 'SConscript'))
+
+

@@ -1,0 +1,25 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "UTIL"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.cpp_classes = \
+'''
+Filter
+'''
+
+benv.required_libs = \
+'''
+core.DS
+core.UTIL
+core.LOG
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

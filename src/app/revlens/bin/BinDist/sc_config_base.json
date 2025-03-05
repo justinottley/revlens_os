@@ -1,0 +1,80 @@
+{
+    "__bootstrap__": {
+        "project": "revlens"
+    },
+    "thirdbase": {
+        "sclib.cls": "scaffold.env.sset.ThirdbaseSoftwareSet",
+        "sftset_version": "22_09",
+        "sftset_type": "tb",
+        "flavour": {
+            "default": [
+                {
+                    "name": "Qt",
+                    "version": "6.4.0",
+                    "version.map": {
+                        "Windows-AMD64-10": "6.4.2"
+                    },
+                    "sclib.cls": "scaffold.env.sset.QtSoftwareSet"
+                },
+                {
+                    "name": "python",
+                    "version": "3.11"
+                },
+                {
+                    "name": "OpenEXR",
+                    "version": "2.5.2_debug"
+                },
+                {
+                    "name": "FFMpeg",
+                    "version": "4.2.2",
+                    "version.map": {
+                        "Windows-AMD64-10": "4.4.1"
+                    }
+                },
+                {
+                    "name": "libmypaint",
+                    "version": "1.0.0"
+                },
+                {
+                    "name": "pylibs/ws4py",
+                    "version": "0.5.1"
+                },
+                {
+                    "name": "google",
+                    "version": "pyclient-2.40.0"
+                },
+                {
+                    "name": "google",
+                    "version": "1.42.0"
+                },
+                {
+                    "name": "WinFsp",
+                    "version": "2022",
+                    "variants": [
+                        {"opsys": "Windows"}
+                    ]
+                }
+            ]
+        }
+    },
+    "revlens": {
+        "sclib.cls": "scaffold.env.sset.AppSoftwareSet",
+        "sftset_type": "app",
+        "sftset_version": "23.07.08",
+        "bin_public": [
+            {
+                "label": "Revlens",
+                "app_name": "revlens",
+                "executable": "revlens",
+                "icon.path": ":misc/revlens_logo_alpha",
+                "label.enabled": false
+            }
+        ]
+    },
+    "sclib": {
+        "sclib.cls": "scaffold.env.sset.SclibSoftwareSet",
+        "sftset_type": "int",
+        "sftset_version": "0.0",
+        "translation_map": ["local", "network"]
+    }
+}

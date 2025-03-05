@@ -1,0 +1,145 @@
+import scaffold.variant
+
+Import("benv")
+Import("buildsys")
+Import("rlp_libs")
+
+benv.build_type = "shared_library"
+benv.lib_name = "PANE"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.UTIL
+core.DS
+core.PY
+'''
+
+benv.required_libs = \
+'''
+gui.BASE
+gui.MENU
+'''
+
+benv.cpp_classes_all = \
+'''
+SvgButton
+Tab
+TabHeader
+PaneSplitter
+PaneHeader
+PaneBody
+Pane
+PaneFrame
+GLItemQuick
+'''
+
+benv.cpp_classes = \
+'''
+SvgButton
+Tab
+TabHeader
+PaneSplitter
+PaneHeader
+PaneBody
+Pane
+PaneFrame
+GLItem
+ViewQuick
+'''
+
+bargs = buildsys.ARGUMENTS
+do_wasm = 'wasm' in bargs.get('platform_test', '') or 'wasm' in bargs.get('platform_target', '')
+
+"""
+if do_wasm:
+    benv.cpp_classes_gv = \
+        '''
+        ViewWasm
+        Window
+        '''
+else:
+    benv.cpp_classes += \
+        '''
+        ViewQuick
+        '''
+"""
+
+
+
+view_cpp_classes = \
+'''
+PaneSplitter
+PaneHeader
+PaneBody
+Pane
+View
+Window
+GLItem
+'''
+
+benv.header_files = \
+'''
+Global.h
+View.h
+'''
+
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'classes': {
+        'SvgButton': {
+            'parent': 'GUI_ButtonBase',
+            'slots': {
+                'icon': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'Tab': {
+            'holder': 'shared_ptr'
+        },
+        'TabHeader': {},
+        'PaneSplitter': {},
+        'PaneBody': {
+            'parent': 'GUI_FrameBase'
+        },
+        'PaneHeader': {},
+        'Pane': {
+            'parent': 'GUI_FrameBase',
+            'slots': {
+                'panePtr': {
+                    'return_value_policy':  'reference'
+                }
+            }
+        },
+        'PaneFrame': {
+            'parent': 'GUI_FrameBase',
+            'slots': {
+                'body': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'View': {
+            'slots': {
+                'createFloatingPane': {
+                    'return_value_policy': 'reference'
+                },
+                'rootPane': {
+                    'return_value_policy': 'reference'
+                },
+                'scene': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'ViewQuick': {
+            'register_typeconverter': False
+        }
+    }
+}
+# benv.pybindgen_file = 'py_modulegen.py'

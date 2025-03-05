@@ -1,0 +1,34 @@
+
+
+benv.build_type = "binary_executable"
+benv.executable_name = "edb_dump_schema"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.CRYPT
+core.SEQ
+core.DS
+core.PY
+core.UTIL
+core.NET
+core.CNTRL
+edb.UTIL
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

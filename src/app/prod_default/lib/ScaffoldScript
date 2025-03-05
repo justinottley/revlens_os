@@ -1,0 +1,13 @@
+
+
+libs = [
+    'GUI'
+]
+
+if benv.platform_target != 'ios' and benv.platform_target != 'wasm':
+    libs.extend([
+        'SITE'
+    ])
+
+for lib_name in libs:
+    Build(lib_name)

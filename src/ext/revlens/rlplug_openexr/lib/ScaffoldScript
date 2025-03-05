@@ -1,0 +1,9 @@
+
+libs = [
+ 'RLEXRDS',
+ 'RLEXRMEDIA'
+]
+
+
+for lib_name in libs:
+    Build(lib_name)

@@ -1,0 +1,43 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "MEDIA"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.PATH
+core.NET
+core.CNTRL
+edb.UTIL
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+'''
+
+
+benv.cpp_classes = \
+'''
+Schema
+Controller
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'EdbMedia',
+    'classes': {
+    }
+}

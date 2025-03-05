@@ -1,0 +1,7 @@
+
+SoftwareSet('revlens')
+Product('revlens')
+Subdir('bin')
+Subdir('lib')
+Build('python')
+Build('etc')

@@ -1,0 +1,9 @@
+
+benv.build_type = "script_executable"
+benv.target_dir = "bin"
+
+benv.bin_files = \
+'''
+killproc
+'''
+

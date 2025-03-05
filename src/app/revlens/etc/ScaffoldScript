@@ -1,0 +1,17 @@
+
+benv.build_type = "static_files"
+benv.target_dir = "etc"
+
+benv.static_files = \
+'''
+credits.txt
+arrangement_default.json
+arrangement_compact.json
+arrangement_default_wasm.json
+arrangement_project.json
+arrangement_project_chooser.json
+arrangement_review.json
+arrangement_min.json
+arrangement_tablet.json
+batch_template.py
+'''

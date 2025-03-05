@@ -1,0 +1,4 @@
+
+Product('rlplug_annotate')
+Subdir('lib')
+Build('python')

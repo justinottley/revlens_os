@@ -1,0 +1,26 @@
+
+
+benv.build_type = "python_shlib_extension_module"
+
+benv.lib_name = "QTCORE"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.cpp_classes = \
+'''
+QtCoreTypes
+'''
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+

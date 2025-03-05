@@ -1,0 +1,74 @@
+
+import os
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLOCIO"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'] + \
+    '''
+    OpenColorIO-2.3.0
+    '''
+
+benv.required_thirdparty_libs += \
+'''
+'''
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.DISP
+revlens.CNTRL
+'''
+
+
+if os.name == 'nt':
+    benv.cpp_classes = \
+'''
+glsl_22
+Plugin
+PaintEngine
+OverlayTools
+'''
+
+else:
+    benv.cpp_classes = \
+'''
+glsl_23
+Plugin
+PaintEngine
+OverlayTools
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'classes': {
+        'Plugin': {
+            'parent': 'DS_EventPlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'PaintEngine': {
+            'parent': 'DISP_GLPaintEngine2D'
+        },
+        'OverlayTools': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}

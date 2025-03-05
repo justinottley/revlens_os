@@ -1,0 +1,79 @@
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = 'shared_library'
+benv.lib_name = 'GRID'
+
+
+benv.required_thirdparty_libs = \
+    rlp_libs
+
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+'''
+
+
+benv.required_libs = \
+'''
+gui.BASE
+gui.MENU
+gui.WIDGET
+gui.PANE
+'''
+
+
+benv.cpp_classes = \
+'''
+FormatterBase
+CellFormatterStr
+CellFormatterEntity
+CellFormatterImage
+RowExpanderItem
+ColType
+ColModel
+ColSplitter
+Row
+Cell
+Header
+HeaderCell
+Toolbar
+View
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI_GRID',
+    'classes': {
+        'ColType': {},
+        'ColModel': {
+            'slots': {
+                'addCol': {
+                    'fulldef': True
+                }
+            }
+        },
+        'Row': {
+            'parent': 'GUI_ItemBase'
+        },
+        'Toolbar': {
+            'parent': 'GUI_ItemBase'
+        },
+        'Header': {
+            'parent': 'GUI_GRID_Row'
+        },
+        'View': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}
+# benv.pybindgen_file = 'py_modulegen.py'

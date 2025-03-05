@@ -1,0 +1,40 @@
+
+libs_ios_wasm = [
+    'LOG',
+    'CRYPT',
+    'PY',
+    'QTCORE',
+    'UTIL',
+    'SEQ',
+    'DS',
+    'PATH',
+    'NET',
+    'CNTRL'
+]
+
+
+libs_desktop = [
+    'LOG',
+    'PROC',
+    'CRYPT',
+    'PY',
+    'QTCORE',
+    'UTIL',
+    'SEQ',
+    'DS',
+    'PATH',
+    'NET',
+    'CNTRL',
+    'PYMODULE' # for pure python binding
+]
+
+
+libs = libs_desktop
+if benv.platform_target == 'wasm_32' or benv.platform_target == 'ios':
+    libs = libs_ios_wasm
+
+# libs = ['LOG', 'CRYPT', 'PY', 'UTIL']
+
+for lib in libs:
+    Build(lib)
+

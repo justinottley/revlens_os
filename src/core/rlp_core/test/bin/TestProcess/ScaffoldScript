@@ -1,0 +1,30 @@
+
+benv.build_type = "binary_executable"
+benv.executable_name = "test_process.bin"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.UTIL
+core.CRYPT
+core.DS
+core.LOG
+core.PY
+core.PROC
+core.SEQ
+core.NET
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

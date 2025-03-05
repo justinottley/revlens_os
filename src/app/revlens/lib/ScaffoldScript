@@ -1,0 +1,20 @@
+
+
+libs_deprecated = [
+    'NET' # all used classes moved to core
+]
+
+libs = [
+ 'DS',
+ 'MEDIA',
+ 'AUDIO',
+ 'DISP',
+ 'VIDEO',
+ 'CNTRL',
+ 'GUI_TL2',
+ 'GUI'
+]
+
+for lib_name in libs:
+    Build(lib_name)
+

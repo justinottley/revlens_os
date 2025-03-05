@@ -1,0 +1,4 @@
+Product('rlplug_rlmedia')
+Subdir('lib')
+Build('python')
+# Build('etc')

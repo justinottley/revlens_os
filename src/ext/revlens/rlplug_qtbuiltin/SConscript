@@ -1,0 +1,10 @@
+
+Import("buildsys")
+
+# SConscript('bin/SConscript')
+SConscript('lib/SConscript')
+
+Import("sftset_env")
+
+buildsys.build(sftset_env, 'rlplug_qtbuiltin', 'etc')
+buildsys.build(sftset_env, 'rlplug_qtbuiltin', 'python')

@@ -1,0 +1,98 @@
+
+import scaffold.variant
+platform_str = scaffold.variant.get_platform()
+
+
+Import("benv")
+Import("buildsys")
+Import("rlp_libs")
+
+benv.build_type = "shared_library"
+benv.lib_name = "WIDGET"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.NET
+'''
+
+benv.required_libs = \
+'''
+gui.BASE
+gui.MENU
+gui.PANE
+'''
+
+benv.cpp_classes = \
+'''
+IconButton
+ToggleIconButton
+Label
+TextEdit
+PyScripting
+ThumbnailItem
+RadioButton
+RadioButtonGroup
+'''
+
+bargs = buildsys.ARGUMENTS
+if 'wasm' not in bargs.get('platform_target', '') and 'wasm' not in bargs.get('platform_test', ''):
+    benv.cpp_classes_web = \
+    '''
+    WebEngineWidget
+    '''
+
+
+benv.webkit_cpp_classes = \
+'''
+WebViewItem
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'includes': [
+        'RlpGui/BASE/ItemBase.h'
+    ],
+    'classes': {
+        'IconButton': {
+            'parent': 'GUI_ButtonBase'
+        },
+        'ToggleIconButton': {
+            'parent': 'GUI_IconButton'
+        },
+        'Label': {
+            'parent': 'GUI_ItemBase'
+        },
+        'TextEdit': {
+            'parent': 'GUI_ItemBase',
+            'slots': {
+                'scrollArea': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'RadioButton': {
+            'parent': 'GUI_ItemBase'
+        },
+        'RadioButtonGroup': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ThumbnailItem': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}
+# benv.pybindgen_file = 'py_modulegen.py'

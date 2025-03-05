@@ -1,0 +1,11 @@
+
+
+benv.build_type = "script_executable"
+benv.executable_name = "edb_dump_events"
+
+
+benv.bin_files = \
+'''
+edb_dump_events.py
+'''
+

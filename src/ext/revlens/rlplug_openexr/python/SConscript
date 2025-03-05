@@ -1,0 +1,6 @@
+Import("benv")
+
+benv.build_type = "python_package"
+
+benv.python_package_files = []
+benv.python_package_dirs = ['rlplug_openexr']

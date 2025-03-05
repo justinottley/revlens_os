@@ -1,0 +1,123 @@
+
+benv.build_type = 'shared_library'
+benv.lib_name = "BASE"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.UTIL
+core.PY
+'''
+
+benv.cpp_classes = \
+'''
+Style
+Stylesheet
+Painter
+PainterModule
+ItemBase
+PaintedItemBase
+GLItem
+FocusGroup
+FrameBase
+ViewBase
+MenuPaneBase
+ButtonBase
+LayoutBase
+Scene
+SpacerItem
+DividerItem
+ScrollArea
+HLayout
+VLayout
+FlowLayout
+FrameOverlay
+ToolInfo
+ToolGroup
+ToolTip
+SvgIcon
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.resource_dir = 'static/icons'
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'includes': [
+        'RlpGui/BASE/ItemBase.h'
+    ],
+    'classes': {
+        'ItemBase': {
+            'parent': 'QQuickItem'
+        },
+        'PaintedItem': {
+            'header': 'ItemBase',
+            'parent': 'GUI_ItemBase'
+        },
+        'PaintedItemBase': {
+            'parent': 'QQuickPaintedItem'
+        },
+        'FrameBase': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ButtonBase': {
+            'parent': 'GUI_ItemBase'
+        },
+        'LayoutBase': {
+            'parent': 'GUI_ItemBase'
+        },
+        'MenuPaneBase': {
+            'parent': 'GUI_ItemBase'
+        },
+        'HLayout': {
+            'parent': 'GUI_LayoutBase'
+        },
+        'VLayout': {
+            'parent': 'GUI_LayoutBase'
+        },
+        'FlowLayout': {
+            'parent': 'GUI_LayoutBase'
+        },
+        'ScrollBarHandle': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ItemBase'
+        },
+        'HorizontalScrollBarHandle': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ScrollBarHandle'
+        },
+        'VerticalScrollBarHandle': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ScrollBarHandle'
+        },
+        'ScrollAreaContent': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ItemBase'
+        },
+        'ScrollArea': {
+            'parent': 'GUI_ItemBase'
+        },
+        'SvgIcon': {
+            'parent': 'GUI_ItemBase'
+        },
+        'PaintedSvgIcon': {
+            'header': 'SvgIcon',
+            'parent': 'GUI_SvgIcon'
+        },
+        'ToolInfo': {},
+        'ToolGroup': {
+            'parent': 'GUI_ItemBase'
+        },
+        'FocusGroup': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}

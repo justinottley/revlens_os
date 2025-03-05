@@ -1,0 +1,39 @@
+
+benv.build_type = "binary_executable"
+benv.executable_name = "edb_view"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.CRYPT
+core.PY
+core.SEQ
+core.UTIL
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+gui.GRID
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+edb.GUI
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

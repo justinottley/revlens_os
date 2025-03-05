@@ -1,0 +1,79 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLANN_GUI"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.CNTRL
+revlens.DISP
+revlens.GUI_TL2
+extrevlens.RLANN_DS
+extrevlens.RLANN_CNTRL
+extrevlens.RLANN_MEDIA
+'''
+
+
+benv.cpp_classes = \
+'''
+BrushSizeButton
+ColourButton
+AnnotationHandle
+AnnotationItem
+TrackActivateButton
+Track
+AnnotationTrackFactoryPlugin
+StartupPlugin
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.resource_dir = 'static/icons'
+
+benv.pybind11_info = {
+    'includes': [
+        'QtGui/QImage',
+        'QtGui/QColor'
+    ],
+    'classes': {
+        'StartupPlugin': {
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'BrushSizeMenuItem': {
+            'header': 'BrushSizeButton'
+        },
+        'BrushSizeButton': {
+            'parent': 'GUI_ItemBase',
+            'slots': {
+                'sizeItem': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'Track': {
+            'parent': 'GUI_TL2_Track'
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "arrangement": {
+    "tabs": [
+      {
+        "name": "Viewer"
+      }
+    ],
+    "startup.post": "import revlens;revlens._init_gui();import revlens.gui;revlens.gui.init_menu_default_layout()",
+    "tabHeaderVisibility": false
+  },
+  "window": {
+    "size": {
+      "width": 1200.0,
+      "height": 800.0
+    }
+  }
+}

@@ -1,0 +1,1 @@
+from rlp_site.session import RlpSiteSession;RlpSiteSession.instance().edbc.delete_entity_type_field('Thumbnail', 'frame_data')

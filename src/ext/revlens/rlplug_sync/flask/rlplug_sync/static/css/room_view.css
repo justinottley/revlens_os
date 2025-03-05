@@ -1,0 +1,12 @@
+.ui-widget {
+    font-size: 1.0em !important;
+}
+
+.room-item {
+    padding: 3px;
+    /* font-size: 0.8em !important; */
+}
+
+.wc-toolbar-item {
+    margin-left: 15px;
+}

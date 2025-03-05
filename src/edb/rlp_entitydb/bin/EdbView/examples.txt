@@ -1,0 +1,61 @@
+
+    /*
+    QString etype = "Sequence";
+    QStringList etypeFields = qcntrl->getEntityTypeFields(etype).keys();
+    etypeFields.push_back("name");
+
+    grid->initFromEntityType(etype);
+
+    QVariantList allresults = qcntrl->find(etype, QVariantList(), etypeFields);
+
+    grid->setModelData(allresults);
+    */
+
+    /*
+    QVariantMap col;
+    col.insert("col_name", "name");
+    col.insert("col_type", "str");
+    col.insert("display_name", "Name");
+    col.insert("width", 100);
+    
+    QVariantMap col2;
+    col2.insert("col_name", "length");
+    col2.insert("col_type", "str");
+    col2.insert("display_name", "Length");
+    col2.insert("width", 70);
+    
+    QVariantMap col3;
+    col3.insert("col_name", "status");
+    col3.insert("col_type", "str");
+    col3.insert("display_name", "Status");
+    col3.insert("width", 60);
+    
+    grid->colModel()->addCol(col);
+    grid->colModel()->addCol(col2);
+    grid->colModel()->addCol(col3);
+    
+    */
+
+
+    /*
+
+    QVariantList md;
+    
+    QVariantMap res;
+    res.insert("name", "100_010");
+    res.insert("length", 72);
+    res.insert("status", "ip");
+    
+    md.push_back(res);
+    
+    QVariantMap res2;
+    res2.insert("name", "100_020");
+    res2.insert("length", 34);
+    res2.insert("status", "wts");
+    
+    md.push_back(res2);
+    
+    
+    grid->setModelData(md);
+    */
+

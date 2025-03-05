@@ -1,0 +1,35 @@
+
+import platform
+
+benv.build_type = "shared_library"
+benv.lib_name = "QPSD"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.UTIL
+core.PY
+revlens.DS
+revlens.MEDIA
+'''
+
+benv.cpp_classes = \
+'''
+qpsdhandler
+qpsdplugin
+'''
+
+benv.header_files = \
+'''
+Global.h
+QPsdPlugin.json
+'''
+
+benv.pybind11_info = {
+    'classes': {}
+}

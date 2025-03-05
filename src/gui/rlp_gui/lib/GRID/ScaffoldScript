@@ -1,0 +1,85 @@
+
+benv.build_type = 'shared_library'
+benv.lib_name = 'GRID'
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.SEQ
+core.NET
+core.CRYPT
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+'''
+
+
+benv.cpp_classes = \
+'''
+FormatterBase
+CellFormatterStr
+CellFormatterDate
+CellFormatterFolder
+CellFormatterEntity
+CellFormatterImage
+CellFormatterPy
+RowExpanderItem
+ColType
+ColModel
+ColSplitter
+Row
+Cell
+Header
+HeaderCell
+Toolbar
+View
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI_GRID',
+    'includes': [
+        'RlpCore/DS/ModelDataItem.h',
+        'RlpGui/GRID/Cell.h'
+    ],
+    'classes': {
+        'FormatterBase': {},
+        'CellFormatterStr': {
+            'parent': 'GUI_GRID_FormatterBase'
+        },
+        'CellFormatterPy': {
+            'parent': 'GUI_GRID_FormatterBase'
+        },
+        'ColType': {},
+        'ColModel': {},
+        'Row': {
+            'parent': 'GUI_ItemBase'
+        },
+        'Cell': {
+            'parent': 'GUI_ItemBase'
+        },
+        'Toolbar': {
+            'parent': 'GUI_ItemBase'
+        },
+        'Header': {
+            'parent': 'GUI_GRID_Row'
+        },
+        'View': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}

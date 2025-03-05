@@ -1,0 +1,107 @@
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "CNTRL"
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.UTIL
+core.SEQ
+core.DS
+core.NET
+core.CNTRL
+core.PY
+gui.BASE
+gui.PANE
+gui.MENU
+'''
+
+benv.required_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+revlens.DISP
+revlens.AUDIO
+revlens.VIDEO
+'''
+
+
+benv.cpp_classes = \
+'''
+Audio
+Video
+MediaManager
+FrameRateProbe
+PluginManager
+Server
+MainController
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'MediaManager': {
+            'slots': {
+                'identifyMedia': {
+                    'fulldef': True
+                },
+                'getMediaFactory': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'Video': {
+            'slots': {
+                'playbackMode': {
+                    'return_value_policy': 'reference'
+                },
+                'cache': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'Audio': {},
+        'PluginManager': {},
+        'Server': {
+            'slots': {
+                'sendCallToService': {
+                    'fulldef': True
+                }
+            }
+        },
+        'MainController': {
+            'slots': {
+                'gotoFrame': {
+                    'fulldef': True
+                },
+                'loginCntrl': {
+                    'return_value_policy': 'reference'
+                },
+                'getMediaManager': {
+                    'return_value_policy': 'reference'
+                },
+                'getVideoManager': {
+                    'return_value_policy': 'reference'
+                },
+                'getAudioManager': {
+                    'return_value_policy': 'reference'
+                },
+                'getServerManager': {
+                    'return_value_policy': 'reference'
+                },
+                'getPluginManager': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        }
+    }
+}

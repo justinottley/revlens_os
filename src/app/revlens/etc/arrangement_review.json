@@ -1,0 +1,90 @@
+{
+  "arrangement": {
+    "panes": [
+      {
+        "panes": [
+          {
+            "panes": [
+              {
+                "tabs": [
+                  {
+                    "name": "Files"
+                  },
+                  {
+                    "name": "Rooms"
+                  }
+                ],
+                "panes": []
+              },
+              {
+                "tabs": [
+                  {
+                    "name": "Chat"
+                  }
+                ],
+                "panes": []
+              }
+            ],
+            "pos": 0.5,
+            "orientation": 1
+          },
+          {
+            "panes": [
+              {
+                "panes": [
+                  {
+                    "tabs": [
+                      {
+                        "name": "Viewer"
+                      }
+                    ],
+                    "panes": []
+                  },
+                  {
+                    "tabs": [
+                      {
+                        "name": "ShotGrid"
+                      }
+                    ],
+                    "panes": []
+                  }
+                ],
+                "pos": 0.617292046546936,
+                "orientation": 1
+              },
+              {
+                "tabs": [
+                  {
+                    "name": "Notes"
+                  }
+                ],
+                "panes": []
+              }
+            ],
+            "pos": 0.5849999785423279,
+            "orientation": 2
+          }
+        ],
+        "pos": 0.2696220874786377,
+        "orientation": 2
+      },
+      {
+        "tabs": [
+          {
+            "name": "Timeline"
+          }
+        ],
+        "panes": []
+      }
+    ],
+    "pos": 0.800000011920929,
+    "orientation": 1,
+    "startup.post": "import revlens;revlens._init_gui();import revlens.gui;revlens.gui.init_menu_default_layout()"
+  },
+  "window": {
+    "size": {
+      "width": 1378,
+      "height": 845
+    }
+  }
+}

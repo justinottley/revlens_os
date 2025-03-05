@@ -1,0 +1,19 @@
+
+import os
+import scaffold.variant
+
+Import('buildsys')
+
+buildsys.build_software_set('gui', 'gui', software_set_type='core')
+
+core_packages = \
+'''
+rlp_gui
+'''
+
+
+
+for core_package in Split(core_packages):
+    SConscript(os.path.join(core_package, 'SConscript'))
+
+

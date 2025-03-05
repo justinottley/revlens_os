@@ -1,0 +1,6 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+buildsys.build(sftset_env, 'rlplug_sync', 'RoomServer')
+

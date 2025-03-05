@@ -1,0 +1,32 @@
+
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "binary_executable"
+benv.executable_name = "edb_dump_data"
+
+benv.required_thirdparty_libs_all = rlp_libs
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_libs = \
+'''
+edb.DS
+edb.STOR_SQL
+'''
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.UTIL
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

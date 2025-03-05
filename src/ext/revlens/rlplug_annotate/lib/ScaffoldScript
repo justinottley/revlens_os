@@ -1,0 +1,12 @@
+
+
+libs = [
+    'RLANN_DS',
+    'RLANN_MP',
+    'RLANN_MEDIA',
+    'RLANN_CNTRL',
+    'RLANN_GUI'
+]
+
+for lib_name in libs:
+    Build(lib_name)

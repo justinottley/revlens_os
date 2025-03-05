@@ -1,0 +1,147 @@
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "WIDGET"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.NET
+core.SEQ
+core.CRYPT
+gui.BASE
+gui.MENU
+gui.PANE
+'''
+
+
+benv.cpp_classes = \
+'''
+IconButton
+ToggleIconButton
+ToggleSvgButton
+Label
+TextEdit
+PyScripting
+ThumbnailItem
+RadioButton
+RadioButtonGroup
+Slider
+QWidgetWrapper
+'''
+
+desktop_classes = \
+'''
+WebEngineItem
+'''
+
+if benv.platform_target != 'wasm_32' and benv.platform_target != 'ios':
+    benv.cpp_classes += desktop_classes
+
+
+benv.webkit_cpp_classes = \
+'''
+WebViewItem
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info_desktop = {
+    'lib_prefix': 'GUI',
+    'includes': [
+        'RlpGui/BASE/ItemBase.h'
+    ],
+    'classes': {
+        'IconButton': {
+            'parent': 'GUI_ButtonBase'
+        },
+        'ToggleIconButton': {
+            'parent': 'GUI_IconButton'
+        },
+        'Label': {
+            'parent': 'GUI_ItemBase'
+        },
+        'TextArea': {
+            'parent': 'GUI_ItemBase',
+            'header': 'TextEdit'
+        },
+        'TextEdit': {
+            'parent': 'GUI_ItemBase',
+            'slots': {
+                'scrollArea': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'RadioButton': {
+            'parent': 'GUI_ItemBase'
+        },
+        'RadioButtonGroup': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ThumbnailItem': {
+            'parent': 'GUI_ItemBase'
+        },
+        'WebEngineItem': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}
+
+
+benv.pybind11_info_wasm = {
+    'lib_prefix': 'GUI',
+    'includes': [
+        'RlpGui/BASE/ItemBase.h'
+    ],
+    'classes': {
+        'IconButton': {
+            'parent': 'GUI_ButtonBase'
+        },
+        'ToggleIconButton': {
+            'parent': 'GUI_IconButton'
+        },
+        'Label': {
+            'parent': 'GUI_ItemBase'
+        },
+        'TextArea': {
+            'parent': 'GUI_ItemBase',
+            'header': 'TextEdit'
+        },
+        'TextEdit': {
+            'parent': 'GUI_ItemBase',
+            'slots': {
+                'scrollArea': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'RadioButton': {
+            'parent': 'GUI_ItemBase'
+        },
+        'RadioButtonGroup': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ThumbnailItem': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}
+
+
+benv.pybind11_info = benv.pybind11_info_desktop
+if benv.platform_target in ['wasm_32', 'ios']:
+    benv.pybind11_info = benv.pybind11_info_wasm
+
+

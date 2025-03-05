@@ -1,0 +1,66 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "MEDIA"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.SEQ
+core.DS
+core.UTIL
+core.NET
+core.CNTRL
+core.CRYPT
+revlens.DS
+'''
+
+
+benv.cpp_classes_all = \
+'''
+ReadEvent
+AVInputNode
+RetimeNode
+DiskCacheNode
+Plugin
+Locator
+Factory
+'''
+
+benv.cpp_classes = \
+'''
+ReadEvent
+AVInputNode
+CompositeNode
+CacheNode
+Plugin
+Locator
+Factory
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpRevlens/DS/Session.h',
+        'RlpRevlens/DS/Node.h'
+    ],
+    'classes': {
+        'Plugin': {},
+        'Locator': {},
+        'Factory': {},
+        'CompositeNode': {
+            'parent': 'DS_Node',
+            'holder': 'shared_ptr'
+        }
+    }
+}

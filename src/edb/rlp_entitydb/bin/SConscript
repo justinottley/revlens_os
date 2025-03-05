@@ -1,0 +1,22 @@
+
+import scaffold.variant
+
+Import("buildsys")
+Import("sftset_env")
+
+if 'wasm' not in scaffold.variant.get_platform():
+    pass
+    # buildsys.build(sftset_env, 'edb', 'DumpSchema')
+    # buildsys.build(sftset_env, 'edb', 'DumpData')
+    # buildsys.build(sftset_env, 'edb', 'DumpEvents')
+    # buildsys.build(sftset_env, 'edb', 'EdbSql')
+    # buildsys.build(sftset_env, 'edb', 'EdbView')
+    # buildsys.build(sftset_env, 'edb', 'EdbServer')
+
+    # Tests
+    #
+    # buildsys.build(sftset_env, 'edb', 'TestDS')
+    # buildsys.build(sftset_env, 'edb', 'TestEntity')
+    # buildsys.build(sftset_env, 'edb', 'TestFind')
+    # buildsys.build(sftset_env, 'edb', 'TestTraverse')
+    

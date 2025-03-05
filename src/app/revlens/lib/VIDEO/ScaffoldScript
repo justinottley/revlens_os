@@ -1,0 +1,44 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "VIDEO"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+core.CRYPT
+revlens.DS
+revlens.MEDIA
+'''
+
+benv.cpp_classes = \
+'''
+SyncTarget
+ClockBase
+ThreadedClock
+TimerClock
+SyncClock
+LookaheadCache
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpRevlens/MEDIA/ReadEvent.h'
+    ],
+    'classes': {
+        'LookaheadCache': {}
+    }
+}

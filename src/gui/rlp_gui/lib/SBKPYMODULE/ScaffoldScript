@@ -1,0 +1,38 @@
+
+
+benv.build_type = "python_extension_module"
+benv.lib_name = "SBKPYMODULE"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'] + \
+    '''
+    PySide-6.4.0
+    '''
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.NET
+core.SEQ
+core.CRYPT
+gui.BASE
+gui.MENU
+gui.PANE
+'''
+
+benv.cpp_classes = \
+'''
+Util
+QWidgetWrapper
+main
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

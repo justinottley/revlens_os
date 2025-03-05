@@ -1,0 +1,56 @@
+import scaffold.variant
+
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "GUI"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.SEQ
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+'''
+
+benv.required_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.CNTRL
+revlens.DISP
+'''
+
+benv.cpp_classes = \
+'''
+ItemLoader
+FileBrowser
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.resource_dir = 'static/icons'
+
+benv.pybind11_info = {
+    'classes': {
+        'ItemLoader': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}

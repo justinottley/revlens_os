@@ -1,0 +1,126 @@
+
+SoftwareSet('extrevlens')
+
+import scaffold.variant
+curr_platform = scaffold.variant.get_platform()
+
+ext_revlens_packages_all = \
+'''
+rlplug_qtbuiltin
+rlplug_rlmedia
+rlplug_annotate
+rlplug_sync
+rlplug_review
+rlplug_ffmpeg
+rlplug_openexr
+rlplug_qpsd
+rlplug_alembic
+rlplug_ios
+'''
+
+ext_revlens_packages_normal = [
+    'rlplug_qtbuiltin',
+    'rlplug_rlmedia',
+    'rlplug_annotate',
+    'rlplug_sync',
+    'rlplug_shotgrid',
+    'rlplug_ffmpeg',
+    'rlplug_qpsd',
+    'rlplug_openexr',
+    'rlplug_ocio',
+    'rlplug_oiio'
+]
+
+if benv.platform_target == 'ios':
+    ext_revlens_packages_normal = [
+        'rlplug_qtbuiltin',
+        'rlplug_rlmedia',
+        'rlplug_sync',
+        'rlplug_ffmpeg',
+        'rlplug_annotate'
+    ]
+
+
+if 'Darwin' in curr_platform:
+    ext_revlens_packages_normal = [
+    'rlplug_qtbuiltin',
+    'rlplug_rlmedia',
+    'rlplug_annotate',
+    'rlplug_shotgrid',
+    'rlplug_nodegraph',
+    'rlplug_sync',
+    'rlplug_ffmpeg',
+    'rlplug_qpsd'
+]
+
+ext_revlens_packages_draw = [
+    'rlplug_annotate'
+]
+
+ext_revlens_packages_bt_all = \
+'''
+rlplug_qtbuiltin
+rlplug_annotate
+rlplug_sync
+rlplug_review
+'''
+
+ext_revlens_packages_wasm = [
+    'rlplug_qtbuiltin',
+    'rlplug_annotate',
+    'rlplug_sync',
+    'rlplug_ffmpeg'
+]
+
+ext_revlens_packages_bt = \
+'''
+rlplug_qtbuiltin
+'''
+
+ext_revlens_packages_ios = \
+'''
+rlplug_ios
+'''
+
+ext_revlens_packages_review = \
+'''
+rlplug_review
+rlplug_sync
+'''
+
+ext_revlens_packages_ff = \
+'''
+rlplug_ffmpeg
+'''
+
+ext_revlens_packages_exr = [
+    'rlplug_openexr']
+
+ext_revlens_packages_ocio = [
+    'rlplug_ocio'
+]
+
+ext_revlens_packages_oiio = [
+    'rlplug_oiio'
+]
+
+ext_revlens_packages_sync = \
+'''
+rlplug_sync
+'''
+
+ext_revlens_packages_extra = \
+'''
+rlplug_review
+'''
+
+
+ext_group_name = 'normal' # buildsys.ARGUMENTS.get('ext', 'normal')
+# ext_group_name = 'wasm'
+# bargs = buildsys.ARGUMENTS
+if 'wasm' in curr_platform: # 'wasm' in buildsys.ARGUMENTS.get('platform_target', ''): #  and not buildsys.ARGUMENTS.get('ext'):
+    ext_group_name = 'wasm'
+
+ext_revlens_packages = eval('ext_revlens_packages_{}'.format(ext_group_name))
+for ext_revlens_package in ext_revlens_packages:
+    Subdir(ext_revlens_package)

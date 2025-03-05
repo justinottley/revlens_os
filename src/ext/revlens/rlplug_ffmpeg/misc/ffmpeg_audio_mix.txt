@@ -1,0 +1,92 @@
+In order to mix multiple audio samples using the FFmpeg's avresample C API, you can follow the steps below. Note that the avresample library is deprecated, and you should use libswresample instead. However, since you requested avresample, I will provide an example using that.
+
+First, include the required headers:
+#include <libavcodec/avcodec.h>
+#include <libavformat/avformat.h>
+#include <libavutil/opt.h>
+#include <libavresample/avresample.h>
+Initialize FFmpeg and create an AVFormatContext for each input audio file:
+av_register_all();
+AVFormatContext *input_format_ctx1 = NULL;
+AVFormatContext *input_format_ctx2 = NULL;
+
+if (avformat_open_input(&input_format_ctx1, "input1.wav", NULL, NULL) < 0) {
+    // Handle error
+}
+
+if (avformat_open_input(&input_format_ctx2, "input2.wav", NULL, NULL) < 0) {
+    // Handle error
+}
+Find the audio stream and codec for each input file:
+int audio_stream_index1 = av_find_best_stream(input_format_ctx1, AVMEDIA_TYPE_AUDIO, -1, -1, NULL, 0);
+int audio_stream_index2 = av_find_best_stream(input_format_ctx2, AVMEDIA_TYPE_AUDIO, -1, -1, NULL, 0);
+
+AVCodecParameters *codec_params1 = input_format_ctx1->streams[audio_stream_index1]->codecpar;
+AVCodecParameters *codec_params2 = input_format_ctx2->streams[audio_stream_index2]->codecpar;
+
+AVCodec *codec1 = avcodec_find_decoder(codec_params1->codec_id);
+AVCodec *codec2 = avcodec_find_decoder(codec_params2->codec_id);
+
+AVCodecContext *codec_ctx1 = avcodec_alloc_context3(codec1);
+AVCodecContext *codec_ctx2 = avcodec_alloc_context3(codec2);
+
+avcodec_parameters_to_context(codec_ctx1, codec_params1);
+avcodec_parameters_to_context(codec_ctx2, codec_params2);
+
+avcodec_open2(codec_ctx1, codec1, NULL);
+avcodec_open2(codec_ctx2, codec2, NULL);
+Create an AVAudioResampleContext and configure it:
+AVAudioResampleContext *resample_ctx = avresample_alloc_context();
+
+av_opt_set_int(resample_ctx, "in_channel_layout", codec_ctx1->channel_layout, 0);
+av_opt_set_int(resample_ctx, "out_channel_layout", codec_ctx2->channel_layout, 0);
+av_opt_set_int(resample_ctx, "in_sample_rate", codec_ctx1->sample_rate, 0);
+av_opt_set_int(resample_ctx, "out_sample_rate", codec_ctx2->sample_rate, 0);
+av_opt_set_int(resample_ctx, "in_sample_fmt", codec_ctx1->sample_fmt, 0);
+av_opt_set_int(resample_ctx, "out_sample_fmt", codec_ctx2->sample_fmt, 0);
+
+avresample_open(resample_ctx);
+Read the input audio files, resample and mix them:
+AVPacket packet1, packet2;
+AVFrame *frame1 = av_frame_alloc();
+AVFrame *frame2 = av_frame_alloc();
+AVFrame *output_frame = av_frame_alloc();
+
+while (1) {
+    // Read input1
+    if (av_read_frame(input_format_ctx1, &packet1) >= 0) {
+        if (packet1.stream_index == audio_stream_index1) {
+            avcodec_send_packet(codec_ctx1, &packet1);
+            avcodec_receive_frame(codec_ctx1, frame1);
+        }
+    }
+    // Read input2
+    if (av_read_frame(input_format_ctx2, &packet2) >= 0) {
+        if (packet2.stream_index == audio_stream_index2) {
+            avcodec_send_packet(codec_ctx2, &packet2);
+            avcodec_receive_frame(codec_ctx2, frame2);
+        }
+    }
+
+    // Break the loop if both input files have reached the end
+    if (packet1.size == 0 && packet2.size == 0) {
+        break;
+    }
+
+    // Resample and mix the audio
+    avresample_convert_frame(resample_ctx, output_frame, frame1);
+    avresample_convert_frame(resample_ctx, output_frame, frame2);
+
+    // Do something with the mixed output_frame
+}
+
+av_frame_free(&frame1);
+av_frame_free(&frame2);
+av_frame_free(&output_frame);
+Clean up:
+avresample_free(&resample_ctx);
+avcodec_free_context(&codec_ctx1);
+avcodec_free_context(&codec_ctx2);
+avformat_close_input(&input_format_ctx1);
+avformat_close_input(&input_format_ctx2);
+This example demonstrates

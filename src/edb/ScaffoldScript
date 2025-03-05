@@ -1,0 +1,10 @@
+sset_config = {
+    'sclib.cls': 'scaffold.env.sset.BuildRelpathSoftwareSet',
+    'sftset_version': '0.0'
+}
+
+SoftwareSet('edb', sset_config)
+Subdir('rlp_entitydb')
+# Subdir('rlp_fs')
+# Subdir('rlp_compute')
+Subdir('rlp_media')

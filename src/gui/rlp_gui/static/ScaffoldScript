@@ -1,0 +1,10 @@
+
+benv.build_type = "static_files"
+benv.target_dir = 'static'
+
+benv.static_files = \
+'''
+icon_files/revlens_logo_alpha.png
+icon_files/revlens_r.png
+icon_files/revlens_r.ico
+'''

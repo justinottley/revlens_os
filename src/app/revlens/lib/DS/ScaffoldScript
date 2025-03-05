@@ -1,0 +1,83 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "DS"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.SEQ
+core.NET
+core.CNTRL
+'''
+
+
+benv.cpp_classes = \
+'''
+DataEvent
+Time
+NanoTimer
+Buffer
+FrameBuffer
+QImageFrameBuffer
+AudioBuffer
+Plugin
+EventPlugin
+NodeFactoryPlugin
+SyncProbe
+SyncTarget
+Graph
+Node
+PlaybackMode
+Factory
+Track
+TrackFactoryPlugin
+Session
+ControllerBase
+'''
+
+benv.header_files = \
+'''
+Global.h
+TimeConstants.h
+'''
+
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpRevlens/DS/Node.h',
+        'RlpRevlens/DS/Session.h'
+    ],
+    'classes': {
+        'Graph': {},
+        'Node': {
+            'holder': 'shared_ptr'
+        },
+        'Track': {
+            'holder': 'shared_ptr'
+        },
+        'Session': {
+            'holder': 'shared_ptr'
+        },
+        'PlaybackMode': {
+            'slots': {
+                'getNextFrameNum': {
+                    'fulldef': True
+                }
+            }
+        },
+        'FrameBuffer': {},
+        'EventPlugin': {},
+        'NodeFactoryPlugin': {},
+        'TrackFactoryPlugin': {},
+        'ControllerBase': {
+            'parent': 'CoreCntrl_ControllerBase'
+        }
+    }
+}

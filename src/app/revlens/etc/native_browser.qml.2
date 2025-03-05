@@ -1,0 +1,22 @@
+import QtQuick 2.2
+import QtWebView 1.1
+
+Rectangle {
+
+    id: webrectangle
+    visible: true
+    width: 500
+    height: 500
+
+    WebView {
+        id: webView
+        anchors.fill: parent
+        url: initialUrl
+        onLoadingChanged: {
+            if (loadRequest.errorString)
+                console.error(loadRequest.errorString);
+        }
+    }
+
+}
+

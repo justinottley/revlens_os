@@ -1,0 +1,9 @@
+
+Import("buildsys")
+
+SConscript('lib/SConscript')
+# SConscript('bin/SConscript')
+
+Import("sftset_env")
+
+buildsys.build(sftset_env, 'rlplug_openexr', 'python')

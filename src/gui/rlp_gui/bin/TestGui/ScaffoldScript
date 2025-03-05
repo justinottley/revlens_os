@@ -1,0 +1,33 @@
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_gui_test.bin"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_thirdparty_libs_1 = \
+'''
+Qt-6.5.3
+'''
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+gui.BASE
+gui.PANE
+gui.WIDGET
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.qrc_resource_libs = \
+'''
+'''
+
+benv.private = \
+'''
+'''

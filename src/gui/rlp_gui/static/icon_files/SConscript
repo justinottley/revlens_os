@@ -1,0 +1,10 @@
+
+Import("benv")
+
+benv.build_type = "static_files"
+benv.target_dir = "static/icons"
+
+benv.static_files = \
+'''
+revlens_logo_alpha.png
+'''

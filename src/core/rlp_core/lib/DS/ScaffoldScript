@@ -1,0 +1,36 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "DS"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.UTIL
+core.SEQ
+core.PY
+'''
+
+benv.cpp_classes = \
+'''
+ModelDataItem
+FileModelDataItem
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'CoreDs',
+    'classes': {
+        'ModelDataItem': {
+            'holder': 'shared_ptr'
+        }
+    }
+}

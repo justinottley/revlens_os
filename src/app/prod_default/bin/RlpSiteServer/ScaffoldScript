@@ -1,0 +1,60 @@
+
+import scaffold.buildsys.globals as buildsys_globals
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_site_server"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.CRYPT
+core.UTIL
+core.PROC
+core.SEQ
+core.DS
+core.LOG
+core.PATH
+core.NET
+core.PY
+core.CNTRL
+core.QTCORE
+edb.UTIL
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+prod.SITE
+'''
+
+gui_libs = \
+'''
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+'''
+
+if buildsys_globals.args['pybind_mode'] == 'static':
+    benv.required_libs += \
+    '''
+    core.QTCORE
+    '''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.SKIP_qrc_resource_libs = \
+'''
+gui.rlp_gui.gui.BASE
+'''
+
+benv.private = \
+'''
+'''

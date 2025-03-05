@@ -1,0 +1,5 @@
+Product('rlp_core')
+Subdir('lib')
+Subdir('bin')
+# Subdir('test')
+Build('python')

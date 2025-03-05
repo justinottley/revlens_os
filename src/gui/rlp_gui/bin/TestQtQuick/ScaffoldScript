@@ -1,0 +1,63 @@
+
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_qtquick_test"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs_desktop = \
+'''
+core.LOG
+core.CRYPT
+core.PY
+core.QTCORE
+core.UTIL
+core.SEQ
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.QTGUI
+gui.WIDGET
+'''
+
+
+benv.required_libs_wasm = \
+'''
+core.DS
+core.LOG
+core.PY
+core.UTIL
+core.QTCORE
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+gui.GRID
+gui.QTGUI
+'''
+
+benv.required_libs = benv.required_libs_desktop
+if benv.exports['do_wasm']:
+    benv.required_libs = benv.required_libs_wasm
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.qrc_resource_libs = \
+'''
+core.CNTRL
+gui.BASE
+'''
+
+benv.private = \
+'''
+'''

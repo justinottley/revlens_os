@@ -1,0 +1,11 @@
+Import("benv")
+
+benv.build_type = "static_files"
+benv.target_dir = "etc"
+
+benv.static_files = \
+'''
+credits.txt
+arrangement_default.json
+arrangement_default_wasm.json
+'''

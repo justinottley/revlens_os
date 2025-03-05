@@ -1,0 +1,106 @@
+import platform
+
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "GUI"
+
+
+benv.required_thirdparty_libs = \
+    rlp_libs
+
+
+benv.required_libs = \
+'''
+'''
+
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.UTIL
+core.DS
+core.SEQ
+core.NET
+core.CNTRL
+core.PY
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+gui.QTGUI
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.AUDIO
+revlens.DISP
+revlens.CNTRL
+revlens.GUI_TL2
+revlens.GUI
+extrevlens.RLQTMEDIA
+extrevlens.RLQTCNTRL
+extrevlens.RLQTDISP
+extrevlens.RLANN_DS
+extrevlens.RLANN_MEDIA
+extrevlens.RLANN_CNTRL
+extrevlens.RLANN_GUI
+extrevlens.RLSYNC
+extrevlens.RLFFMPEG
+'''
+
+if platform.system() != 'Darwin':
+    benv.required_external_libs += \
+    '''
+    extrevlens.RLEXRDS
+    extrevlens.RLEXRMEDIA
+    '''
+
+edb_libs = \
+'''
+edb.DS
+edb.GUI
+edb.STOR_SQL
+edb.CNTRL
+edb.GRAPH
+'''
+
+benv.cpp_classes = \
+'''
+ViewerPane
+MainToolbar
+ArrangementBase
+Startup
+MainWindowArrangement
+'''
+
+benv.cpp_classes_rl = \
+'''
+EntityBrowser
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'ArrangementBase': {},
+        'MainWindowArrangement': {
+            'slots': {
+                'mainView': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'ViewerPane': {
+            'slots': {
+                'toolbar': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        }
+    }
+}

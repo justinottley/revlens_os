@@ -1,0 +1,16 @@
+
+benv.build_type = "script_executable"
+benv.executable_name = "revlens"
+
+benv.bin_files = \
+'''
+revlens.py
+'''
+
+benv.product_config['bin_public'] = [
+{
+  "filename": "revlens",
+  "label": "Revlens",
+  "description": "Revlens Player"
+}
+]

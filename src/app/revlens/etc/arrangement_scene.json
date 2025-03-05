@@ -1,0 +1,91 @@
+{
+  "arrangement": {
+    "panes": [
+      {
+        "panes": [
+          {
+            "tabs": [
+              {
+                "name": "Filesystem"
+              },
+              {
+                "name": "Media"
+              },
+              {
+                "name": "NavLoader"
+              },
+              {
+                "name": "Node Graph"
+              }
+            ],
+            "panes": []
+          },
+          {
+            "panes": [
+              {
+                "tabs": [
+                  {
+                    "name": "Viewport"
+                  }
+                ],
+                "panes": []
+              },
+              {
+                "panes": [
+                  {
+                    "tabs": [
+                      {
+                        "name": "Viewer"
+                      },
+                      {
+                        "name": "S3D Hierarchy"
+                      },
+                      {
+                        "name": "Node Interface"
+                      }
+                    ],
+                    "panes": []
+                  },
+                  {
+                    "tabs": [
+                      {
+                        "name": "S3D Attributes"
+                      },
+                      {
+                        "name": "Scene Objects"
+                      }
+                    ],
+                    "panes": []
+                  }
+                ],
+                "pos": 0.5,
+                "orientation": 1
+              }
+            ],
+            "pos": 0.6,
+            "orientation": 2
+          }
+        ],
+        "pos": 0.28,
+        "orientation": 2
+      },
+      {
+        "tabs": [
+          {
+            "name": "Timeline"
+          }
+        ],
+        "panes": []
+      }
+    ],
+    "pos": 0.8,
+    "orientation": 1,
+    "startup.post": "import revlens;revlens._init_gui();import revlens.gui;revlens.gui.init_menu_default_layout();import rlp.s3d;rlp.s3d._init_gui();"
+  },
+  "window": {
+    "size": {
+      "width": 1516.0,
+      "height": 800.0
+    }
+  }
+}

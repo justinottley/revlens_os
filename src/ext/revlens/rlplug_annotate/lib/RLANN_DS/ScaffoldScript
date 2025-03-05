@@ -1,0 +1,63 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLANN_DS"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.DISP
+revlens.CNTRL
+'''
+
+
+benv.cpp_classes = \
+'''
+QImageFrameBuffer
+Annotation
+AnnotationEvent
+AnnotationTask
+DrawControllerBase
+FrameBuffer
+BrushBase
+PaintBrush
+EraserBrush
+TextBrush
+PickerBrush
+Track
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpExtrevlens/RLANN_DS/Annotation.h'
+    ],
+    'classes': {
+        'Track': {
+            'parent': 'DS_Track',
+            'holder': 'shared_ptr'
+        },
+        'Annotation': {},
+        'BrushBase': {
+        },
+        'DrawControllerBase': {
+            'parent': 'DS_EventPlugin'
+        }
+    }
+}

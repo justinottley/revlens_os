@@ -1,0 +1,32 @@
+Import("benv")
+
+benv.build_type = "static_files"
+benv.target_dir = "etc"
+
+extra = \
+'''
+jqueryui/1.11.1/js/jquery-ui.min.js
+jqueryui/1.11.1/css/jquery-ui.structure.min.css
+jqueryui/1.11.1/css/jquery-ui.theme.css
+jqueryui/1.11.1/css/jquery-ui.theme.min.css
+jqueryui/1.11.1/css/jquery-ui.min.css
+jqueryui/1.11.1/css/jquery-ui.min.nc.css
+'''
+
+extra_web = \
+'''
+jqueryui/1.11.1/js/jquery.js
+jqueryui/1.11.1/js/jquery.spin.js
+jqueryui/1.11.1/js/jquery.timer.js
+jqueryui/1.11.1/js/spin.min.js
+jqueryui/dark_hive/inst/jquery-ui.min.js
+jqueryui/dark_hive/inst/jquery-ui.min.css
+jqueryui/dark_hive/inst/jquery-ui.theme.min.css
+'''
+
+
+benv.static_files = \
+'''
+hud/hud_min.json
+hud/hud_sginfo.json
+'''

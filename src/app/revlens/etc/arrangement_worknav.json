@@ -1,0 +1,53 @@
+{
+  "arrangement": {
+    "panes": [
+      {
+        "panes": [
+          {
+            "tabs": [
+              {
+                "name": "Files"
+              },
+              {
+                "name": "Workflow"
+              },
+              {
+                "name": "NavLoader"
+              }
+            ]
+          },
+          {
+            "tabs": [
+              {
+                "name": "Entities"
+              },
+              {
+                "name": "Viewer"
+              }
+            ],
+            "panes": []
+          }
+        ],
+        "pos": 0.3499999940395355,
+        "orientation": 2
+      },
+      {
+        "tabs": [
+          {
+            "name": "Timeline"
+          }
+        ],
+        "panes": []
+      }
+    ],
+    "pos": 0.699999988079071,
+    "orientation": 1,
+    "startup.post": ""
+  },
+  "window": {
+    "size": {
+      "width": 1200.0,
+      "height": 800.0
+    }
+  }
+}

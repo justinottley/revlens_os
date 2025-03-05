@@ -1,0 +1,3 @@
+Product('rlplug_sync')
+Subdir('lib')
+Build('python')

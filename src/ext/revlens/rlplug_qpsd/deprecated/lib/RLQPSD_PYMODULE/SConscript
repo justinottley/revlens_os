@@ -1,0 +1,33 @@
+
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "python_extension_module"
+benv.lib_name = "RLQPSD_PYMODULE"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+
+benv.required_libs = \
+'''
+extrevlens.QPSD
+extrevlens.RLQPSD_MEDIA
+'''
+
+benv.required_external_libs = \
+'''
+core.LOG
+revlens.DS
+revlens.MEDIA
+'''
+
+
+benv.cpp_classes = \
+'''
+pymodule
+'''
+
+benv.private = \
+'''
+'''

@@ -1,0 +1,9 @@
+
+benv.build_type = "script_executable"
+
+benv.bin_files = \
+'''
+qt.conf
+qt.conf.dist
+qt.conf.dev
+'''

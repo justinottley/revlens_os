@@ -1,0 +1,6 @@
+do_bin = benv.platform_target != 'wasm_32' and benv.platform_target != 'ios'
+
+if do_bin:
+    Build('RunWrapper')
+    Build('IOService')
+    Build('PyBin')

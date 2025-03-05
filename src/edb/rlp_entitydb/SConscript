@@ -1,0 +1,10 @@
+
+import scaffold.variant
+
+Import('buildsys')
+Import('sftset_env')
+
+SConscript('lib/SConscript')
+SConscript('bin/SConscript')
+
+buildsys.build(sftset_env, 'rlp_entitydb', 'python')

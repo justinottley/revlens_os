@@ -1,0 +1,35 @@
+Import("benv")
+
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "SEQ"
+
+
+benv.required_thirdparty_libs = \
+    rlp_libs
+
+
+benv.required_libs = \
+'''
+core.LOG
+'''
+
+benv.cpp_classes = \
+'''
+Hint
+Template
+Signature
+Item
+FrameSequence
+Sequence
+Util
+Init
+'''
+
+benv.header_files = \
+'''
+Global.h
+SequenceBase.h
+'''
+# benv.pybindgen_file = 'py_modulegen.py'

@@ -1,0 +1,70 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "CNTRL"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.UTIL
+core.SEQ
+core.DS
+core.NET
+core.CNTRL
+core.PY
+core.CRYPT
+gui.BASE
+gui.PANE
+gui.MENU
+revlens.DS
+revlens.MEDIA
+revlens.DISP
+revlens.AUDIO
+revlens.VIDEO
+'''
+
+
+benv.cpp_classes = \
+'''
+Audio
+Video
+MediaManager
+FrameRateProbe
+PluginManager
+Server
+Commands
+MediaServiceController
+MainController
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpRevlens/DS/Session.h',
+        'RlpRevlens/DS/Node.h',
+        'RlpRevlens/DISP/GLView.h'
+    ],
+    'classes': {
+        'MediaManager': {},
+        'Video': {},
+        'Audio': {},
+        'PluginManager': {},
+        'Server': {},
+        'MediaServiceController': {},
+        'MainController': {
+            'parent': 'DS_ControllerBase',
+            'slots': {
+                'gotoFrame': {
+                    'fulldef': True
+                }
+            }
+        }
+    }
+}

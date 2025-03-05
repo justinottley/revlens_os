@@ -1,0 +1,11 @@
+Import("benv")
+
+benv.build_type = "compiled_static_files"
+benv.target_dir = "static"
+
+benv.static_files = \
+'''
+Freepik/White/pencil.png
+Freepik/White/rubber.png
+Freepik/White/clear_annotation.png
+'''

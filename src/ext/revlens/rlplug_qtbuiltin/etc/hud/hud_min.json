@@ -1,0 +1,27 @@
+{"item_list": [
+    {"item.key":"video.currframe",
+     "item.type":"qlonglong",
+     "position.x.value": -100,
+     "position.x.relative_to": "window.width",
+     "position.y.value": -45,
+     "position.y.relative_to": "window.height",
+     "font.size": 12,
+     "font.opacity": 0.8,
+     "font.colour": [200, 200, 200],
+     "text.dropshadow": true
+    },
+    {"item.key":"video.currfps",
+    "item.type":"float",
+    "item.precision": 3,
+    "position.x.value": -100,
+    "position.x.relative_to": "window.width",
+    "position.y.value": -25,
+    "position.y.relative_to": "window.height",
+    "font.size": 12,
+    "font.opacity": 0.8,
+     "font.colour": [200, 200, 200],
+     "text.dropshadow": true
+    }
+],
+"movable": false
+}

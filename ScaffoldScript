@@ -1,0 +1,28 @@
+do_wasm = benv.platform_target == 'wasm_32'
+
+rlp_libs = \
+'''
+Python-3.12
+PyBind11-2.13.6
+Qt-6.8.2
+OpenSSL-0.0
+'''
+
+if do_wasm:
+    rlp_libs = \
+    '''
+    Python-3.11
+    PyBind11-2.10.0
+    Qt-6.8.0
+    '''
+
+Export('rlp_libs', rlp_libs)
+Export('do_wasm', do_wasm)
+
+# Subdir('src/sclib')
+Subdir('src/core')
+Subdir('src/gui')
+Subdir('src/edb')
+Subdir('src/app/revlens')
+Subdir('src/ext/revlens')
+Subdir('src/app/prod_default')

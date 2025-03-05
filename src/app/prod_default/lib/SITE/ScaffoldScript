@@ -1,0 +1,62 @@
+
+import scaffold.buildsys.globals as buildsys_globals
+
+benv.build_type = "shared_library"
+benv.lib_name = "SITE"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.DS
+core.SEQ
+core.UTIL
+core.PROC
+core.PATH
+core.NET
+core.CNTRL
+core.PY
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+'''
+
+
+if buildsys_globals.args['pybind_mode'] == 'static':
+    benv.required_libs += \
+    '''
+    core.QTCORE
+    '''
+
+benv.required_external_libs_gui = \
+'''
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+gui.QTGUI
+'''
+
+benv.cpp_classes = \
+'''
+ServerController
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'ServerController': {
+            'parent': 'CoreCntrl_ControllerBase'
+        }
+    }
+}

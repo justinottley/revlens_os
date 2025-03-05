@@ -1,0 +1,75 @@
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLSYNC"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_external_libs_edb = \
+'''
+edb.DS
+edb.FS
+edb.CNTRL
+edb.GRAPH
+edb.STOR_SQL
+edb.STOR_LOCAL
+edb.STOR_GOOGLE
+'''
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.LOG
+core.SEQ
+core.DS
+core.PATH
+core.NET
+core.CNTRL
+gui.BASE
+gui.PANE
+gui.MENU
+gui.WIDGET
+revlens.DS
+revlens.MEDIA
+revlens.DISP
+revlens.CNTRL
+revlens.VIDEO
+revlens.AUDIO
+revlens.GUI_TL2
+'''
+
+
+benv.cpp_classes = \
+'''
+CmdFilter
+RoomController
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpCore/CNTRL/CommandBase.h'
+    ],
+    'classes': {
+        'RoomController': {
+            'parent': 'DS_EventPlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'CmdFilter': {
+            'parent': 'CoreCntrl_CommandFilterBase'
+        }
+    }
+}

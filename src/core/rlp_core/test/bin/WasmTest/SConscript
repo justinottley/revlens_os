@@ -1,0 +1,35 @@
+
+Import('benv')
+Import('rlp_lib_qt')
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_wasm_test"
+
+benv.required_thirdparty_libs = rlp_lib_qt
+''
+
+benv.required_external_libs = \
+'''
+'''
+
+
+benv.required_libs_all = \
+'''
+core.DS
+core.GUI
+core.UTIL
+'''
+
+benv.required_libs = \
+'''
+core.DS
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.private = \
+'''
+'''

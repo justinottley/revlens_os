@@ -1,0 +1,62 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLANN_CNTRL"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'] + \
+'''
+MyPaint-1.0.0
+'''
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.DS
+core.UTIL
+core.NET
+core.CNTRL
+core.PY
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.DISP
+revlens.VIDEO
+revlens.MEDIA
+revlens.CNTRL
+revlens.GUI_TL2
+extrevlens.RLANN_DS
+extrevlens.RLANN_MP
+extrevlens.RLANN_MEDIA
+'''
+
+
+benv.cpp_classes = \
+'''
+FrameProbe
+TrackFactoryPlugin
+DrawCommands
+DrawController
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpExtrevlens/RLANN_MP/Handler.h'
+    ],
+    'classes': {
+        'DrawController': {
+            'parent': 'RLANN_DS_DrawControllerBase',
+            'bootstrap': {
+                'bind_object': True
+            }
+            
+        }
+    }
+}

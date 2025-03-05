@@ -1,0 +1,9 @@
+Import("benv")
+
+benv.build_type = "static_files"
+benv.target_dir = "etc"
+
+benv.static_files = \
+'''
+
+'''

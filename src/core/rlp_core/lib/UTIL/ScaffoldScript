@@ -1,0 +1,46 @@
+
+import os
+
+benv.build_type = "shared_library"
+benv.lib_name = "UTIL"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.CRYPT
+core.PY
+'''
+
+
+benv.cpp_classes = \
+'''
+Temp
+Convert
+Text
+Image
+AppGlobals
+ThreadPool
+LogUtil
+StacktraceHandler
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'classes': {
+        'Temp': {},
+        'Convert': {},
+        'Text': {},
+        'Image': {},
+        'AppGlobals': {},
+        'LogUtil': {}
+    }
+}

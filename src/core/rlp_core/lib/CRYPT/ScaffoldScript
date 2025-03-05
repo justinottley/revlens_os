@@ -1,0 +1,25 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "CRYPT"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+'''
+
+benv.cpp_classes = \
+'''
+Base64
+VinCrypt
+'''
+
+benv.header_files = \
+'''
+Global.h
+vigenere.h
+'''
+

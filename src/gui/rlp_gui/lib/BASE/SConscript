@@ -1,0 +1,124 @@
+import scaffold.variant
+
+Import("benv")
+Import("rlp_libs")
+
+benv.build_type = "shared_library"
+benv.lib_name = "BASE"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.UTIL
+core.PY
+'''
+
+
+benv.deprecated_cpp_classes = \
+''''
+QWidgetItem
+'''
+
+benv.cpp_classes = \
+'''
+Style
+Stylesheet
+ItemBase
+FocusGroup
+FrameBase
+ViewBase
+MenuPaneBase
+GLItemBase
+ButtonBase
+LayoutBase
+Scene
+SpacerItem
+ScrollArea
+HLayout
+VLayout
+FlowLayout
+FrameOverlay
+ToolInfo
+ToolGroup
+SvgIcon
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.resource_dir = 'static/icons'
+
+
+benv.SKIPshiboken_class_prefix = 'GUI'
+benv.SKIPshiboken_classes = \
+'''
+ToolGroup
+ToolInfo
+'''
+
+benv.SKIPrequired_pymodule_libs = \
+'''
+gui.BASE
+core.PY
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'classes': {
+        'ItemBase': {
+        },
+        'FrameBase': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ButtonBase': {
+            'parent': 'GUI_ItemBase'
+        },
+        'LayoutBase': {
+            'parent': 'GUI_ItemBase'
+        },
+        'HLayout': {
+            'parent': 'GUI_LayoutBase'
+        },
+        'VLayout': {
+            'parent': 'GUI_LayoutBase'
+        },
+        'FlowLayout': {
+            'parent': 'GUI_LayoutBase'
+        },
+        'ScrollBarHandle': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ItemBase'
+        },
+        'HorizontalScrollBarHandle': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ScrollBarHandle'
+        },
+        'VerticalScrollBarHandle': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ScrollBarHandle'
+        },
+        'ScrollAreaContent': {
+            'header': 'ScrollArea',
+            'parent': 'GUI_ItemBase'
+        },
+        'ScrollArea': {
+            'parent': 'GUI_ItemBase'
+        },
+        'SvgIcon': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ToolInfo': {},
+        'ToolGroup': {
+            'parent': 'GUI_ItemBase'
+        },
+        'FocusGroup': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}
+# benv.pybindgen_file = 'py_modulegen.py'

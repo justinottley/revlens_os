@@ -1,0 +1,11 @@
+
+Import('buildsys')
+Import('sftset_env')
+
+SConscript("lib/SConscript")
+SConscript("bin/SConscript")
+SConscript("static/SConscript")
+
+buildsys.build(sftset_env, 'rlp_core', 'python')
+
+

@@ -1,0 +1,26 @@
+
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_test_ws_client"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.UTIL
+core.DS
+core.LOG
+core.NET
+core.CNTRL
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

@@ -1,0 +1,49 @@
+
+benv.build_type = "python_extension_module"
+benv.lib_name = "PYMODULE"
+
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_thirdparty_libs_1 = \
+'''
+Python-3.12
+PyBind11-2.10.0
+'''
+
+
+
+benv.required_libs_all = \
+'''
+core.DS
+core.LOG
+core.UTIL
+core.NET
+core.CNTRL
+core.PY
+'''
+
+benv.required_libs_1 = \
+'''
+core.LOG
+core.CRYPT
+'''
+
+benv.required_libs = \
+'''
+'''
+
+benv.cpp_classes = \
+'''
+Base64
+main
+'''
+
+
+benv.header_files = \
+'''
+vigenere.h
+'''

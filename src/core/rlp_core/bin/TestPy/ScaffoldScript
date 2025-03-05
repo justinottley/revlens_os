@@ -1,0 +1,32 @@
+
+benv.build_type = "binary_executable"
+benv.executable_name = "test_py"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.UTIL
+core.CRYPT
+core.DS
+core.LOG
+core.PY
+core.PROC
+core.SEQ
+core.NET
+core.CNTRL
+core.QTCORE
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

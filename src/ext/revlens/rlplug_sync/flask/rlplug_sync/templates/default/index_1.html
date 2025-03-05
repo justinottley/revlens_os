@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+
+        {{include "shared/jqueryui.html"}}
+        {{include "shared/free-jqgrid.html"}}
+        {{include "default/common.html"}}
+        {{include "shared/load_shared.html"}}
+<script src="/rlplug_review/static/js/obj_revlens.js" type="text/javascript"></script>
+
+</head>
+
+<script>
+
+startup = function() {
+    window.lens_room_handler.sendCallFromJS("get_rooms", [], {}, function(){});
+}
+
+init_revlens = function() {
+
+    console.log(window);
+
+    var ws_url = "{{=ws_url}}";
+
+    if (ws_url == "") {
+
+        console.log('starting qt webchannel');
+
+        new QWebChannel(qt.webChannelTransport, function(channel) {
+
+            console.log('setting up Qt WebChannel for revlens_dailies');
+            
+            window.revlens_dailies = channel.objects.revlens_dailies;
+            
+            window.revlens_dailies.sendCallToClient.connect(function(args) {
+                console.log('RECEVED MESSAGE!');
+                console.log(args);
+            });
+        });
+
+    } else {
+
+        console.log('starting standalone websocket transport from ' + ws_url);
+
+        window.revlens_dailies = new RevlensWebSocketHandler(ws_url);
+
+    }
+
+    if (window.revlens_dailies != undefined) {
+        console.log('FOUND revlens_dailies object')
+        return;
+    }
+
+    console.log('initializing lens standin');
+
+    window.revlens_dailies = {
+        
+        pycall: function(method, arg_list) {
+            console.log('revlens.pycall() [STANDIN] ' + method);
+        }
+    }
+}
+
+$(function() {
+
+    console.log('dailies - startup');
+
+    // init_revlens();
+});
+
+</script>
+
+
+<body bgcolor="#000;">
+    <div class="ui-widget-content">
+        <p>hello world</p>
+    </div>
+
+</body>
+
+</html>

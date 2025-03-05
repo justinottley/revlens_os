@@ -1,0 +1,75 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLQTDISP"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.DISP
+revlens.CNTRL
+revlens.VIDEO
+'''
+
+
+benv.cpp_classes = \
+'''
+HUD
+FadeMessage
+FadeMessagePlugin
+PanZoom
+CompositeImageWindow
+CompositeWipeSplitter
+Composite
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+# benv.pybindgen_file = 'py_modulegen.py'
+
+benv.pybind11_info = {
+    'classes': {
+        'HUD': {
+            'parent': 'DS_EventPlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'FadeMessage': {},
+        'FadeMessagePlugin': {
+            'parent': 'DS_EventPlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'PanZoom': {
+            'parent': 'DS_EventPlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'Composite': {
+            'parent': 'DS_EventPlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        }
+    }
+}

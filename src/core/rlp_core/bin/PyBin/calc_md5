@@ -1,0 +1,96 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import logging
+import hashlib
+import argparse
+import traceback
+
+from rlp.core import rlp_logging
+
+rlogger = logging.getLogger('rlp.{}'.format(__name__))
+
+EXIT_SUCCESS = 0
+EXIT_ERROR_INVALID_DIR = 1
+EXIT_ERROR_UNKNOWN = 2
+
+def calc_md5(directory):
+
+
+    md5_hash = hashlib.md5()
+    
+    if not os.path.exists(directory):
+        retcode = EXIT_ERROR_INVALID_DIR
+        return (retcode, '')
+        
+    try:
+      
+        for root, dirs, files in os.walk(directory):
+            for names in files:
+                
+                
+                filepath = os.path.join(root,names)
+                rlogger.info('Hashing {f}'.format(f=filepath))
+                
+                try:
+                    f1 = open(filepath, 'rb')
+                    
+                except Exception as e:
+                    
+                    # You can't open the file for some reason
+                    rlogger.warning('Error opening {f} - {e}'.format(f=filepath, e=e))
+                    f1.close()
+                    
+                    continue
+                    
+                    
+                while True:
+                  
+                    # Read file in as little chunks
+                    buf = f1.read(4096)
+                    if not buf:
+                        break
+                      
+                    md5_hash.update(hashlib.md5(buf).hexdigest())
+                    
+                f1.close()
+                
+    except:
+        
+        # Print the stack traceback
+        rlogger.error(traceback.print_exc())
+        retcode = EXIT_ERROR_UNKNOWN
+        
+        return (retcode, '')
+        
+        
+    return (EXIT_SUCCESS, md5_hash.hexdigest())
+    
+    
+    
+def init_logging(loglevel):
+    rlp_logging.basic_config(rlogger, loglevel)
+    
+    
+def main():
+    
+    parser = argparse.ArgumentParser('Calculate an MD5 hash of a directory structure')
+    parser.add_argument('--loglevel', dest='loglevel', help='loglevel', default=logging.INFO)
+    parser.add_argument('directory')
+    
+    args = parser.parse_args()
+    
+    init_logging(args.loglevel)
+    
+    retcode, md5_result = calc_md5(args.directory)
+    
+    if retcode == EXIT_SUCCESS:
+        print md5_result
+        
+        
+    sys.exit(retcode)
+    
+    
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,7 @@
+#include <QtCore/QtGlobal>
+
+#ifndef EXTREVLENS_QPSD_LIB
+#define EXTREVLENS_QPSD_API Q_DECL_EXPORT
+#else
+#define EXTREVLENS_QPSD_API Q_DECL_IMPORT
+#endif

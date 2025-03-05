@@ -1,0 +1,34 @@
+
+benv.build_type = "binary_executable"
+benv.executable_name = "test_crypt.bin"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'] + \
+    '''
+    OpenSSL-1.0
+    '''
+
+
+
+benv.required_libs = \
+'''
+core.UTIL
+core.CRYPT
+core.DS
+core.LOG
+core.PY
+core.PROC
+core.SEQ
+core.NET
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

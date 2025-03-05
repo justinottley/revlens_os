@@ -1,0 +1,28 @@
+
+# benv.build_type = "shared_library"
+benv.build_type = "python_shlib_extension_module"
+
+benv.lib_name = "QTGUI"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.cpp_classes = \
+'''
+QtGuiTypes
+'''
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+gui.BASE
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

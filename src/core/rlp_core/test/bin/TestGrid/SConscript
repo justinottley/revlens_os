@@ -1,0 +1,27 @@
+
+Import("benv")
+Import("rlp_lib_qt")
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rl_test_grid"
+
+benv.required_thirdparty_libs = \
+    rlp_lib_qt
+
+benv.required_libs = \
+'''
+core.UTIL
+core.DS
+gui.BASE
+gui.GRID
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

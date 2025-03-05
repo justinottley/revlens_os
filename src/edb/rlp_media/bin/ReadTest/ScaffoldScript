@@ -1,0 +1,38 @@
+
+benv.build_type = "binary_executable"
+benv.executable_name = "jpg_read_test"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'] + \
+    '''
+    ImgLibs-1.0
+    '''
+
+benv.required_libs = \
+'''
+core.LOG
+core.CRYPT
+core.PY
+core.SEQ
+core.UTIL
+core.DS
+core.PATH
+core.NET
+core.CNTRL
+edb.UTIL
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+edb.MEDIA
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

@@ -1,0 +1,22 @@
+
+libs = [
+    'QTGUI',
+    'BASE',
+    'MENU',
+    'PANE',
+    'WIDGET',
+    'GRID'
+]
+
+# only linux has PySide integration
+if benv.platform_target == 'linux':
+    libs.append('SBKPYMODULE')
+
+# libs = ['BASE', 'PANE']
+# slibs = ['MENU']
+
+# libs = ['QTGUI', 'BASE']
+# slibs = ['BASE']
+
+for lib in libs:
+    Build(lib)

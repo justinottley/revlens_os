@@ -1,0 +1,34 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "DS"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.cpp_classes = \
+'''
+StorageConnectionBase
+StorageHandleBase
+EdbObjectBase
+DataSource
+FieldType
+EntityType
+Entity
+FieldValue
+Event
+StorageManagerBase
+'''
+
+benv.required_libs = \
+'''
+core.DS
+core.UTIL
+core.LOG
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

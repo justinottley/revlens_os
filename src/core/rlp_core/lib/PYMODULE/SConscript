@@ -1,0 +1,38 @@
+import scaffold.variant
+
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "python_extension_module"
+benv.lib_name = "PYMODULE"
+
+
+benv.required_thirdparty_libs = \
+    rlp_libs
+
+
+benv.required_libs_all = \
+'''
+core.DS
+core.LOG
+core.UTIL
+core.NET
+core.CNTRL
+core.PY
+'''
+
+benv.required_libs = \
+'''
+core.LOG
+core.CRYPT
+'''
+
+benv.cpp_classes = \
+'''
+pymodule
+'''
+
+
+benv.header_files = \
+'''
+'''

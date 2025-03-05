@@ -1,0 +1,8 @@
+
+Import("buildsys")
+
+SConscript('lib/SConscript')
+
+Import("sftset_env")
+
+buildsys.build(sftset_env, 'rlplug_qpsd', 'python')

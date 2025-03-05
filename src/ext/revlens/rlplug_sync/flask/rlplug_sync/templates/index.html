@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+
+{% include "jqueryui.html" %}
+{% include "free-jqgrid.html" %}
+{% include "common.html" %}
+
+<script>
+
+var GLOBALS = {};
+
+
+startup = function() {
+
+    console.log('startup');
+    console.log(window);
+
+    var comm_style = "{{data['comm']}}";
+
+    window.rlp_controller = new RevlensCommsController(comm_style);
+
+    // window.revlens.room_controller.sendCallToClient.connect(on_controller_msg_received);
+
+    // console.log('Starting standalone websocket handler');
+    // window.revlens_room_controller = new RevlensWebSocketHandler(ws_url);
+
+    window.rlp_controller.callFromClient("get_properties", [], {}, function(){});
+    window.rlp_controller.callFromClient("get_rooms", [], {}, function(){});
+    
+}
+
+on_controller_msg_received = function(data)
+{
+    console.log('ON CONTROLLER MESSAGE RECEIVED');
+    console.log(data);
+}
+
+
+
+
+$(function() {
+
+    $("#new_dialog").hide();
+    $("#new_dialog_media input").checkboxradio();
+
+    // NOTE: setting checked in the html results in visual problem with radio icon..
+    $('#new-dialog-media-1')
+        .prop('checked',true)
+        .checkboxradio('refresh');
+    
+
+    console.log('Dailies - Room View - startup');
+
+    var room_view = new RoomViewWidget("#rooms");
+    room_view.init();
+
+    window.room_view = room_view;
+
+    startup();
+
+});
+
+</script>
+
+</head>
+<body style="background-color: #000;">
+    <div class="ui-widget ui-widget-content" id="rooms" style="height: 500px;"></div>
+    <div id="new_dialog">
+        <div>Room Name: <input id="new_room_name"></input></div>
+        <div style="height: 10px;"></div>
+        <div id="new_dialog_media">
+            <fieldset>
+                <legend>Contents:</legend>
+                <label for="new-dialog-media-1">Empty</label>
+                <input type="radio" name="new-dialog-media-1" id="new-dialog-media-1">
+                <label for="new-dialog-media-2">Current Session</label>
+                <input type="radio" name="new-dialog-media-1" id="new-dialog-media-2">
+            </fieldset>
+        </div>
+    </div>
+    
+    <div id="delete_dialog">
+        <p>Delete Room "<span id="delete_dialog_room_name"></span>" - Are you sure?</p>
+    </div>
+    </div>
+    
+
+</body>
+
+</html>

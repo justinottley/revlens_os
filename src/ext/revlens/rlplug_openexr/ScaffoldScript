@@ -1,0 +1,3 @@
+Product('rlplug_openexr')
+Subdir('lib')
+Build('python')

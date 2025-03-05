@@ -1,0 +1,42 @@
+
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "binary_executable"
+benv.executable_name = "revlens_batch.bin"
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.SEQ
+core.GUI
+'''
+
+benv.required_libs_all = \
+'''
+revlens.DS
+revlens.DISP
+revlens.AUDIO
+revlens.MEDIA
+revlens.VIDEO
+revlens.CNTRL
+revlens.GUI
+'''
+
+benv.required_libs = \
+'''
+revlens.GUI
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+revlens.bin
+'''

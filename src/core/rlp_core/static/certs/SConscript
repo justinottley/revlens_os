@@ -1,0 +1,10 @@
+Import("benv")
+
+benv.build_type = "compiled_static_files"
+
+
+benv.static_files = \
+'''
+localhost.crt
+server.key
+'''

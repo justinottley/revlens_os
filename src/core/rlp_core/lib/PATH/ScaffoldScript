@@ -1,0 +1,26 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "PATH"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.UTIL
+'''
+
+benv.cpp_classes = \
+'''
+PathInfo
+StyleBase
+PosixStyle
+Path
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

@@ -1,0 +1,4 @@
+Import("benv")
+
+benv.build_type = "web2py_application"
+benv.appname = 'revlens'

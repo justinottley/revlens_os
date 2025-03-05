@@ -1,0 +1,26 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "GRAPH"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.cpp_classes = \
+'''
+TraverserBase
+Node
+Parser
+'''
+
+
+benv.required_libs = \
+'''
+core.LOG
+edb.DS
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

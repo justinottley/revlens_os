@@ -1,0 +1,99 @@
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "PANE"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.UTIL
+core.DS
+core.PY
+core.SEQ
+gui.BASE
+gui.MENU
+'''
+
+
+benv.cpp_classes = \
+'''
+SvgButton
+Tab
+TabHeader
+PaneSplitter
+PaneHeader
+PaneBody
+Pane
+PaneFrame
+ViewQuick
+'''
+
+benv.header_files = \
+'''
+Global.h
+View.h
+'''
+
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'classes': {
+        'SvgButton': {
+            'parent': 'GUI_ButtonBase',
+            'slots': {
+                'icon': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'SvgToggleButton': {
+            'parent': 'GUI_SvgButton',
+            'header': 'SvgButton'
+        },
+        'Tab': {
+            'holder': 'shared_ptr'
+        },
+        'TabHeader': {},
+        'PaneSplitter': {},
+        'PaneBody': {
+            'parent': 'GUI_ItemBase'
+        },
+        'PaneHeader': {},
+        'Pane': {
+            'parent': 'GUI_FrameBase',
+            'slots': {
+                'panePtr': {
+                    'return_value_policy':  'reference'
+                }
+            }
+        },
+        'PaneFrame': {
+            'parent': 'GUI_FrameBase',
+            'slots': {
+                'body': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'View': {
+            'parent': 'QQuickWindow',
+            'slots': {
+                'createFloatingPane': {
+                    'return_value_policy': 'reference'
+                },
+                'rootPane': {
+                    'return_value_policy': 'reference'
+                },
+                'scene': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        },
+        'ViewQuick': {
+            'register_typeconverter': False
+        }
+    }
+}

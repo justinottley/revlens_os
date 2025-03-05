@@ -1,0 +1,11 @@
+
+
+lib_tools = [
+ 'RLQTMEDIA',
+ 'RLQTCNTRL',
+ 'RLQTDISP'
+]
+
+
+for lib_name in lib_tools:
+    Build(lib_name)

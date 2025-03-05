@@ -1,0 +1,53 @@
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLEXRMEDIA"
+
+
+benv.required_thirdparty_libs = rlp_libs + \
+'''
+OpenEXR-3.2.1
+'''
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.SEQ
+revlens.DS
+revlens.MEDIA
+'''
+
+benv.required_libs = \
+'''
+extrevlens.RLEXRDS
+'''
+
+benv.required_pybindgen_libs = \
+'''
+'''
+
+benv.cpp_classes = \
+'''
+VideoReader
+Plugin
+'''
+
+benv.header_files = \
+'''
+Global.h
+ExrIncludes.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'Plugin': {
+            'parent': 'MEDIA_Plugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+
+        }
+    }
+}

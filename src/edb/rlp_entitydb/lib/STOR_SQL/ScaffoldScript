@@ -1,0 +1,36 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "STOR_SQL"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.cpp_classes = \
+'''
+Connection
+StorageHandle
+DataSource
+EntityType
+FieldType
+Entity
+FieldValue
+Event
+EntityCache
+StorageManager
+Traverser
+'''
+
+benv.required_libs = \
+'''
+core.DS
+core.LOG
+edb.DS
+edb.GRAPH
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''

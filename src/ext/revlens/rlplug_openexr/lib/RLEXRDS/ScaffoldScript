@@ -1,0 +1,31 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLEXRDS"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_thirdparty_libs += \
+'''
+OpenEXR-3.2.1
+'''
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+revlens.DS
+'''
+
+
+benv.cpp_classes = \
+'''
+FrameBuffer
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

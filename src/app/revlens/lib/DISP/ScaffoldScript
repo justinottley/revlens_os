@@ -1,0 +1,78 @@
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "DISP"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.UTIL
+core.SEQ
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.MEDIA
+'''
+
+benv.cpp_classes_all = \
+'''
+FrameRateTimer
+GLPaintEngine
+GLPaintEngine2D
+ViewBase
+MockView
+GLView
+'''
+
+benv.cpp_classes = \
+'''
+FrameRateTimer
+GLPaintEngine
+GLPaintEngine2D
+GLView
+'''
+
+
+deprecated = \
+'''
+GlslWidget
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+if 'ios' in benv.platform_target or 'wasm' in benv.platform_target:
+    benv.header_files += \
+    '''
+    GlslShaders2DiOS.h
+    '''
+else:
+    benv.header_files += \
+    '''
+    GlslShaders2D.h
+    '''
+
+    
+benv.pybind11_info = {
+    'includes': [
+        'RlpRevlens/DISP/GLView.h'
+    ],
+    'classes': {
+        'GLView': {
+            'parent': 'GUI_ItemBase'
+        },
+        'GLPaintEngine2D': {
+        }
+    }
+}

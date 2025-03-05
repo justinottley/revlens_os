@@ -1,0 +1,142 @@
+
+import platform
+plat_sys = platform.system()
+
+import scaffold.buildsys.globals as buildsys_globals
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "GUI"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+core_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.SEQ
+core.DS
+core.PATH
+core.NET
+core.CNTRL
+'''
+
+if not benv.exports.get('do_wasm') and benv.platform_target != 'ios':
+    core_libs += \
+    '''
+    core.PROC
+    '''
+
+
+gui_libs = \
+'''
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+'''
+
+if buildsys_globals.args['pybind_mode'] == 'static':
+    core_libs += \
+    '''
+    core.QTCORE
+    '''
+
+    gui_libs += \
+    '''
+    gui.QTGUI
+    '''
+
+edb_libs = \
+'''
+edb.DS
+edb.UTIL
+edb.GUI
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+edb.MEDIA
+'''
+
+revlens_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.AUDIO
+revlens.DISP
+revlens.CNTRL
+revlens.GUI_TL2
+revlens.GUI
+'''
+
+
+extrevlens_libs = \
+'''
+extrevlens.RLQTMEDIA
+extrevlens.RLQTCNTRL
+extrevlens.RLQTDISP
+extrevlens.RLSYNC
+extrevlens.RLFFMPEG
+extrevlens.RLMEDIA
+'''
+
+extrevlens_libs += \
+'''
+extrevlens.RLANN_DS
+extrevlens.RLANN_MP
+extrevlens.RLANN_MEDIA
+extrevlens.RLANN_CNTRL
+extrevlens.RLANN_GUI
+'''
+
+
+if plat_sys != 'Darwin' and not benv.exports.get('do_wasm') and benv.platform_target != 'ios':
+    extrevlens_libs += \
+    '''
+    extrevlens.RLEXRDS
+    extrevlens.RLEXRMEDIA
+    extrevlens.RLOCIO
+    extrevlens.RLOIIO
+    extrevlens.QPSD
+    extrevlens.RLQPSD_MEDIA
+    '''
+
+
+benv.required_libs = \
+    core_libs + \
+    gui_libs + \
+    edb_libs + \
+    revlens_libs
+
+if buildsys_globals.args['pybind_mode'] == 'static':
+    benv.required_libs += \
+        extrevlens_libs
+
+    if plat_sys != 'Darwin' and not benv.exports.get('do_wasm') and benv.platform_target != 'ios':
+        benv.required_thirdparty_libs += \
+        '''
+        OpenColorIO-2.3.0
+        OpenImageIO-2.5.5.0
+        '''
+
+benv.cpp_classes = \
+'''
+Startup
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+    }
+}

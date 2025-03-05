@@ -1,0 +1,69 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "GUI"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.SEQ
+core.NET
+core.CNTRL
+core.CRYPT
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.AUDIO
+revlens.CNTRL
+revlens.DISP
+revlens.GUI_TL2
+'''
+
+benv.cpp_classes = \
+'''
+ItemLoader
+FileBrowser
+ViewerLoadOverlay
+ViewerTimeline
+ViewerPane
+MainToolbar
+ArrangementBase
+MainWindowArrangement
+TabletWindowArrangement
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.resource_dir = 'static/icons'
+
+benv.pybind11_info = {
+    'classes': {
+        'ItemLoader': {
+            'parent': 'GUI_ItemBase'
+        },
+        'FileBrowser': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ViewerPane': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ArrangementBase': {},
+        'MainWindowArrangement': {},
+        'TabletWindowArrangement': {}
+    }
+}

@@ -1,0 +1,79 @@
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "DS"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.NET
+core.CNTRL
+'''
+
+benv.required_libs = \
+'''
+'''
+
+benv.cpp_classes = \
+'''
+DataEvent
+Time
+NanoTimer
+Buffer
+FrameBuffer
+AudioBuffer
+Plugin
+EventPlugin
+NodeFactoryPlugin
+SyncProbe
+SyncTarget
+Graph
+Node
+PlaybackMode
+Factory
+Track
+TrackFactoryPlugin
+Session
+ControllerBase
+'''
+
+benv.header_files = \
+'''
+Global.h
+TimeConstants.h
+'''
+
+
+benv.pybind11_info = {
+    'classes': {
+        'Graph': {},
+        'Node': {
+            'holder': 'shared_ptr'
+        },
+        'Track': {
+            'holder': 'shared_ptr'
+        },
+        'Session': {
+            'holder': 'shared_ptr'
+        },
+        'PlaybackMode': {
+            'slots': {
+                'getNextFrameNum': {
+                    'fulldef': True
+                }
+            }
+        },
+        'FrameBuffer': {},
+        'EventPlugin': {},
+        'NodeFactoryPlugin': {}
+    }
+}
+
+# benv.pybindgen_file = 'py_modulegen.py'

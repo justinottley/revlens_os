@@ -1,0 +1,41 @@
+
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "binary_executable"
+benv.executable_name = "webkit_test"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+
+benv.required_libs = \
+'''
+'''
+
+benv.required_external_libs = \
+'''
+core.UTIL
+core.DS
+core.LOG
+core.SEQ
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+gui.GRID
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.qrc_resource_libs = \
+'''
+'''
+
+benv.private = \
+'''
+'''

@@ -1,0 +1,48 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLANN_MP"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'] + \
+'''
+MyPaint-1.0.0
+'''
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.NET
+core.CNTRL
+gui.BASE
+gui.PANE
+gui.MENU
+extrevlens.RLANN_DS
+revlens.DS
+revlens.DISP
+revlens.CNTRL
+'''
+
+
+benv.cpp_classes = \
+'''
+Tile
+Surface
+Handler
+Brush
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'classes': {
+        'Handler': {}
+    }
+}
+
+benv.resource_dir = 'static/mypaint'

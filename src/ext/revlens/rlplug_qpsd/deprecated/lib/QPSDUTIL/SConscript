@@ -1,0 +1,26 @@
+Import("benv")
+
+benv.build_type = "shared_library"
+benv.lib_name = "QPSDUTIL"
+
+
+benv.required_thirdparty_libs = \
+'''
+Qt-5.7
+PyBindGen-0.17.0
+PythonQt-3.2
+Python-2.7
+'''
+
+benv.required_libs = \
+'''
+extlens.QPSD
+'''
+
+benv.cpp_classes = \
+'''
+QPsdUtil
+'''
+
+
+benv.pybindgen_file = 'py_modulegen.py'

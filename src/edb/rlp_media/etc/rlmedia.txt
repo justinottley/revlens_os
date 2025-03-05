@@ -1,0 +1,105 @@
+
+MediaContainer
+  Video
+  Audio
+  Waveform
+  Thumbnail
+  Annotation
+
+-----------
+
+MediaHandle
+  description
+  type
+  container : MediaContainer
+  
+  
+Stream
+  info : CodecInfo
+  settings : CodecSettings
+  handle: MediaHandle
+
+
+
+
+VideoStream : Stream
+  width
+  height
+  
+  
+AudioStream : Stream
+  sample_rate
+  bit_depth
+  channel_count
+  
+
+
+‐------
+
+Media
+    name<str> : "010_020_anim_playblast"
+
+Video
+    name<str> : "010_020_anim_playblast"
+    uuid : abcd
+    source : Media
+    
+Audio
+    name :
+    source : Media
+    
+    
+VideoStream
+    
+    handle : Video (uuid)
+    codec_info<CodecInfo>
+        name : "jpg"
+        description : "jpg"
+    codec_settings<JpegCodecSettings>
+        quality : 90
+    
+    
+    width<int> : 1920
+    height<int> : 1080
+    description<str> : "HD"
+    
+    frame_count<int> : 10
+    
+    frames<VideoFrame>
+        
+        frame_num<int> : 0
+        frame_data<binary> :
+    
+    start_time<int> : 0
+    
+    
+AudioStream
+
+    source : Audio
+    codec<WavCodec>
+        name :
+        
+    channels : 2
+    frames<AudioFrame>
+    start_time<int> : 0
+    
+        
+
+
+
+container
+
+Stream
+  - format
+  - type
+
+VideoStream
+  - width
+  - height
+  - channels
+  - bit_depth
+  - colorspace
+
+
+AudioStream
+  - 

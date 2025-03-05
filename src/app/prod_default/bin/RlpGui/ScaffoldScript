@@ -1,0 +1,163 @@
+
+import platform
+import scaffold.buildsys.globals as buildsys_globals
+
+bargs = {} # buildsys.ARGUMENTS
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_gui"
+
+ext_libs = '''
+FFMpeg-7.1
+OpenEXR-3.2.1
+MyPaint-1.0.0
+OpenColorIO-2.3.0
+OpenImageIO-2.5.5.0
+'''
+
+
+if benv.exports.get('do_wasm'):
+    ext_libs = '''
+    FFMpeg-4.2.2
+    MyPaint-1.0.0
+    '''
+
+if platform.system() == 'Darwin':
+    ext_libs = '''
+    FFMpeg-7.1
+    MyPaint-1.0.0
+    '''
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'] + ext_libs
+    
+
+core_libs = \
+'''
+core.UTIL
+core.DS
+core.LOG
+core.SEQ
+core.PATH
+core.CRYPT
+core.NET
+core.CNTRL
+core.PY
+core.CRYPT
+'''
+
+
+if not benv.exports.get('do_wasm'):
+    core_libs += \
+    '''
+    core.PROC
+    '''
+
+
+gui_libs = \
+'''
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+gui.GRID
+'''
+
+
+if buildsys_globals.args['pybind_mode'] == 'static':
+    core_libs += \
+    '''
+    core.QTCORE
+    '''
+
+    gui_libs += \
+    '''
+    gui.QTGUI
+    '''
+
+
+edb_libs = \
+'''
+edb.DS
+edb.UTIL
+edb.GUI
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+edb.MEDIA
+'''
+
+if benv.exports.get('do_wasm'):
+    edb_libs = ''
+
+revlens_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.AUDIO
+revlens.CNTRL
+revlens.DISP
+revlens.GUI
+revlens.GUI_TL2
+'''
+
+
+extrevlens_libs = \
+'''
+extrevlens.RLQTMEDIA
+extrevlens.RLQTCNTRL
+extrevlens.RLQTDISP
+extrevlens.RLSYNC
+extrevlens.RLANN_DS
+extrevlens.RLANN_MP
+extrevlens.RLANN_MEDIA
+extrevlens.RLANN_CNTRL
+extrevlens.RLANN_GUI
+extrevlens.RLFFMPEG
+extrevlens.RLMEDIA
+extrevlens.QPSD
+extrevlens.RLQPSD_MEDIA
+'''
+if not benv.exports.get('do_wasm') and platform.system() != 'Darwin':
+    extrevlens_libs += \
+    '''
+    extrevlens.RLEXRDS
+    extrevlens.RLEXRMEDIA
+    extrevlens.RLOCIO
+    extrevlens.RLOIIO
+    '''
+
+
+prod_libs = \
+'''
+prod.GUI
+'''
+
+
+benv.required_libs = \
+    core_libs + \
+    gui_libs + \
+    edb_libs + \
+    revlens_libs + \
+    extrevlens_libs + \
+    prod_libs
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.qrc_resource_libs = \
+'''
+core.CNTRL
+gui.BASE
+revlens.GUI
+extrevlens.RLANN_GUI
+extrevlens.RLANN_MP
+'''
+
+benv.private = \
+'''
+'''

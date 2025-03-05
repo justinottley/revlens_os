@@ -1,0 +1,28 @@
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "UTIL"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+
+benv.cpp_classes = \
+'''
+Filter
+'''
+
+benv.required_external_libs = \
+'''
+core.DS
+core.UTIL
+core.LOG
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+# benv.pybindgen_file = 'py_modulegen.py'

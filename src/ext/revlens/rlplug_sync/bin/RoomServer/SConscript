@@ -1,0 +1,10 @@
+
+Import("benv")
+
+benv.build_type = "script_executable"
+
+benv.bin_files = \
+'''
+revlens_roomserver.py
+revlens_testclient.py
+'''

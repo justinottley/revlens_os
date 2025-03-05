@@ -1,0 +1,22 @@
+
+benv.build_type = 'shared_library'
+benv.lib_name = "LOG"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.cpp_classes = \
+'''
+HandlerBase
+StdoutHandler
+FileHandler
+Logger
+Logging
+
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''

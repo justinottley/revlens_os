@@ -1,0 +1,54 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "MENU"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.SEQ
+gui.BASE
+'''
+
+benv.cpp_classes = \
+'''
+MenuItem
+MenuPane
+MenuButton
+MenuBar
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'classes': {
+        'MenuItem': {
+            'parent': 'GUI_ItemBase'
+        },
+        'MenuPane': {
+            'parent': 'GUI_ItemBase',
+            'slots': {
+                'setPos': {
+                    'fulldef': True
+                }
+            }
+        },
+        'MenuButton': {
+            'parent': 'GUI_ItemBase'
+        },
+        'MenuBar': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}

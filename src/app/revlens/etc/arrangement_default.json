@@ -1,0 +1,33 @@
+{
+    "arrangement": {
+        "orientation": 1,
+        "panes": [
+                    {
+                        "orientation": 2,
+                        "panes": [
+                            {
+                                "panes": [],
+                                "tabs": [{"name": "Files"}, {"name": "Media"}, {"name": "NavLoader"}, {"name": "PyConsole"}],
+                                "activeTab": 0
+                            },
+                            {
+                                "panes": [],
+                                "tabs": [{"name": "Viewer"}]
+                            }],
+                        "pos": 0.3499999940395355
+                    },
+                    {
+                        "panes": [],
+                        "tabs": [{"name": "Timeline"}]
+                    }
+                ],
+        "pos": 0.700000011920929,
+        "startup.post": "import revlens;revlens._init_gui();import revlens.gui;revlens.gui.init_menu_default_layout()"
+    },
+    "window": {
+        "size": {
+            "width": 1200,
+            "height": 800
+        }
+    }
+}

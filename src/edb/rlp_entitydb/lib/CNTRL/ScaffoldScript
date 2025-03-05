@@ -1,0 +1,50 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "CNTRL"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+'''
+
+
+benv.cpp_classes = \
+'''
+Query
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'lib_prefix': 'EdbCntrl',
+    'classes': {
+        'Query': {
+            'slots': {
+                'createEntityType': {
+                    'return_value_policy': 'reference'
+                },
+                'createEntityTypeField': {
+                    'return_value_policy': 'reference'
+                }
+            }
+        }
+    }
+}

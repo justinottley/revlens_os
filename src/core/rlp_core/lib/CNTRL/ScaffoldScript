@@ -1,0 +1,48 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "CNTRL"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs']
+
+benv.required_libs = \
+'''
+core.LOG
+core.CRYPT
+core.UTIL
+core.NET
+core.PY
+core.CRYPT
+'''
+
+benv.cpp_classes = \
+'''
+CommandBase
+ControllerBase
+Auth
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.resource_dir = 'static/certs'
+
+
+benv.pybind11_info = {
+    'lib_prefix': 'CoreCntrl',
+    'classes': {
+        'CommandBase': {},
+        'CommandFilterBase': {
+            'header': 'CommandBase'
+        },
+        'ControllerBase': {},
+        'Auth': {
+            'bootstrap': {
+                'bind_object': True
+            }
+        }
+    }
+}

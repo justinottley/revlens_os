@@ -1,0 +1,11 @@
+sset_config = {
+    'sclib.cls': 'scaffold.env.sset.BuildRelpathSoftwareSet',
+    'sftset_version': '0.0'
+}
+
+SoftwareSet('prod', sset_config)
+Product('prod')
+Subdir('lib')
+Subdir('bin')
+Build('etc')
+Build('python')

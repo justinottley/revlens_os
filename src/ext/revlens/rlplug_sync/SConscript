@@ -1,0 +1,12 @@
+
+Import("buildsys")
+
+SConscript('lib/SConscript')
+SConscript('bin/SConscript')
+
+Import("sftset_env")
+
+# buildsys.build(sftset_env, 'rlplug_sync', 'etc')
+buildsys.build(sftset_env, 'rlplug_sync', 'python')
+# buildsys.build(sftset_env, 'rlplug_sync', 'flask')
+# buildsys.build(sftset_env, 'rlplug_sync', 'web2py')

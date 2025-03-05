@@ -1,0 +1,32 @@
+import scaffold.variant
+
+Import("buildsys")
+Import("sftset_env")
+
+# buildsys.build(sftset_env, 'core', 'Schema')
+# buildsys.build(sftset_env, 'core', 'TestConvert')
+
+# buildsys.build(sftset_env, 'core', 'WasmTest')
+
+buildsys.build(sftset_env, 'core', 'IOService')
+
+
+build_tests = True
+if 'wasm' in buildsys.ARGUMENTS.get('platform_target', ''):
+    build_tests = False
+    #buildsys.build(sftset_env, 'core', 'WasmTest')
+    #buildsys.build(sftset_env, 'core', 'WasmPyTest')
+    pass
+
+if build_tests:
+    pass
+    # buildsys.build(sftset_env, 'core', 'TestHttpServer')
+    # buildsys.build(sftset_env, 'core', 'TestGrid')
+    # buildsys.build(sftset_env, 'core', 'TestPath')
+    # buildsys.build(sftset_env, 'core', 'TestSeq')
+    # buildsys.build(sftset_env, 'core', 'TestHttpRequest')
+    # buildsys.build(sftset_env, 'core', 'TestWsServer')
+    # buildsys.build(sftset_env, 'core', 'TestWsClient')
+
+    # buildsys.build(sftset_env, 'core', 'TestSbk')
+    # buildsys.build(sftset_env, 'core', 'TestPy')
