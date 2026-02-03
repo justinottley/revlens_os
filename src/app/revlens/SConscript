@@ -1,0 +1,20 @@
+
+import scaffold.variant
+
+Import('buildsys')
+
+buildsys.build_software_set('revlens', 'app/revlens')
+
+SConscript('static/SConscript')
+SConscript('lib/SConscript')
+
+
+if 'iOS' not in scaffold.variant.get_platform() and \
+'wasm' not in scaffold.variant.get_platform():
+    SConscript('bin/SConscript')
+
+Import('sftset_env')
+
+buildsys.build(sftset_env, 'revlens', 'python', src_relpath='python')
+buildsys.build(sftset_env, 'revlens', 'etc')
+buildsys.build(sftset_env, 'revlens', 'web2py', src_relpath='web2py')

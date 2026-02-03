@@ -1,0 +1,9 @@
+
+
+libs = [
+ 'RLSGCMD'
+]
+
+
+for lib_name in libs:
+    Build(lib_name)

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+
+{% include "shared/jqueryui.html" %}
+{% include "shared/free-jqgrid.html" %}
+{% include "default/common.html" %}
+
+<script>
+
+var GLOBALS = {};
+
+
+startup = function() {
+
+    window.revlens_room_controller.callFromClient("get_properties", [], {}, function(){});
+    window.revlens_room_controller.callFromClient("get_rooms", [], {}, function(){});
+    
+}
+
+init_revlens = function() {
+
+    console.log(window);
+
+    var ws_url = "{{=ws_url}}";
+
+    if (ws_url == "") {
+
+        
+        console.log('starting qt webchannel');
+
+        new QWebChannel(qt.webChannelTransport, function(channel) {
+
+            console.log('setting up Qt WebChannel for revlens_dailies');
+            
+            console.log(channel.objects);
+
+            window.revlens_room_controller = channel.objects.revlens_room_controller;
+            
+            /*
+            window.revlens_room_controller.properties(function(props) {
+                console.log('getting properties');
+                console.log(props);
+                GLOBALS = props;
+
+            });
+            */
+
+
+            window.revlens_room_controller.sendCallToClient.connect(function(args) {
+                console.log('RECEVED MESSAGE!');
+                console.log(args);
+                
+                window.room_view.on_message_received(args);
+                
+
+            });
+
+            startup();
+
+        });
+        
+    
+    } else {
+
+        console.log('Starting standalone websocket handler');
+
+        window.revlens_room_controller = new RevlensWebSocketHandler(ws_url);
+    } 
+
+}
+
+
+$(function() {
+
+    $("#new_dialog").hide();
+    $("#new_dialog_media input").checkboxradio();
+
+    // NOTE: setting checked in the html results in visual problem with radio icon..
+    $('#new-dialog-media-1')
+        .prop('checked',true)
+        .checkboxradio('refresh');
+    
+
+    console.log('Dailies - Room View - startup');
+
+    var room_view = new RoomViewWidget("#rooms");
+    room_view.init();
+
+    window.room_view = room_view
+
+    init_revlens();
+});
+
+</script>
+
+</head>
+<body bgcolor="#000;">
+    <div class="ui-widget ui-widget-content" id="rooms" style="height: 500px;"></div>
+    <div id="new_dialog">
+        <div>Room Name: <input id="new_room_name"></input></div>
+        <div style="height: 10px;"></div>
+        <div id="new_dialog_media">
+            <fieldset>
+                <legend>Contents:</legend>
+                <label for="new-dialog-media-1">Empty</label>
+                <input type="radio" name="new-dialog-media-1" id="new-dialog-media-1">
+                <label for="new-dialog-media-2">Current Session</label>
+                <input type="radio" name="new-dialog-media-1" id="new-dialog-media-2">
+            </fieldset>
+        </div>
+    </div>
+    
+    <div id="delete_dialog">
+        <p>Delete Room "<span id="delete_dialog_room_name"></span>" - Are you sure?</p>
+    </div>
+    </div>
+    
+
+</body>
+
+</html>

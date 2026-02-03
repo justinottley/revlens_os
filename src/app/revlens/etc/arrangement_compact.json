@@ -1,0 +1,23 @@
+{
+    "arrangement": {
+        "orientation": 1,
+        "panes": [
+            {
+                "panes": [],
+                "tabs": [{"name": "Viewer"}],
+                "activeTab": 0
+            },
+            {
+                "panes": [],
+                "tabs": [{"name": "Timeline"}]
+            }],
+        "pos": 0.830000011920929,
+        "startup.post": "import revlens.gui.arrangement;revlens.gui.arrangement._init_compact()"
+    },
+    "window": {
+        "size": {
+            "width": 1200,
+            "height": 800
+        }
+    }
+}

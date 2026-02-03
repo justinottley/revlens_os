@@ -1,0 +1,18 @@
+Import('buildsys')
+Import('sftset_env')
+
+libs = [
+    'UTIL',
+    'DS',
+    'GRAPH',
+    'STOR_SQL',
+    'CNTRL',
+    'GUI'
+]
+
+if 'wasm' in buildsys.ARGUMENTS.get('platform_target', ''):
+    libs = []
+
+
+for lib_name in libs:
+    buildsys.build(sftset_env, 'edb', lib_name)

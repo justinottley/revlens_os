@@ -1,0 +1,41 @@
+{
+  "arrangement": {
+    "panes": [
+      {
+        "tabs": [
+          {
+            "name": "EntityNav"
+          }
+        ],
+        "panes": [],
+        "tabHeaderVisibility": false
+      },
+      {
+        "tabs": [
+          {
+            "name": "Tasks"
+          },
+          {
+            "name": "Entity Notes"
+          },
+          {
+            "name": "Entity Media"
+          },
+          {
+            "name": "Bundles"
+          }
+        ],
+        "panes": []
+      }
+    ],
+    "posPixels": 60,
+    "orientation": 1,
+    "startup.post": "import revlens.gui;revlens.gui.init_menu_global()"
+  },
+  "window": {
+    "size": {
+      "width": 1200.0,
+      "height": 800.0
+    }
+  }
+}

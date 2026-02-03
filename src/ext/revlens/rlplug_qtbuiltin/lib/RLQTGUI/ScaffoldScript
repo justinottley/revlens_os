@@ -1,0 +1,98 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLQTGUI"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+core.UTIL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.CNTRL
+revlens.DISP
+revlens.GUI_TL2
+extrevlens.RLQTCNTRL
+'''
+
+benv.cpp_classes = \
+'''
+CompositeTools
+TileCompositePlugin
+WipeCompositeSplitter
+WipeCompositePlugin
+BlendCompositeSlider
+BlendCompositePlugin
+SingleCompositePlugin
+OnTheGoTrackFactoryPlugin
+StartupPlugin
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpGui/BASE/ItemBase.h'
+    ],
+    'classes': {
+        'CompositeTools': {},
+        'ViewerIconButton': {
+            'header': 'CompositeTools',
+            'parent': 'GUI_IconButton'
+        },
+        'CompositeModeButton': {
+            'header': 'CompositeTools',
+            'parent': 'RLQTGUI_ViewerIconButton'
+        },
+        'WipeCompositeSplitter': {
+            'parent': 'GUI_ItemBase'
+        },
+        'TileCompositePlugin': {
+            'parent': 'DISP_CompositePlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'WipeCompositePlugin': {
+            'parent': 'DISP_CompositePlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'BlendCompositePlugin': {
+            'parent': 'DISP_CompositePlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'SingleCompositePlugin': {
+            'parent': 'DISP_CompositePlugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'StartupPlugin': {
+            'bootstrap': {
+                'bind_object': True
+            }
+        }
+    }
+}
+
+

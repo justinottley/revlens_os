@@ -1,0 +1,101 @@
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "GUI_TL2"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+
+benv.required_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+revlens.AUDIO
+revlens.VIDEO
+revlens.DISP
+revlens.CNTRL
+'''
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+core.SEQ
+core.NET
+core.CNTRL
+gui.BASE
+gui.PANE
+gui.MENU
+'''
+
+benv.required_pybindgen_libs = \
+'''
+'''
+
+benv.cpp_classes = \
+'''
+VerticalScrollBar
+Ticks
+ZoomBarDragButton
+ZoomBarBar
+ZoomBar
+InputModeButtonBar
+BookendDragButton
+Bookends
+Splitter
+Playhead
+Cache
+Item
+TrackButton
+TrackToggleButton
+TrackToggleButtonImage
+TrackToggleButtonSvg
+Track
+TrackFactoryPluginBase
+MediaTrack
+MediaItem
+MediaTrackFactoryPlugin
+TrackManager
+SyncHandler
+View
+Controller
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'Track': {
+            'parent': 'GUI_ItemBase'
+        },
+        'MediaTrack': {
+            'parent': 'GUI_TL2_Track'
+        },
+        'Item': {
+            'parent': 'GUI_ItemBase'
+        },
+        'MediaItem': {
+            'parent': 'GUI_TL2_Item'
+        },
+        'TrackManager': {},
+        'View': {},
+        'Controller': {},
+        'ZoomBarBar': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ZoomBarDragButton': {
+            'parent': 'GUI_ItemBase'
+        },
+        'ZoomBar': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}
+# benv.pybindgen_file = 'py_modulegen.py'

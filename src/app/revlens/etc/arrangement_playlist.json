@@ -1,0 +1,41 @@
+{
+    "arrangement": {
+        "orientation": 1,
+        "pos": 0.5,
+        "tabHeaderVisibility": false,
+        "panes": [
+            {
+                "orientation": 2,
+                "pos": 0.7,
+                "panes": [
+                    {
+                        "panes": [],
+                        "tabs": [{"name": "Playlist"}]
+                    },
+                    {
+                        "panes": [],
+                        "tabs": [{"name": "Rooms"}]
+                    }
+                ]
+            },
+            {
+                "orientation": 2,
+                "pos": 0.7,
+                "tabHeaderVisibility": false,
+                "panes": [
+                    {
+                        "panes": [],
+                        "tabs": [{"name": "Library"}]
+                    }
+                ]
+            }
+        ],
+        "startup.post": "import revlens;import revlens.gui.menu;revlens.gui.menu.init_menu_default_layout()"
+    },
+    "window": {
+        "size": {
+            "width": 1200,
+            "height": 800
+        }
+    }
+}

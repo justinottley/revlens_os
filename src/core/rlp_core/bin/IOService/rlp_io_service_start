@@ -1,0 +1,3 @@
+#!/bin/bash
+
+run_wrapper python3 $RLP_INST_DIR/core/bin/rlp_io_service $@

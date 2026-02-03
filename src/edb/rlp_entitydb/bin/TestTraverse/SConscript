@@ -1,0 +1,32 @@
+
+Import("benv")
+Import('rlp_lib_qt')
+
+benv.build_type = "binary_executable"
+benv.executable_name = "edb_test_traverse"
+
+benv.required_thirdparty_libs_all = rlp_lib_qt
+
+benv.required_thirdparty_libs = rlp_lib_qt
+
+benv.required_libs = \
+'''
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+'''
+
+benv.required_external_libs = \
+'''
+core.UTIL
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

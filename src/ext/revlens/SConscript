@@ -1,0 +1,126 @@
+
+import os
+import scaffold.variant
+
+Import('buildsys')
+
+buildsys.build_software_set('extrevlens', 'ext/revlens')
+
+Import('sftset_env')
+
+
+curr_platform = scaffold.variant.get_platform()
+
+ext_revlens_packages_all = \
+'''
+rlplug_qtbuiltin
+rlplug_annotate
+rlplug_sync
+rlplug_review
+rlplug_nodegraph
+rlplug_ffmpeg
+rlplug_openexr
+rlplug_qpsd
+rlplug_alembic
+rlplug_ios
+'''
+
+ext_revlens_packages_normal = \
+'''
+rlplug_qtbuiltin
+rlplug_annotate
+rlplug_review
+rlplug_nodegraph
+rlplug_sync
+rlplug_ffmpeg
+rlplug_qpsd
+rlplug_openexr
+'''
+
+
+if 'iOS' in curr_platform:
+    ext_revlens_packages_normal += \
+    '''
+    rlplug_ios
+    '''
+else:
+    ext_revlens_packages_normal += \
+    '''
+    
+    '''
+
+ext_revlens_packages_draw = \
+'''
+rlplug_annotate
+'''
+
+ext_revlens_packages_bt_all = \
+'''
+rlplug_qtbuiltin
+rlplug_annotate
+rlplug_sync
+rlplug_review
+rlplug_nodegraph
+'''
+
+ext_revlens_packages_wasm = \
+'''
+rlplug_qtbuiltin
+rlplug_annotate
+rlplug_sync
+rlplug_ffmpeg
+'''
+
+ext_revlens_packages_bt = \
+'''
+rlplug_qtbuiltin
+'''
+
+ext_revlens_packages_ios = \
+'''
+rlplug_ios
+'''
+
+ext_revlens_packages_review = \
+'''
+rlplug_review
+rlplug_sync
+'''
+
+ext_revlens_packages_ff = \
+'''
+rlplug_ffmpeg
+'''
+
+ext_revlens_packages_exr = \
+'''
+rlplug_openexr
+'''
+
+ext_revlens_packages_sync = \
+'''
+rlplug_sync
+'''
+
+ext_revlens_packages_extra = \
+'''
+rlplug_review
+rlplug_nodegraph
+'''
+
+ext_revlens_packages_graph = \
+'''
+rlplug_nodegraph
+'''
+
+ext_group_name = buildsys.ARGUMENTS.get('ext', 'normal')
+
+bargs = buildsys.ARGUMENTS
+if 'wasm' in bargs.get('platform_target', '') and not buildsys.ARGUMENTS.get('ext'):
+    ext_group_name = 'wasm'
+
+ext_revlens_packages = eval('ext_revlens_packages_{}'.format(ext_group_name))
+# ext_revlens_packages = ext_revlens_packages_normal
+
+for ext_revlens_package in Split(ext_revlens_packages):
+    SConscript(os.path.join(ext_revlens_package, 'SConscript'))

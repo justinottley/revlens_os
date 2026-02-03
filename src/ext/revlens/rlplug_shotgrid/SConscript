@@ -1,0 +1,8 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+buildsys.build(sftset_env, 'rlplug_review', 'etc')
+buildsys.build(sftset_env, 'rlplug_review', 'python')
+buildsys.build(sftset_env, 'rlplug_review', 'web2py')
+buildsys.build(sftset_env, 'rlplug_review', 'bin')

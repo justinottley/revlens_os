@@ -1,0 +1,4 @@
+Product('rlplug_shotgrid')
+Subdir('lib')
+Build('python')
+Build('etc')

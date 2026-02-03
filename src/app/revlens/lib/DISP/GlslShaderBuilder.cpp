@@ -1,0 +1,307 @@
+
+#include "RlpRevlens/DISP/GlslShaderBuilder.h"
+
+
+RLP_SETUP_LOGGER(revlens, DISP, GlslShaderBuilder)
+
+static const char* glsl_func_get_color = R"(
+vec4 get_color(sampler2D tex, vec4 texc, int chan_order, float alpha)
+{
+    vec4 color;
+
+    if (chan_order == 0)
+    {
+        color = vec4(texture2D(tex, texc.st).bgr, alpha); // , texture2D(texture, texc.st).a);
+    }
+    else if (chan_order == 1)
+    {
+        color = vec4(texture2D(tex, texc.st).rgba);
+    }
+    else if (chan_order == 2)
+    {
+        color = vec4(texture2D(tex, texc.st).rgb, alpha);
+    }
+
+    return color;
+}
+)";
+
+static const char* glsl_func_greyscale = R"(
+vec3 greyscale(vec3 color, float alphaval) {
+    float g = dot(color, vec3(0.299, 0.587, 0.114));
+    return mix(color, vec3(g), alphaval);
+}
+
+vec4 greyscale(vec4 color, float gmix) {
+    vec3 cresult = greyscale(color.rgb, gmix);
+    vec4 result = vec4(cresult.rgb.r, cresult.rgb.g, cresult.rgb.b, color.a);
+    return result;
+}
+)";
+
+static const char* glsl_func_gamma_correct = R"(
+vec4 gamma_correct(vec4 color, float gamma)
+{
+    return pow(color, vec4(gamma, gamma, gamma, 1.0));
+}
+)";
+
+static const char* glsl_func_apply_opacity = R"(
+vec4 apply_opacity(vec4 color, float opacity)
+{
+    return vec4(opacity, opacity, opacity, opacity) * color;
+}
+)";
+
+static const char* glsl_func_apply_grayscale = R"(
+vec4 apply_grayscale(vec4 color, int do_grayscale, float greyscale_mix)
+{
+    if (do_grayscale == 1)
+    {
+        return greyscale(color, greyscale_mix);
+    }
+
+    return color;
+}
+)";
+
+static const char* glsl_func_apply_colourspace = R"(
+vec4 apply_colourspace(vec4 color, int colspace_linear, float videoGamma)
+{
+    if (colspace_linear == 1)
+    {
+        return gamma_correct(color, videoGamma);
+    }
+
+    return color;
+}
+)";
+
+/*
+static const char* glsl_func_apply_all = R"(
+    vec4 apply_all(sampler2D tex, vec2 texc, int chan_order, float alpha, float opacity, int do_grayscale, float greyscale_mix, int colspace_linear, float videoGamma)
+    {
+        vec4 color = get_color(tex, texc, chan_order, alpha);
+        color = apply_opacity(color, opacity);
+        color = apply_grayscale(color, do_grayscale, greyscale_mix);
+        color = apply_colourspace(color, colspace_linear, videoGamma);
+
+        return color;
+    }
+)";
+*/
+
+static const char* glsl_attrib_declare = R"(
+varying mediump vec4 texc;
+uniform int colspace_linear;
+
+uniform int do_grayscale;
+uniform float greyscale_mix;
+
+uniform float alpha;
+uniform float opacity;
+uniform float videoGamma;
+
+uniform int func_call_idx;
+
+)";
+
+
+static const char* glsl_func_main = R"(
+
+void main()
+{
+    // Setup color samples per texture
+
+%1
+
+    // built-in adjustments for primary texture/frame
+    //
+    main_color = apply_opacity(main_color, opacity);
+    main_color = apply_grayscale(main_color, do_grayscale, greyscale_mix);
+    main_color = apply_colourspace(main_color, colspace_linear, videoGamma);
+
+    vec4 result_color = main_color;
+
+%2
+
+    gl_FragColor = result_color;
+}
+)";
+
+static const char* glsl_func_build_main = R"(
+return main_color;
+)";
+
+
+// static const char* glsl_func_apply_another = R"(
+// return main_color;
+// )";
+
+
+DISP_GlslShaderBuilder::DISP_GlslShaderBuilder(QString glslVersion):
+    _glslVersion(glslVersion)
+{
+    _textureNames.clear();
+
+    registerTextureName("main");
+    registerTextureName("aux1");
+
+    registerGLFunction("build_main", glsl_func_build_main);
+    // registerGLFunction("apply_another", glsl_func_apply_another);
+    setGLPostRunFunction("build_main");
+
+}
+
+
+void
+DISP_GlslShaderBuilder::registerTextureName(QString name)
+{
+    RLP_LOG_DEBUG(name)
+
+    _textureNames.append(name);
+}
+
+
+void
+DISP_GlslShaderBuilder::registerGLFunction(QString funcName, QString funcBody)
+{
+    _glFunctionMap.insert(funcName, funcBody);
+    int nextIdx = _glFunctionIdxMap.size();
+    _glFunctionIdxMap.insert(nextIdx, funcName);
+    _glFunctionIdxRevMap.insert(funcName, nextIdx);
+}
+
+
+QStringList
+DISP_GlslShaderBuilder::genTextureNameLines()
+{
+    QStringList result;
+
+    for (int i = 0; i < _textureNames.size(); i++)
+    {
+        QString texName = _textureNames.at(i);
+        result.append(QString("// texture %1").arg(texName));
+        result.append(QString("uniform sampler2D %1_texture;").arg(texName));
+        result.append(QString("uniform int %1_chan_order;").arg(texName));
+        result.append("");
+    }
+
+    return result;
+}
+
+
+QString
+DISP_GlslShaderBuilder::genGLFunction(QString funcName)
+{
+    QString result = QString("vec4 %1(").arg(funcName);
+    for (int ti = 0; ti < _textureNames.size(); ti++)
+    {
+        result += QString("vec4 %1_color").arg(_textureNames.at(ti));
+        if (ti < _textureNames.size() - 1)
+        {
+            result += ", ";
+        }
+    }
+    result += ")\n{\n";
+    result += _glFunctionMap.value(funcName);
+    result += "\n}\n";
+
+    return result;
+}
+
+
+QString
+DISP_GlslShaderBuilder::genFuncMainAdditionalTextures()
+{
+    QString result;
+    for (int ti = 0; ti < _textureNames.size(); ti++)
+    {
+        QString texName = _textureNames.at(ti);
+        result += QString("    vec4 %1_color = get_color(%2_texture, texc, %3_chan_order, alpha);\n").
+            arg(texName).
+            arg(texName).
+            arg(texName);
+    }
+
+    return result;
+}
+
+
+QString
+DISP_GlslShaderBuilder::genGLFunctionSwitch()
+{
+    QStringList result;
+
+    bool first = true;
+    for (int i = 0; i != _glFunctionIdxMap.size(); ++i)
+    {
+        QString funcName = _glFunctionIdxMap.value(i);
+
+        QString ifblock = QString("if (func_call_idx == %1)").arg(i);
+        if (!first)
+        {
+            ifblock = QString("else %1").arg(ifblock);
+        }
+
+        first = false;
+
+        result.append(QString("    %1").arg(ifblock));
+        result.append(QString("    {"));
+
+        QString glFuncCallSig = funcName;
+        glFuncCallSig += "(";
+
+        for (int ti = 0; ti < _textureNames.size(); ti++)
+        {
+            glFuncCallSig += QString("%1_color").arg(_textureNames.at(ti));
+            if (ti < _textureNames.size() - 1)
+            {
+                glFuncCallSig += ", ";
+            }
+        }
+        glFuncCallSig += ");";
+
+        result.append(QString("        result_color = %1").arg(glFuncCallSig));
+        result.append(QString("    }"));
+        result.append(QString(""));
+    }
+
+    return result.join("\n");
+}
+
+
+QString
+DISP_GlslShaderBuilder::getShaderCode()
+{
+    QStringList lines;
+    lines.append(QString("#version %1").arg(_glslVersion));
+    lines.append("");
+    lines.append(genTextureNameLines());
+
+    lines.append(QString(glsl_attrib_declare));
+    lines.append(QString(glsl_func_get_color));
+    lines.append(QString(glsl_func_greyscale));
+    lines.append(QString(glsl_func_gamma_correct));
+    lines.append(QString(glsl_func_apply_opacity));
+    lines.append(QString(glsl_func_apply_grayscale));
+    lines.append(QString(glsl_func_apply_colourspace));
+
+    QStringList glFuncNames = _glFunctionMap.keys();
+    for (int i = 0; i < glFuncNames.size(); i++)
+    {
+        lines.append(genGLFunction(glFuncNames.at(i)));
+        //lines.append(_glFunctionMap.values().at(i));
+    }
+    // lines.append(genGLFunctionSwitch());
+
+
+    // lines.append(QString(glsl_func_apply_all));
+    lines.append(
+        QString(glsl_func_main).
+            arg(genFuncMainAdditionalTextures()).
+            arg(genGLFunctionSwitch())
+    );
+
+    return lines.join("\n");
+}

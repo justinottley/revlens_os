@@ -1,0 +1,43 @@
+
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_launcher.bin"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+
+benv.required_libs = \
+'''
+core.CRYPT
+core.UTIL
+core.PROC
+core.SEQ
+core.DS
+core.LOG
+core.PATH
+core.NET
+core.PY
+core.QTCORE
+core.CNTRL
+gui.QTGUI
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+prod.LAUNCH
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.qrc_resource_libs = \
+'''
+core.CNTRL
+gui.BASE
+'''

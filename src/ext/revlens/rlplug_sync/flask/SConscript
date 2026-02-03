@@ -1,0 +1,4 @@
+Import("benv")
+
+benv.build_type = "flask_application"
+benv.appname = 'rlplug_sync'

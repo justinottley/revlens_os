@@ -1,0 +1,46 @@
+
+import os
+
+benv.build_type = "shared_library"
+benv.lib_name = "NET"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+benv.required_libs = \
+'''
+core.LOG
+core.DS
+core.UTIL
+core.CRYPT
+core.PY
+'''
+
+
+benv.cpp_classes = \
+'''
+RPCFuture
+WebSocketClient
+WebSocketServer
+WebSocketIOHandler
+NullRequestHandler
+WebChannelPyHelper
+HttpRequest
+HttpClient
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'lib_prefix': 'CoreNet',
+    'classes': {
+        'RPCFuture': {},
+        'WebSocketClient': {},
+        'WebSocketServer': {},
+        'HttpClient': {}
+    }
+}

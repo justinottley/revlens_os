@@ -1,0 +1,18 @@
+
+libs = [
+    'UTIL',
+    'DS',
+    'GRAPH',
+    'STOR_SQL',
+    'CNTRL',
+    'GUI'
+]
+
+
+if benv.exports.get('do_wasm'):
+    libs = []
+
+
+
+for lib_name in libs:
+    Build(lib_name)

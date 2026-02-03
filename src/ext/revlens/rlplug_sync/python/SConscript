@@ -1,0 +1,5 @@
+Import("benv")
+
+benv.build_type = "python_package"
+benv.target = "base"
+benv.python_package_dirs = ['rlplug_sync']

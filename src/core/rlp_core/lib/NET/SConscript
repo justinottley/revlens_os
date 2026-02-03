@@ -1,0 +1,89 @@
+
+import os
+
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "NET"
+
+
+benv.required_thirdparty_libs = \
+    rlp_libs
+
+benv.required_libs = \
+'''
+core.LOG
+core.DS
+core.UTIL
+core.CRYPT
+core.PY
+'''
+
+if os.name != 'nt':
+    benv.required_libs += \
+    '''
+    core.MONGOOSE
+    '''
+
+benv.cpp_classes = \
+'''
+WebSocketClient
+WebSocketServer
+WebSocketIOHandler
+NullRequestHandler
+PyWebChannelHelper
+'''
+
+benv.win_notworking = \
+'''
+HttpServer
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+if os.name == 'znt':
+    benv.c_files = \
+    '''
+    mongoose
+    '''
+
+    benv.header_files += \
+        '''
+        mongoose.h
+        '''
+
+
+benv.SKIPshiboken_class_prefix = 'CoreNet_'
+benv.SKIPshiboken_classes = \
+'''
+WebSocketClient
+'''
+
+benv.SKIPrequired_pymodule_libs = \
+'''
+core.NET
+core.PY
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'CoreNet',
+    'classes': {
+        'WebSocketClient': {
+            'slots': {
+                'sendCall': {
+                    'fulldef': True
+                },
+                'formatMethodCall': {
+                    'fulldef': True
+                }
+            }
+        },
+        'WebSocketServer': {
+        }
+    }
+}

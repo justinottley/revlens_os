@@ -1,0 +1,7 @@
+sset_config = {
+    'sclib.cls': 'scaffold.env.sset.BuildRelpathSoftwareSet',
+    'sftset_version': '0.0'
+}
+
+SoftwareSet('gui', sset_config)
+Subdir('rlp_gui')

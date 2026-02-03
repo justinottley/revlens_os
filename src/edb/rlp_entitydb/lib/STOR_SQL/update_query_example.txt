@@ -1,0 +1,26 @@
+/*
+	
+	qInfo() << "EdbStorSql_DataSource flushOne() " << methodName;
+	
+	QString query(""
+	    "UPDATE " + _tableName + " SET "
+	    + _colPrefix + methodName +
+        " = :val "
+        " WHERE "
+        + _colPrefix + "uuid = :uuid"
+    );
+    
+    
+	QSqlQuery q(_conn->db());
+	q.prepare(query);
+	
+	q.bindValue(":val", val);
+	q.bindValue(":uuid", _eobj->uuid());
+	
+	if (!q.exec()) {
+        qWarning() << "UPDATE failed: " << q.lastError().text() ;
+    }
+	
+	qInfo() << q.executedQuery();
+	
+	*/

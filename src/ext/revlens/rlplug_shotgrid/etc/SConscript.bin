@@ -1,0 +1,20 @@
+
+Import("benv")
+
+benv.build_type = "script_executable"
+benv.target_dir = "bin"
+
+benv.bin_files = \
+'''
+review_session.py
+revlens.py
+'''
+
+benv.bin_public = \
+'''
+- {filename: "revlens.py",
+   title: Revlens,
+   description: 'Revlens - media playback and review tool',
+   labels: ['Misc']
+}
+'''

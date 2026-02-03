@@ -1,0 +1,12 @@
+
+Import("benv")
+
+benv.build_type = "script_executable"
+benv.executable_name = "revlens"
+
+benv.bin_files = \
+'''
+qt.conf
+qt.conf.dist
+qt.conf.dev
+'''

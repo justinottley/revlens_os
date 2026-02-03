@@ -1,0 +1,11 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+lib_tools = [
+ 'RLSYNC'
+]
+
+
+for lib_name in lib_tools:
+    buildsys.build(sftset_env, 'rlplug_sync', lib_name)

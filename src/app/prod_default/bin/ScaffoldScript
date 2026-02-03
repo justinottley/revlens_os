@@ -1,0 +1,6 @@
+
+Build('RlpGui')
+if benv.platform_target != 'ios':
+    Build('RlpSiteServer')
+    Build('RlpLauncherBin')
+    Build('RlpLauncherPy')

@@ -1,0 +1,24 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+libs_deprecated = [
+    'NET' # all used classes moved to core
+]
+
+libs_all = [
+ 'DS',
+ 'MEDIA',
+ 'AUDIO',
+ 'DISP',
+ 'VIDEO',
+ 'CNTRL',
+ 'GUI_TL2',
+ 'GUI' # Required for static/icons
+]
+
+
+libs = libs_all
+
+for lib_name in libs:
+    buildsys.build(sftset_env, 'revlens', lib_name)

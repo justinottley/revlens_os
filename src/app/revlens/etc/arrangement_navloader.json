@@ -1,0 +1,17 @@
+{
+  "arrangement": {
+    "tabs": [
+      {
+        "name": "NavLoader"
+      }
+    ],
+    "startup.post": "import revlens.gui;revlens.gui.init_menu_global()",
+    "tabHeaderVisibility": false
+  },
+  "window": {
+    "size": {
+      "width": 400.0,
+      "height": 600.0
+    }
+  }
+}

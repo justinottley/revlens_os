@@ -1,0 +1,52 @@
+{
+  "arrangement": {
+    "panes": [
+      {
+        "tabs": [
+          {
+            "name": "Display Controls"
+          },
+          {
+            "name": "Annotate"
+          },
+          {
+            "name": "Rooms"
+          },
+          {
+            "name": "Playlist"
+          },
+          {
+            "name": "Tablet Stream"
+          }
+        ],
+        "panes": []
+      },
+      {
+        "panes": [
+          {
+            "tabs": [
+              {
+                "name": "Viewer"
+              }
+            ],
+            "panes": []
+          },
+          {
+            "tabs": [
+              {
+                "name": "Timeline"
+              }
+            ],
+            "panes": []
+          }
+        ],
+        "pos": 1.0,
+        "orientation": 1
+      }
+    ],
+    "pos": 0.24529296159744263,
+    "orientation": 2,
+    "tabHeaderVisibility": false,
+    "startup.post": "import revlens_prod.panel.tablet;revlens_prod.panel.tablet.init_layout()"
+  }
+}

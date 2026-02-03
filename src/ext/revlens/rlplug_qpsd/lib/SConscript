@@ -1,0 +1,14 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+lib_tools = [
+ 'QPSD',
+ # 'QPSDUTIL',
+ 'RLQPSD_MEDIA',
+ 'RLQPSD_PYMODULE'
+]
+
+
+for lib_name in lib_tools:
+    buildsys.build(sftset_env, 'rlplug_qpsd', lib_name)

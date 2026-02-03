@@ -1,0 +1,57 @@
+
+#ifndef EXTREVLENS_CNTRL_StreamingController_H
+#define EXTREVLENS_CNTRL_StreamingController_H
+
+#include "RlpRevlens/CNTRL/MainController.h"
+#include "RlpRevlens/CNTRL/Video.h"
+#include "RlpRevlens/VIDEO/ThreadedClock.h"
+
+#include "RlpRevlens/DS/ControllerBase.h"
+#include "RlpRevlens/DS/Session.h"
+
+class CNTRL_StreamingController : public VIDEO_SyncTarget {
+    Q_OBJECT
+
+signals:
+    void frameReady();
+
+public:
+    RLP_DEFINE_LOGGER
+
+    CNTRL_StreamingController();
+
+    CNTRL_Video* getVideoManager() { return _videoManager; }
+    DS_SessionPtr session() { return _session; }
+    static CNTRL_StreamingController* instance();
+
+    bool event(QEvent* event);
+
+public slots:
+
+    void loadStream();
+    void playStream();
+
+    void displayNextFrame();
+
+    void registerDisplay(DISP_GLView* view);
+
+    void updateDisplay();
+
+private:
+    CNTRL_Video* _videoManager;
+    DS_SessionPtr _session;
+    VIDEO_ClockBase* _avclock;
+
+    DS_FrameBufferPtr _nfbuf;
+    DS_FrameBufferPtr _fbuf;
+    DS_NodePtr _node;
+    DS_TimePtr _time;
+    qlonglong _frameNum;
+
+    DISP_GLView* _view;
+
+    static CNTRL_StreamingController* _instance;
+
+};
+
+#endif

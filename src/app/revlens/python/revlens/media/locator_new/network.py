@@ -1,0 +1,4 @@
+
+class NetworkLocator(MediaLocator):
+
+    pass

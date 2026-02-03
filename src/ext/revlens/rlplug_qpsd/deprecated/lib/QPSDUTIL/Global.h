@@ -1,0 +1,7 @@
+#include <QtCore/QtGlobal>
+
+#ifndef EXTLENS_QPSDUTIL_LIB
+#define EXTLENS_QPSDUTIL_API Q_DECL_EXPORT
+#else
+#define EXTLENS_QPSDUTIL_API Q_DECL_IMPORT
+#endif

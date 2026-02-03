@@ -1,0 +1,53 @@
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLSGCMD"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.LOG
+core.SEQ
+core.DS
+core.PATH
+core.NET
+core.CNTRL
+'''
+
+
+benv.cpp_classes = \
+'''
+Commands
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'includes': [
+        'RlpCore/CNTRL/CommandBase.h',
+        'RlpCore/CNTRL/ControllerBase.h',
+        'RlpExtrevlens/RLSGCMD/Commands.h'
+    ],
+    'classes': {
+        'SgFindCommand': {
+            'header': 'Commands',
+            'parent': 'CoreCntrl_CommandBase'
+        },
+        'SgExtensionCommand': {
+            'header': 'Commands',
+            'parent': 'CoreCntrl_CommandBase'
+        }
+    }
+}

@@ -1,0 +1,10 @@
+
+import scaffold.variant
+
+Import('buildsys')
+
+# buildsys.build_software_set('rlmedia', 'edb/rlp_media')
+
+SConscript('lib/SConscript')
+SConscript('bin/SConscript')
+

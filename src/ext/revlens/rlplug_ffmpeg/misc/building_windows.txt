@@ -1,0 +1,7 @@
+install yasm - http://yasm.tortall.net/Download.html
+install instructions: https://trac.ffmpeg.org/wiki/CompilationGuide/MSVC
+
+cmd.exe
+vcvarsall x64
+bash
+./configure --target-os=win64 --arch=x86_64 --toolchain=msvc --enable-shared --prefix=/c/Users/justi/dev/revlens_root/thirdbase/20_04/Windows-AMD64-10/FFMpeg/3.4.2

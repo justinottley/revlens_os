@@ -1,0 +1,168 @@
+
+import platform
+plat_sys = platform.system()
+
+import scaffold.buildsys.globals as buildsys_globals
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "GUI"
+
+
+benv.required_thirdparty_libs = \
+    list(benv.exports['rlp_libs'].values()) + \
+    list(benv.exports['ext_libs'].values())
+
+
+core_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.SEQ
+core.DS
+core.PATH
+core.NET
+core.CNTRL
+'''
+
+if not benv.exports.get('do_wasm') and benv.platform_target != 'ios':
+    core_libs += \
+    '''
+    core.PROC
+    '''
+
+
+gui_libs = \
+'''
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+'''
+
+if buildsys_globals.args['pybind_mode'] == 'static':
+    core_libs += \
+    '''
+    core.QTCORE
+    '''
+
+    gui_libs += \
+    '''
+    gui.QTGUI
+    '''
+
+edb_libs = \
+'''
+edb.DS
+edb.UTIL
+edb.GUI
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+edb.MEDIA
+'''
+
+revlens_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.AUDIO
+revlens.DISP
+revlens.CNTRL
+revlens.GUI_TL2
+revlens.GUI_TLT
+revlens.GUI_VIEW
+revlens.GUI
+'''
+
+
+extrevlens_libs = \
+'''
+extrevlens.RLQTMEDIA
+extrevlens.RLQTCNTRL
+extrevlens.RLQTDISP
+extrevlens.RLQTGUI
+extrevlens.RLSYNC
+extrevlens.RLANN_DS
+extrevlens.RLANN_BRUSH
+extrevlens.RLANN_MP
+extrevlens.RLANN_MEDIA
+extrevlens.RLANN_CNTRL
+extrevlens.RLANN_GUI
+extrevlens.RLSGCMD
+'''
+
+# media file format plugins
+#
+extrevlens_libs += \
+'''
+extrevlens.RLMEDIA
+extrevlens.RLFFMPEG
+extrevlens.QPSD
+extrevlens.RLQPSD_MEDIA
+'''
+
+
+if benv.platform_target != 'ios':
+    extrevlens_libs += \
+    '''
+    extrevlens.RLQPDF_MEDIA
+'''
+
+
+if plat_sys != 'Darwin' and not benv.exports.get('do_wasm') and benv.platform_target != 'ios':
+    extrevlens_libs += \
+    '''
+    extrevlens.RLEXRDS
+    extrevlens.RLEXRMEDIA
+    extrevlens.RLOCIO
+    extrevlens.RLOIIO
+    '''
+
+
+prod_libs = \
+'''
+prod.CNTRL
+'''
+
+benv.required_libs = \
+    core_libs + \
+    gui_libs + \
+    edb_libs + \
+    revlens_libs
+
+if buildsys_globals.args['pybind_mode'] == 'static':
+    benv.required_libs += \
+        extrevlens_libs
+
+
+benv.required_libs += prod_libs
+
+
+benv.cpp_classes = \
+'''
+PlaylistView
+StreamingPane
+Startup
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'classes': {
+        'PlaylistView': {
+            'parent': 'GUI_GRID_View'
+        },
+        'StreamingPane': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}

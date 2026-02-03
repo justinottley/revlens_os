@@ -1,0 +1,10 @@
+
+
+Import("buildsys")
+Import("sftset_env")
+
+
+# buildsys.build(sftset_env, 'gui', 'TestGuiScene')
+# buildsys.build(sftset_env, 'gui', 'TestWebKit')
+buildsys.build(sftset_env, 'gui', 'TestGui')
+# buildsys.build(sftset_env, 'gui', 'TestQtQuick')

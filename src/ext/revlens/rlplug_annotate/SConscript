@@ -1,0 +1,11 @@
+
+Import("buildsys")
+
+SConscript('lib/SConscript')
+SConscript('static/SConscript')
+
+Import("sftset_env")
+
+buildsys.build(sftset_env, 'rlplug_annotate', 'python')
+# buildsys.build(sftset_env, 'rlplug_annotate', 'etc')
+# buildsys.build(sftset_env, 'rlplug_annotate', 'static')

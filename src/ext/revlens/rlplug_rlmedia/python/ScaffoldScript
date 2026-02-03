@@ -1,0 +1,6 @@
+
+benv.build_type = "python_package"
+benv.target = "shared"
+
+benv.python_package_files = []
+benv.python_package_dirs = ['rlplug_rlmedia']

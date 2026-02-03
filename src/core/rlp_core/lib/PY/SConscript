@@ -1,0 +1,33 @@
+import os
+import scaffold.variant
+
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "PY"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.cpp_classes = \
+'''
+Interp
+PyQVariant
+PyQVariantMap
+PySignal
+QtCoreTypes
+'''
+
+benv.required_libs = \
+'''
+core.LOG
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+# benv.pybindgen_file = 'py_modulegen.py'

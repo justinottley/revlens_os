@@ -1,0 +1,42 @@
+
+Import("benv")
+Import("rlp_libs")
+
+benv.build_type = "binary_executable"
+benv.executable_name = "edb_view"
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.DS
+core.LOG
+core.UTIL
+core.NET
+core.CNTRL
+core.PY
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+'''
+
+benv.required_libs = \
+'''
+edb.DS
+edb.GRAPH
+edb.CNTRL
+edb.GUI
+edb.STOR_SQL
+'''
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+
+benv.private = \
+'''
+'''

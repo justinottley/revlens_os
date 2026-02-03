@@ -1,0 +1,7 @@
+
+import scaffold.variant
+
+Import("buildsys")
+Import("sftset_env")
+
+buildsys.build(sftset_env, 'extrevlens', 'PyBindTest')

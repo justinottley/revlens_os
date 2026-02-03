@@ -1,0 +1,9 @@
+
+
+
+# Build('TestQtQuick')
+# Build('TestQNP')
+
+if not benv.exports.get('do_wasm'):
+    # Build('TestGui')
+    pass

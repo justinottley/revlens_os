@@ -1,0 +1,1 @@
+import revlens.media;n=revlens.CNTRL.session().getNodeByFrame(1);revlens.media.append_to_composite('/home/justinottley/Videos/big_buck_bunny_trailer_480p.mov', n)

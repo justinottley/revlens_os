@@ -1,0 +1,31 @@
+
+benv.build_type = "static_files"
+benv.target_dir = "etc"
+
+benv.static_files = \
+'''
+credits.txt
+arrangement_empty.json
+arrangement_min.json
+arrangement_default.json
+arrangement_compact.json
+arrangement_tablet.json
+arrangement_tablet2.json
+arrangement_playlist.json
+arrangement_playview2.json
+arrangement_threepio.json
+arrangement_threepioqc.json
+arrangement_threepioqc3d.json
+batch_template.py
+'''
+
+other_arrangements = \
+'''
+arrangement_project.json
+arrangement_project_chooser.json
+arrangement_review.json
+arrangement_playview3.json
+arrangement_sg.json
+arrangement_playview.json
+arrangement_default_wasm.json
+'''

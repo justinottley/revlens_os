@@ -1,0 +1,57 @@
+import scaffold.variant
+
+Import("benv")
+Import("rlp_libs")
+
+benv.build_type = "shared_library"
+benv.lib_name = "MENU"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.UTIL
+core.DS
+'''
+
+benv.required_libs = \
+'''
+gui.BASE
+'''
+
+benv.cpp_classes = \
+'''
+MenuItem
+MenuPane
+MenuButton
+MenuBar
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'lib_prefix': 'GUI',
+    'classes': {
+        'MenuItem': {},
+        'MenuPane': {
+            'slots': {
+                'addItem': {
+                    'fulldef': True
+                },
+                'setPos': {
+                    'fulldef': True
+                }
+            }
+        },
+        'MenuButton': {},
+        'MenuBar': {
+            'parent': 'GUI_ItemBase'
+        }
+    }
+}

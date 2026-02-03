@@ -1,0 +1,29 @@
+
+
+benv.build_type = "shared_library"
+benv.lib_name = "PY"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+benv.cpp_classes = \
+'''
+Interp
+PyQVariant
+PyQVariantMap
+SigSlotConnector
+Signal
+PyTimer
+'''
+
+benv.required_libs = \
+'''
+core.LOG
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
