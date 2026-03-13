@@ -1,0 +1,49 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLANN_BRUSH"
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.DISP
+revlens.CNTRL
+extrevlens.RLANN_DS
+'''
+
+
+benv.cpp_classes = \
+'''
+PaintBrush
+EraserBrush
+TextPreview
+TextBrush
+TextBrush2
+PickerBrush
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'includes':[
+        'RlpExtrevlens/RLANN_BRUSH/TextPreview.h'
+    ],
+    'classes': {
+
+    }
+}

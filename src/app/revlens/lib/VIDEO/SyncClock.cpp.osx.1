@@ -1,0 +1,300 @@
+//
+//  Copyright (c) 2014 Justin Ottley. All rights reserved.
+//
+
+#include <iostream>
+#include <unistd.h>
+
+#include <QtCore/QTimer>
+#include <QtWidgets/QApplication>
+
+#include "RlpRevlens/CNTRL/Video.h"
+
+
+#define NANOSEC_SCALE 1000000000
+#define DRIFT_THRESHOLD 10000
+
+
+VIDEO_SyncTarget::VIDEO_SyncTarget()
+{
+    // qRegisterMetaType<VIDEO_SyncTarget>();
+}
+
+
+VIDEO_AVSyncClock::VIDEO_AVSyncClock(VIDEO_SyncTarget* target, 
+                                     float frameRate,
+                                     QMutex* mutex,
+                                     QWaitCondition* wc) :
+    _timer(),
+    _syncTarget(target),
+    _runLock(mutex),
+    _run(wc),
+    _running(true),
+    _resetDrift(false)
+{
+    _vsync = new QWaitCondition();
+    _vsync->wakeAll();
+    
+    _vmutex = new QMutex();
+    
+    _tmpCount = 0;
+    
+    
+    _currVideoFps = 0.0f;
+    _vsyncTime.tv_sec = 0;
+    _vsyncTime.tv_nsec= 0L;
+    
+    setTargetFrameRate(frameRate);
+    
+    // clock_gettime(CLOCK_MONOTONIC, &_vsyncTime);
+    _timer.gettime(&_vsyncTime);
+    
+    // Copy exact value over to async
+    // _asyncTime.tv_sec = _vsyncTime.tv_sec;
+    // _asyncTime.tv_nsec = _vsyncTime.tv_nsec;
+}
+
+
+void
+VIDEO_AVSyncClock::syncWait()
+{
+    QMutexLocker lock(_vmutex);
+    
+    _vsync->wait(_vmutex);
+}
+
+
+void
+VIDEO_AVSyncClock::syncWake()
+{
+    _vsync->wakeAll();
+}
+
+
+void
+VIDEO_AVSyncClock::setTargetFrameRate(float frameRate)
+{
+    _frameRate = frameRate;
+    
+    _rate = (1.0 / frameRate) * NANOSEC_SCALE;
+    _rateDiff = _rate;
+    
+    _sleepInterval.tv_sec = 0;
+    _sleepInterval.tv_nsec = (1.0 / frameRate) * NANOSEC_SCALE;
+}
+
+
+void
+VIDEO_AVSyncClock::updateVideo()
+{
+    
+    
+    QMetaObject::invokeMethod(_syncTarget,
+                              "displayNextFrame",
+                              Qt::QueuedConnection);
+                              
+    
+    
+    /*
+    if (_preRoll > 10) {
+    
+        
+        QCoreApplication::postEvent(_syncTarget,
+                                    new VIDEO_UpdateEvent(),
+                                    Qt::HighEventPriority + 100);
+        
+        syncWait();
+        
+    } else {
+        
+        
+        _preRoll++;
+    }
+    */
+    
+    
+    // std::cout << "VIDEO_AVSyncClock::updateVideo() " << _tmpCount <<  std::endl;
+    
+    _timer.gettime(&_vsyncNextTime);
+    
+    
+    
+    // std::cout << _vsyncTime.tv_sec << std::endl;
+    // std::cout << _vsyncTime.tv_nsec << std::endl;
+    
+    
+    uint64_t currNanoTime = (_vsyncTime.tv_sec * NANOSEC_SCALE) + _vsyncTime.tv_nsec;
+    uint64_t newNanoTime = (_vsyncNextTime.tv_sec * NANOSEC_SCALE) + _vsyncNextTime.tv_nsec;
+    uint64_t nanodiff = newNanoTime - currNanoTime;
+    
+    _vsyncTime.tv_sec = _vsyncNextTime.tv_sec;
+    _vsyncTime.tv_nsec = _vsyncNextTime.tv_nsec;
+    
+    uint64_t drift = nanodiff - _rate;
+    
+    //std::cout << "drift: " << drift << std::endl;
+    
+    if (_resetDrift) {
+        
+        // std::cout << "RESETTING DRIFT" << std::endl;
+        drift = 0;
+        _resetDrift = false;
+    }
+    
+    
+    
+    if (abs(drift) > DRIFT_THRESHOLD) {
+        
+        
+        if (_rateDiff < 0) {
+            _rateDiff = _rate;
+        }
+        _rateDiff = _rateDiff - drift;
+        
+    }
+    
+    
+    
+    _sleepInterval.tv_nsec = _rateDiff;
+    // _sleepInterval.tv_nsec = 41701417;
+    
+    
+    
+    
+    
+    _tmpCount += 1;
+    
+    
+    // milliseconds.. wow alot of precision is lost here for the sake of 
+    // Qt's QTimer in int milliseconds..
+    
+    /*
+    int sleepTime = int(rint(_rateDiff / 1000000.0));
+    
+    if (sleepTime < 0) {
+        sleepTime = 41;
+    }
+    */
+    
+    // std::cout << "nano diff: " << nanodiff << " rate: " << _rate << std::endl;
+    // std::cout << "drift: " << drift <<  " rate: " << _rate << std::endl;
+    // std::cout << "curr fps: " << _currVideoFps <<  " ratediff: " << _rateDiff << std::endl;
+    // std::cout << "sleep time: " << sleepTime << std::endl;
+    
+    /*
+    if (_running) {
+        QTimer::singleShot(sleepTime, Qt::PreciseTimer, this, SLOT(updateVideo()));
+    }
+    */
+    
+    nanosleep(&_sleepInterval, NULL);
+    // sleep(1);
+    
+}
+
+
+void
+VIDEO_AVSyncClock::stop()
+{
+    // _slock.lock();
+    _running = false;
+    // _slock.unlock();
+    // QCoreApplication::flush();
+    // _lastUpdate->wake();
+}
+
+
+void
+VIDEO_AVSyncClock::resume()
+{
+    std::cout << "VIDEO_AVSyncClock::resume()" << std::endl;
+    
+    _preRoll = 0;
+    // QCoreApplication::flush();
+    
+    /*
+    _sleepInterval.tv_nsec = _rate;
+    _timer.gettime(&_vsyncTime);
+    nanosleep(&_sleepInterval, NULL);
+    _timer.gettime(&_vsyncNextTime);
+    */
+    
+    _resetDrift = true;
+    
+    _running = true;
+    _run->wakeAll();
+}
+
+
+void
+VIDEO_AVSyncClock::run()
+{
+    
+    std::cout << "VIDEO_AVSyncClock::run()" << std::endl;
+    
+    
+    while (true) {
+        
+        
+        std::cout << "VIDEO_AVSyncClock::run() : WAITING" << std::endl;
+        
+        
+        _runLock->lock();
+        _run->wait(_runLock);
+        _runLock->unlock();
+        
+        std::cout << "VIDEO_AVSyncClock::run() : WAKING" << std::endl;
+        
+        
+        // TODO: start the sound here (after the thread wakes up?)
+        // so that we hit a more accurate sync..?
+        // 
+        // updateVideo();
+        
+        while (_running) {
+            updateVideo();
+        }
+        
+    }
+    
+    
+    std::cout << "SYNCLOCK done!" << std::endl;
+    
+    /*
+    _runLock.lock();
+    _running = true;
+    _runLock.unlock();
+    
+    while (_running) {
+        _avclock->updateVideo();
+    }
+    
+    
+    int sleeptime = 0;
+    
+    _avclock->updateVideo();
+    */
+    
+    
+    /*
+    for (int x = 0; x != 100; x++) {
+        
+        std::cout << "X: " << x << std::endl;
+        
+        sleeptime = _avclock->updateVideo();
+        
+        QTimer::singleShot(
+        std::cout << "sleeptime: " << sleeptime << std::endl;
+        _avclock->sleep();
+        
+    }
+    */
+    
+    // QTimer::singleShot
+}
+
+
+
+//
+
+

@@ -1,0 +1,3 @@
+
+if benv.platform_target != 'ios':
+    Build('Encoder')

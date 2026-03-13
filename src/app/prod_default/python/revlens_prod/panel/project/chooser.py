@@ -1,0 +1,300 @@
+
+import os
+import json
+import uuid
+
+from rlp import QtCore, QtGui
+import rlp.gui as RlpGui
+import rlp.core as RlpCore
+import rlp.util as RlpUtil
+
+import revlens
+import revlens.gui
+
+from rlp.core.net.websocket import RlpClient
+
+from .dialogs import NewProjectDialog
+
+
+ag = RlpUtil.APPGLOBALS.globals()
+
+THUMB_SIZE = 230
+if ag['app.platform'] == 'ios':
+    THUMB_SIZE = 160
+
+class ProjectItem(RlpGui.GUI_ItemBase):
+
+    _thumbf = RlpGui.GUI_ThumbnailItem()
+    _uimage = RlpCore.UTIL_Image()
+
+    def __init__(self, parent, project_info, fallback_image=':misc/3d-modeling.svg'): # :feather/package.svg'
+        RlpGui.GUI_ItemBase.__init__(self, parent)
+
+        self.http_client = parent.http_client
+        self.setItemAcceptsHoverEvents(True)
+
+        self.selected = QtCore.PY_Signal(self)
+
+        self._hover = False
+
+        self.project_info = project_info
+
+        self.thumb = None
+        self.fthumb = None
+
+        self.run_id = str(uuid.uuid4())
+
+        # if 'image' in project_info:
+        #     self.thumb = self._uimage.fromBase64(
+        #         project_info['image_icon']).scaledToWidth(240)
+
+        # else:
+        #     self.fthumb = RlpGui.GUI_SvgIcon(
+        #         fallback_image, self, 140, 0, QtGui.QColor(140, 140, 140))
+        #     self.fthumb.setPos(58, 50)
+        #     self.fthumb.buttonPressed.connect(self.mousePressEventItem)
+
+
+        self.label = RlpGui.GUI_Label(self, '')
+        self.label.setDropShadow(True)
+
+        size = THUMB_SIZE + 20
+
+        lf = self.label.font()
+        lf.setPixelSize(14)
+        lf.setBold(True)
+        self.label.setFont(lf)
+        self.label.setText(project_info['name'])
+        self.label.setPos(10, size - 30)
+
+        self._colHoverOff = QtGui.QColor(0, 0, 0)
+        self._colHoverOn = QtGui.QColor(80, 80, 80)
+
+        self.setItemWidth(size)
+        self.setItemHeight(size)
+
+
+    def hoverEnterEventItem(self, event):
+        self._hover = True
+        self.updateItem()
+
+    def hoverLeaveEventItem(self, event):
+        self._hover = False
+        self.updateItem()
+
+    def mousePressEventItem(self, event):
+        self.selected.emit(self.project_info)
+
+
+    def boundingRect(self):
+        return QtCore.QRectF(0, 0, self.width(), self.height())
+
+    def paintItem(self, painter):
+
+        # painter.setAntiAliasing(True)
+
+        col = self._colHoverOff
+        if self._hover:
+            col = self._colHoverOn
+
+        painter.setPen(QtGui.QPen(col))
+        painter.setBrush(QtGui.QBrush(col))
+
+        painter.drawRoundedRect(self.boundingRect(), 15, 15)
+
+        if self.thumb:
+            painter.drawImage(12, 10, self.thumb)
+
+
+class ProjectChooserPanel(RlpGui.GUI_ItemBase):
+
+    _PANE = None
+
+    def __init__(self, parent):
+        RlpGui.GUI_ItemBase.__init__(self, parent)
+
+        self.projectSelected = QtCore.PY_Signal(self)
+
+        self.http_client = RlpCore.CoreNet_HttpClient()
+        self.http_client.requestReady.connect(self.onRequestReady)
+
+        self._projects = {}
+
+        self.toolbar_layout = RlpGui.GUI_HLayout(self)
+        self.filter_textarea = RlpGui.GUI_TextEdit(self.toolbar_layout, parent.width() - 40, 30)
+        self.filter_textarea.textChanged.connect(self.onFilterChanged)
+        self.filter_textarea.setTempHintText('Filter:')
+
+        self.toolbar_layout.addSpacer(5)
+        self.toolbar_layout.addItem(self.filter_textarea, 0)
+
+        self.layout = RlpGui.GUI_FlowLayout(self)
+        self.layout.setSpacing(25)
+        self.layout.setOutlined(False)
+
+        self.main_layout = RlpGui.GUI_VLayout(self)
+
+        self.main_layout.addItem(self.toolbar_layout, 0)
+        self.main_layout.addSpacer(5)
+        self.main_layout.addItem(self.layout, 0)
+
+        self.onParentSizeChangedItem(parent.width() - 10, parent.height())
+
+        self.init()
+
+
+    @classmethod
+    def create_panel(cls):
+
+        if cls._PANE:
+            cls._PANE.setVisible(True)
+            return
+
+        pane = revlens.GUI.mainView().createFloatingPane(900, 600, False)
+        pane.setPersistent(True)
+        pane.setText("Select Project..")
+
+        pcp = cls(pane.body())
+
+        cls._PANE = pane
+
+        def _project_selected(md=None):
+            import revlens.gui.menu
+            revlens.gui.menu.init_menu_project_list()
+
+            pane.requestClose()
+
+        pcp.projectSelected.connect(_project_selected)
+
+        return pcp
+
+    def onFilterChanged(self, text):
+
+        lfilterText = text.lower()
+        for project in self._projects.values():
+
+            if not lfilterText:
+                project.setVisible(True)
+
+            elif lfilterText in project.project_info['name'].lower():
+                project.setVisible(True)
+
+            else:
+                project.setVisible(False)
+
+        self.layout.updateItems()
+
+
+    def onRequestReady(self, data):
+
+        run_id = data['run_id']
+
+        if run_id not in self._projects:
+            print('WARNING: run_id not found: {}'.format(run_id))
+            return
+
+        if data['image']:
+            self._projects[run_id].thumb = data['image'].scaledToWidth(THUMB_SIZE)
+            self._projects[run_id].update()
+
+
+    def init(self):
+
+        self.layout.clear()
+        self._projects = {}
+
+        def _projects_ready(result):
+
+            if not result:
+                return
+
+            for entry in result:
+
+                proj_item = ProjectItem(self, entry)
+                proj_item.selected.connect(self.on_project_selected)
+                self.layout.addItem(proj_item)
+                self._projects[proj_item.run_id] = proj_item
+
+                if 'image' in entry and entry['image']:
+                    self.http_client.requestImage(entry['image'], proj_item.run_id)
+
+            # new_project = ProjectItem(self, {'fullname':'New Project..', 'name': 'new_project'}, fallback_image=':misc/add.svg')
+            # new_project.selected.connect(self.on_new_project_selected)
+            # self.layout.addItem(new_project)
+
+            # self._projects.append(new_project)
+
+            self.onParentSizeChangedItem(self.width(), self.height())
+
+
+        edbc = RlpClient.instance()
+        edbc.ioclient('sg').call(
+            _projects_ready, 'cmds.find',
+            'Project',
+            [
+                ['sg_status', 'is', 'Active']
+                # ['sg_type', 'in', ['Feature Film', 'Short Film', 'Television']]
+            ],
+            ['name', 'code', 'image']
+        ).run()
+
+
+    def on_project_selected(self, project_info):
+
+        print(project_info)
+
+        projectInfo = {
+            'project.name': project_info['code'],
+            'project.info': project_info
+        }
+
+        RlpUtil.APPGLOBALS.update(projectInfo)
+
+        appctx_path = os.path.join(revlens._init_state_dir(), 'appcontext.json')
+        with open(appctx_path, 'w') as wfh:
+            wfh.write(json.dumps(projectInfo))
+
+        print('Wrote {}'.format(appctx_path))
+
+        self.projectSelected.emit({
+            'project.name': project_info['code'],
+            'project.info': project_info
+        })
+
+        # load project page via sig/slot connection
+        # so widgets get cleaned up and app doesnt crash
+        # revlens.GUI.mainView().emitSelectionChanged({
+        #     'source': 'project_chooser',
+        #     'data': project_info['name']
+        # })
+
+
+
+    def on_new_project_selected(self, md=None):
+
+        def _on_created(md):
+            self.init()
+
+        diag = NewProjectDialog.create()
+        diag.created.connect(_on_created)
+
+
+    def onParentSizeChangedItem(self, width, height):
+
+        if not self.isVisible():
+            return
+
+        self.setItemWidth(width)
+        self.setItemHeight(height)
+
+        self.layout.updateItems()
+
+def create(parent):
+
+    
+    project_chooser_panel = ProjectChooserPanel(parent)
+
+    # global _PANELS
+    # _PANELS.append(project_chooser_panel)
+
+    return project_chooser_panel

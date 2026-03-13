@@ -1,0 +1,3 @@
+Product('rlplug_ocio')
+Subdir('lib')
+Build('python')

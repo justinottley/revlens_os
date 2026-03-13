@@ -1,0 +1,3 @@
+Product('rlplug_qpsd')
+Subdir('lib')
+Build('python')

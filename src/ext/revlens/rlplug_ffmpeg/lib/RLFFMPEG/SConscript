@@ -1,0 +1,60 @@
+import os
+import platform
+
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLFFMPEG"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+if os.name == 'nt':
+    benv.required_thirdparty_libs += \
+    '''
+    FFMpeg-4.4.1
+    '''
+elif platform.system() == 'Darwin':
+    benv.required_thirdparty_libs += \
+    '''
+    FFMpeg-4.4
+    '''
+else:
+    benv.required_thirdparty_libs += \
+    '''
+    FFMpeg-4.2.2
+    '''
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+revlens.DS
+revlens.MEDIA
+'''
+
+benv.cpp_classes = \
+'''
+Plugin
+ReaderBase2
+VideoReader3
+AudioReader2
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'Plugin': {
+            'parent': 'MEDIA_Plugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+
+        }
+    }
+}

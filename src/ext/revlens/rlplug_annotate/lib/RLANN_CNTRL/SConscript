@@ -1,0 +1,60 @@
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLANN_CNTRL"
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.DS
+core.UTIL
+core.NET
+core.CNTRL
+core.PY
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+revlens.DS
+revlens.DISP
+revlens.VIDEO
+revlens.MEDIA
+revlens.CNTRL
+revlens.GUI_TL2
+'''
+
+benv.required_libs = \
+'''
+extrevlens.RLANN_DS
+extrevlens.RLANN_MEDIA
+'''
+
+benv.required_pybindgen_libs = \
+'''
+'''
+
+benv.cpp_classes = \
+'''
+FrameProbe
+DrawController
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'DrawController': {
+            'parent': 'RLANN_DS_DrawControllerBase',
+            'bootstrap': {
+                'bind_object': True
+            }
+            
+        }
+    }
+}

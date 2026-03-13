@@ -1,0 +1,39 @@
+{
+    "arrangement": {
+        "orientation": 1,
+        "panes": [
+                    {
+                        "orientation": 2,
+                        "panes": [
+                            {
+                                "panes": [],
+                                "tabs": [
+                                    {"name": "Files"},
+                                    {"name": "Annotate"},
+                                    {"name": "PyConsole"},
+                                    {"name": "Rooms"}
+                                ],
+                                "activeTab": 0
+                            },
+                            {
+                                "panes": [],
+                                "tabs": [{"name": "Viewer"}]
+                            }],
+                        "pos": 0.3499999940395355
+                    },
+                    {
+                        "panes": [],
+                        "tabs": [{"name": "Timeline"}]
+                    }
+                ],
+        "pos": 0.700000011920929,
+        "__temp__": "revlens._init_gui();",
+        "startup.post": "import revlens;import revlens.gui.menu;revlens.gui.menu.init_menu_default_layout()"
+    },
+    "window": {
+        "size": {
+            "width": 1200,
+            "height": 800
+        }
+    }
+}

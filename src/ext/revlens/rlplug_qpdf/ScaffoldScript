@@ -1,0 +1,3 @@
+Product('rlplug_qpdf')
+Subdir('lib')
+Build('python')

@@ -1,0 +1,3 @@
+#!/bin/bash
+# TODO FIXME: does not support separate streams per monitor
+/usr/bin/ffmpeg -thread_queue_size 1024 -video_size 1920x1080 -framerate 18 -f x11grab -thread_queue_size 1024 -i :100.0 -pes_payload_size 0 -c:v h264_nvenc -profile:v high -rc:v vbr -cq:v 19 -b:v 0 -maxrate 6M -bufsize 12M -pix_fmt rgb0 -g 90 -strict_gop 1 -preset p3 -tune ull -2pass 0 -b_adapt 0 -no-scenecut 1 -nonref_p 1 -forced-idr 1 -zerolatency 1 -flags +global_header -f mpegts -rtsp_transport tcp -f rtsp rtsp://localhost:8554/$HOSTNAME.stream

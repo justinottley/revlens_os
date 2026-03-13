@@ -1,0 +1,22 @@
+
+
+benv.build_type = "script_executable"
+benv.executable_name = "rlp_launcher"
+
+benv.bin_files = \
+'''
+rlp_launcher.py
+rlp_start_desktop_stream.py
+rlp_start_frame_server.sh
+rlp_start_mediamtx.py
+rlp_start_site_server.sh
+'''
+
+benv.bin_public = \
+'''
+[{
+  "filename": "revlens",
+  "label": "Revlens",
+  "description": "Revlens Player"
+}]
+'''

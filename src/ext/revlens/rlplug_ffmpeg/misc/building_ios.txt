@@ -1,0 +1,1 @@
+./configure --enable-static --disable-shared --disable-audiotoolbox --prefix=/Users/justinottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64/ffmpeg/7.1/ios --enable-cross-compile --arch=arm64 --target-os=darwin --cc='clang -arch arm64' --sysroot=$(xcrun --sdk iphoneos --show-sdk-path) --enable-pic | tee configure.out

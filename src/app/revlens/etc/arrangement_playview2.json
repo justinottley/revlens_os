@@ -1,0 +1,89 @@
+{
+  "arrangement": {
+    "panes": [
+      {
+        "panes": [
+          {
+            "tabs": [
+              {
+                "name": "Viewer"
+              }
+            ],
+            "panes": []
+          },
+          {
+            "panes": [
+              {
+                "panes": [
+                  {
+                    "tabs": [
+                      {
+                        "name": "Session"
+                      }
+                    ],
+                    "panes": []
+                  },
+                  {
+                    "tabs": [
+                      {
+                        "name": "Rooms"
+                      },
+                      {
+                        "name": "Snapshots"
+                      },
+                      {
+                        "name": "Preview"
+                      },
+                      {
+                        "name": "Annotate"
+                      }
+                    ],
+                    "panes": []
+                  }
+                ],
+                "pos": 0.65,
+                "orientation": 2
+              },
+              {
+                "tabs": [
+                  {
+                    "name": "Files"
+                  },
+                  {
+                    "name": "ShotGrid Notes"
+                  },
+                  {
+                    "name": "Library"
+                  }
+                ],
+                "panes": []
+              }
+            ],
+            "pos": 0.5,
+            "orientation": 1
+          }
+        ],
+        "pos": 0.45668426156044006,
+        "orientation": 2
+      },
+      {
+        "tabs": [
+          {
+            "name": "Timeline"
+          }
+        ],
+        "panes": []
+      }
+    ],
+    "pos": 0.995,
+    "orientation": 1,
+    "__temp__": "revlens._init_gui(init_session_media_track=False);",
+    "startup.post": "import revlens;import revlens.gui.arrangement.playview;import revlens.gui.menu;revlens.gui.menu.init_menu_default_layout(init_session_media_track=False);revlens.gui.arrangement.playview.init_playview_layout()"
+  },
+  "window": {
+    "size": {
+      "width": 2100.0,
+      "height": 1000.0
+    }
+  }
+}

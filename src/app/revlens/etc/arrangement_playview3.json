@@ -1,0 +1,70 @@
+{
+    "arrangement": {
+        "orientation": 2,
+        "panes": [
+                    {
+                        "tabHeaderVisibility": false,
+                        "pos": 0.9,
+                        "orientation": 1,
+                        "panes": [
+                             {
+                                "tabs": [
+                                {
+                                    "name": "Viewer"
+                                }
+                                ],
+                                "panes": []
+                            },
+                            {
+                                "tabHeaderVisibility": false,
+                                "tabs": [
+                                    {
+                                        "name": "AnnotateTb"
+                                    },
+                                    {
+                                        "name": "TimelineTb"
+                                    }
+                                ],
+                                "panes": []
+                            }
+                        ],
+                        "tabs": []
+                    },
+                    {
+                        "tabHeaderVisibility": true,
+                        "orientation": 1,
+                        "pos": 0.5,
+                        "panes": [
+                            {
+                                "orientation": 2,
+                                "pos": 0.6,
+                                "tabHeaderVisibility": true,
+                                "panes": [
+                                    {
+                                        "panes": [],
+                                        "tabs": [{"name": "Playlist"}]
+                                    },
+                                    {
+                                        "panes": [],
+                                        "tabs": [{"name": "Rooms"}, {"name": "Annotate"}]
+                                    }
+                                ]
+                            },
+                            {
+                                "panes": [],
+                                "tabs": [{"name": "ShotGrid"}, {"name": "Library"}]
+                            }
+                        ]
+                    }
+                ],
+        "pos": 0.5,
+        "__temp__": "revlens._init_gui(init_session_media_track=False);",
+        "startup.post": "import revlens;import revlens.gui.menu;revlens.gui.menu.init_menu_default_layout()"
+    },
+    "window": {
+        "size": {
+            "width": 1700,
+            "height": 800
+        }
+    }
+}

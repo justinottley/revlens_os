@@ -1,0 +1,11 @@
+{
+    "arrangement": {
+        "orientation": 1,
+        "panes": [{"orientation": 2,
+                    "panes": [{"panes": [], "tabs": [{"name": "Files"}, {"name": "Media"}, {"name": "Rooms"}]},
+                            {"panes": [], "tabs": [{"name": "Viewer"}]}],
+                    "pos": 0.38},
+                {"panes": [], "tabs": [{"name": "Timeline"}]}],
+        "pos": 0.75
+    }
+}

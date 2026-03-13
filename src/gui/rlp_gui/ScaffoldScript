@@ -1,0 +1,7 @@
+Product('rlp_gui')
+
+Subdir('lib')
+Subdir('bin')
+
+Build('python')
+Build('static')

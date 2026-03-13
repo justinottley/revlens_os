@@ -1,0 +1,44 @@
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "VIDEO"
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+'''
+
+benv.required_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+'''
+
+benv.cpp_classes = \
+'''
+SyncTarget
+ClockBase
+ThreadedClock
+TimerClock
+SyncClock
+LookaheadCache
+'''
+
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {
+        'LookaheadCache': {}
+    }
+}

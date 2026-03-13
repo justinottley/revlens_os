@@ -1,0 +1,4 @@
+Product('rlp_entitydb')
+Subdir('lib')
+Subdir('bin')
+Build('python')

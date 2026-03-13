@@ -1,0 +1,38 @@
+import scaffold.variant
+
+Import("benv")
+Import('rlp_libs')
+
+benv.build_type = "python_extension_module"
+benv.lib_name = "DB_PYMODULE"
+
+
+benv.required_thirdparty_libs = \
+    rlp_libs
+
+
+benv.required_libs = \
+'''
+edb.DS
+edb.GRAPH
+edb.STOR_SQL
+edb.CNTRL
+'''
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.DS
+core.NET
+core.CNTRL
+'''
+
+benv.cpp_classes = \
+'''
+pymodule
+'''
+
+
+benv.header_files = \
+'''
+'''

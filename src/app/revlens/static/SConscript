@@ -1,0 +1,8 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+static_dirs = ['icons']
+
+for static_dir in static_dirs:
+    buildsys.build(sftset_env, 'revlens', static_dir)

@@ -1,0 +1,40 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLQTDS"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.DS
+core.NET
+core.CNTRL
+gui.BASE
+gui.MENU
+gui.PANE
+revlens.DS
+revlens.MEDIA
+revlens.VIDEO
+revlens.CNTRL
+'''
+
+benv.cpp_classes = \
+'''
+OnTheGoNode
+OnTheGoTrack
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+benv.pybind11_info = {
+    'classes': {}
+}
+
+

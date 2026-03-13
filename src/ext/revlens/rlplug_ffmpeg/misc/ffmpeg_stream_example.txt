@@ -1,0 +1,55 @@
+
+
+
+ffmpeg -r 24 -video_size 1024x768 -f x11grab -i :0.0+0,0 -c:v libx264 -preset ultrafast -tune zerolatency -pix_fmt yuv420p -video_size 1024x768 -framerate 15 -f mpegts -omit_video_pes_length 1 -video_size 1024x768 udp://192.168.1.71:8400
+
+
+
+ffmpeg -r 24 -video_size 1024x768 -f x11grab -i :0.0+0,0 -c:v libx264 -preset ultrafast -tune zerolatency -pix_fmt yuv420p -video_size 1024x768 -framerate 24 -f mpegts -omit_video_pes_length 1 -video_size 1024x768 -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live.stream
+
+
+ffmpeg -r 24 -video_size 1024x768 -f x11grab -i :0.0+0,0 -c:v h264_nvenc -preset ultrafast -tune zerolatency -pix_fmt yuv420p -video_size 1024x768 -framerate 24 -b:v 500k -f mpegts -omit_video_pes_length 1 -video_size 1024x768 -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live.stream
+
+
+ffmpeg -loglevel debug -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -f x11grab -vf 'format=nv12,hwupload' -threads 4 -f mpegts -b:v 500k -vcodec h264_vaapi -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live.stream
+
+
+ffmpeg -r 24 -video_size 1024x768 -f x11grab -i :0.0+0,0 -c:v h264_nvenc -preset llhp -tune ull -pix_fmt yuv420p -video_size 1024x768 -framerate 24 -b:v 500k -f mpegts -omit_video_pes_length 1 -video_size 1024x768 -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live.stream
+
+ffmpeg -threads:v 2 -filter_threads 2 -r 24 -video_size 1920x1080 -f x11grab -i :0.0+0,0 -c:v h264_nvenc -rc:v cbr_ld_hq -video_size 1024x768 -framerate 24 -minrate:v 500k -maxrate:v 500k -bufsize:v 500k -b:v 500k -f mpegts -omit_video_pes_length 1 -video_size 1920x1080 -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live.stream
+
+
+ffmpeg -r 30 -video_size 1024x768 -f x11grab -i :0.0+0,0 -c:v h264_nvenc -preset llhp -tune ull -pix_fmt yuv420p -video_size 1024x768 -framerate 30 -b:v 500k -f mpegts -omit_video_pes_length 1 -video_size 1024x768 -f rtsp rtsp://localhost:8554/live.stream
+
+
+
+ffmpeg -loglevel debug -threads:v 2 -filter_threads 2 \
+-f x11grab -i :0.0+0,0 -s 1920x1080 -framerate 24 \
+-b:v 500k -minrate:v 500k -maxrate:v 500k -bufsize:v 500k \
+-c:v h264_nvenc -qp:v 19  \
+-profile:v baseline -rc:v cbr_ld_hq -level:v 4.2 -r:v 24 -g:v 48 -bf:v 3 -refs:v 16 \
+-f mpegts -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live.stream
+
+----
+
+WORKS:
+ffmpeg -threads:v 2 -filter_threads 2 -f x11grab -i :100.0+0,0 -s 1920x1080 -framerate 24 -b:v 500k -minrate:v 500k -maxrate:v 500k -bufsize:v 500k -c:v h264_nvenc -qp:v 19 -f mpegts -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live.stream
+
+
+// --- SETTING TCP AS RTSP rtsp_transport
+//
+AVDictionary *opts = 0;
+av_dict_set(&opts, "rtsp_transport", "tcp", 0);
+if (avformat_open_input(&context, "rtsp://10.20.30.40/video", 0, &opts) != 0) raise AVError("can't open input");
+//
+
+----
+
+
+ffmpeg -i rtsp://localhost:8554/live.stream -f sdl "Video"
+
+
+"output file"
+
+// V2 WORKING
+/usr/bin/ffmpeg -thread_queue_size 1024 -video_size 1920x1080 -framerate 18 -f x11grab -thread_queue_size 1024 -i :100.0 -pes_payload_size 0 -c:v h264_nvenc -profile:v high -rc:v vbr -cq:v 19 -b:v 0 -maxrate 6M -bufsize 12M -pix_fmt rgb0 -g 90 -strict_gop 1 -preset p3 -tune ull -2pass 0 -b_adapt 0 -no-scenecut 1 -nonref_p 1 -forced-idr 1 -zerolatency 1 -flags +global_header -f mpegts -rtsp_transport tcp -f rtsp rtsp://localhost:8554/live.stream

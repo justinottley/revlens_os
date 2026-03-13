@@ -1,0 +1,30 @@
+{
+  "arrangement": {
+    "orientation": 2,
+    "pos": 0.0,
+    "tabHeaderVisibility": false,
+    "panes":[
+        {
+            "tabs": [
+                {
+                    "name": "Annotate"
+                },
+                {
+                    "name": "Rooms"
+                },
+                {
+                    "name": "Playlist"
+                }
+            ]
+        },
+        {
+            "tabs": [
+                {
+                    "name": "Viewer"
+                }
+            ]
+        }
+    ],
+    "startup.post": "import revlens_prod.panel.tablet;revlens_prod.panel.tablet.init_layout()"
+  }
+}

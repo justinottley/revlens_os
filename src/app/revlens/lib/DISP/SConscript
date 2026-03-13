@@ -1,0 +1,68 @@
+import scaffold.variant
+
+Import('benv')
+Import('rlp_libs')
+
+benv.build_type = "shared_library"
+benv.lib_name = "DISP"
+
+
+benv.required_thirdparty_libs = rlp_libs
+
+benv.required_external_libs = \
+'''
+core.LOG
+core.DS
+gui.BASE
+gui.MENU
+gui.PANE
+gui.WIDGET
+'''
+
+benv.required_libs = \
+'''
+revlens.DS
+revlens.MEDIA
+'''
+
+benv.cpp_classes_all = \
+'''
+FrameRateTimer
+GLPaintEngine
+GLPaintEngine2D
+ViewBase
+MockView
+GLView
+'''
+
+benv.cpp_classes = \
+'''
+FrameRateTimer
+GLPaintEngine
+GLPaintEngine2D
+GLView
+'''
+
+
+deprecated = \
+'''
+GlslWidget
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+if 'iOS' in scaffold.variant.get_platform() or 'wasm' in scaffold.variant.get_platform():
+    benv.header_files += \
+    '''
+    GlslShaders2DiOS.h
+    '''
+else:
+    benv.header_files += \
+    '''
+    GlslShaders2D.h
+    '''
+
+    

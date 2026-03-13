@@ -1,0 +1,15 @@
+
+
+libs = [
+    'CNTRL',
+    'GUI'
+]
+
+if benv.platform_target != 'ios' and benv.platform_target != 'wasm':
+    libs.extend([
+        'SITE',
+        'LAUNCH'
+    ])
+
+for lib_name in libs:
+    Build(lib_name)

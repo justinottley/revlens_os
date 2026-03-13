@@ -1,0 +1,35 @@
+{
+  "arrangement": {
+    "panes": [
+      {
+        "tabs": [
+          {
+            "name": "ProjectBanner"
+          }
+        ],
+        "panes": [],
+        "tabHeaderVisibility": false
+      },
+      {
+        "tabs": [
+          {
+            "name": "Entities"
+          },
+          {
+            "name": "Media"
+          }
+        ],
+        "panes": []
+      }
+    ],
+    "posPixels": 140,
+    "orientation": 1,
+    "startup.post": "import revlens.gui;revlens.gui.init_menu_global()"
+  },
+  "window": {
+    "size": {
+      "width": 1200.0,
+      "height": 800.0
+    }
+  }
+}

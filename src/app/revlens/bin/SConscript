@@ -1,0 +1,13 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+# buildsys.build(sftset_env, 'revlens', 'TestBin')
+# buildsys.build(sftset_env, 'revlens', 'LensPyBinWrapper')
+# buildsys.build(sftset_env, 'revlens', 'TestSequence')
+# buildsys.build(sftset_env, 'revlens', 'RPathFix')
+
+# buildsys.build(sftset_env, 'revlens', 'RevlensBin')
+# buildsys.build(sftset_env, 'revlens', 'RevlensBatchBin')
+buildsys.build(sftset_env, 'revlens', 'RevlensPyBin')
+buildsys.build(sftset_env ,'revlens', 'QtConfLinux', variants={'opsys':'Linux'})

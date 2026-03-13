@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# unset RLP_SHOW_LOG
+run_wrapper python3 $RLP_INST_BIN_DIR/rlp_io_service $@

@@ -1,0 +1,48 @@
+
+
+benv.build_type = "binary_executable"
+benv.executable_name = "rlp_launcher.bin"
+
+benv.required_thirdparty_libs = \
+    list(benv.exports['rlp_libs'].values()) + \
+    ['FFmpeg-7.1']
+
+
+benv.required_libs = \
+'''
+core.CRYPT
+core.UTIL
+core.PROC
+core.SEQ
+core.DS
+core.LOG
+core.PATH
+core.NET
+core.PY
+core.QTCORE
+core.CNTRL
+gui.QTGUI
+gui.BASE
+gui.MENU
+gui.PANE
+gui.GRID
+gui.WIDGET
+revlens.DS
+revlens.MEDIA
+revlens.AUDIO
+extrevlens.RLFFMPEG
+prod.GUI
+prod.LAUNCH
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.qrc_resource_libs = \
+'''
+core.CNTRL
+gui.BASE
+'''

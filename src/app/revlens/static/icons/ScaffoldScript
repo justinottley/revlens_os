@@ -1,0 +1,25 @@
+
+benv.build_type = "compiled_static_files"
+benv.target_dir = "static/icons"
+
+benv.static_files = \
+'''
+PioFiveMusicWhite/fast-forward-arrow.png
+PioFiveMusicWhite/music-player-pause-lines.png
+PioFiveMusicWhite/music-player-play.png
+PioFiveMusicWhite/rewind-arrow.png
+PioFiveMusicWhite/saltar-a-pista-anterior.png
+PioFiveMusicWhite/saltar-a-pista-anterior_trackgray.png
+PioFiveMusicWhite/skip-track-option.png
+PioFiveMusicWhite/skip-track-option_trackgray.png
+PioFiveMusicWhite/volume-adjustment-mute.png
+PioFiveMusicWhite/volume-control.png
+PioFiveMusicWhite/settings-work-tool.png
+Ic_visibility_48px_Gray.png
+Ic_visibility_off_48px_Gray.png
+wi-fi-signal_gray.png
+picture_gray.png
+audio-wave.png
+timeline_24x24_grey.png
+video-editing_24x24_grey.png
+'''

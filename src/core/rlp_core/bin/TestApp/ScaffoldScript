@@ -1,0 +1,21 @@
+
+benv.build_type = "binary_executable"
+benv.executable_name = "test_app"
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''
+
+benv.required_thirdparty_libs = \
+'''
+'''
+
+benv.qrc_resource_libs = \
+'''
+'''
+
+benv.private = \
+'''
+'''

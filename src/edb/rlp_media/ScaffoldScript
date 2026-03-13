@@ -1,0 +1,4 @@
+Product('rlp_media')
+Subdir('lib')
+Subdir('bin')
+Build('python')

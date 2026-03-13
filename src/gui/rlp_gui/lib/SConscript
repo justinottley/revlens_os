@@ -1,0 +1,19 @@
+import scaffold.variant
+
+Import('buildsys')
+Import('sftset_env')
+
+
+libs = [
+    'BASE',
+    'MENU',
+    'PANE',
+    'WIDGET',
+    'GRID',
+    'PY'
+]
+
+
+
+for lib_name in libs:
+    buildsys.build(sftset_env, 'gui', lib_name)

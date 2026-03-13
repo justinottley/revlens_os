@@ -1,0 +1,26 @@
+import scaffold.variant
+
+Import('buildsys')
+Import('sftset_env')
+
+
+libs = [
+    'LOG',
+    'CRYPT',
+    'PY',
+    'UTIL',
+    'SEQ',
+    'DS',
+    'PATH',
+    'MONGOOSE',
+    'NET',
+    'CNTRL',
+    'PYMODULE' # for pure python binding
+]
+
+# libs = ['LOG', 'UTIL', 'PY'] # , 'DS', 'LOG', 'PYMODULE']
+# libs = ['LOG', 'UTIL', 'PY', 'TESTMOD']
+# libs = ['LOG', 'UTIL', 'PY'] # TESTMOD']
+
+for lib_name in libs:
+    buildsys.build(sftset_env, 'core', lib_name)

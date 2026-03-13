@@ -1,0 +1,20 @@
+
+Import("benv")
+
+benv.build_type = "binary_executable"
+benv.executable_name = "exrtest"
+
+benv.required_thirdparty_libs = \
+'''
+Qt-5.4.0
+'''
+
+benv.required_libs = \
+'''
+'''
+
+
+benv.cpp_files = \
+'''
+main.cpp
+'''

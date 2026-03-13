@@ -1,0 +1,1685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		035FB6405D804C55B4B32BD5 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E1183FD81774446B98073526 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				965BCF2C005AC40F962556EC /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		97D088378DC448A88688B5C2 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E007804E77ED4004889760EA /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				F8612F8C9D674AE289DD8B77 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		FC3742AEA1C54EC0911011F7 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 95B2B7E294D34E73A66D477A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				BFA567F8E49F0604FA21A00B /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				77F03C5FFDD64B9384E0A495 /* PBXTargetDependency */,
+				5AF071C16CD748E097063EAA /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		A5A00EC92CF5416100067468 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00EC72CF5416100067468 /* AVFAudio.framework */; };
+		A5A00ECA2CF5416100067468 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00EC82CF5416100067468 /* AVFoundation.framework */; };
+		A5A00ECC2CF651AB00067468 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00ECB2CF651AB00067468 /* AVKit.framework */; };
+		A5A00ECE2CF651B400067468 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00ECD2CF651B400067468 /* CoreVideo.framework */; };
+		A5A00ED02CF651B900067468 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00ECF2CF651B900067468 /* VideoToolbox.framework */; };
+		A5A00ED22CF6520000067468 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00ED12CF6520000067468 /* CoreMedia.framework */; };
+		A5A00ED42CF652C200067468 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00ED32CF652AD00067468 /* libiconv.tbd */; };
+		A5A00ED62CF652ED00067468 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00ED52CF652E600067468 /* libz.tbd */; };
+		A5A00EDA2CF654E800067468 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A00ED92CF654DA00067468 /* libbz2.tbd */; };
+		B39B6EA82D30700500E7EFC7 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39B6EA52D306FD100E7EFC7 /* Python.framework */; };
+		B39B6EA92D30700500E7EFC7 /* Python.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B39B6EA52D306FD100E7EFC7 /* Python.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B39B6EAC2D30769F00E7EFC7 /* main 2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B39B6EAB2D30769F00E7EFC7 /* main 2.cpp */; };
+		B39B6EAF2D3077A300E7EFC7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A00EDB2CF8FE2100067468 /* Media.xcassets */; };
+		B39B6EB12D30781D00E7EFC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39B6EB02D30781D00E7EFC7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		34994EFFA24346B882385D7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA929B9725EA4C60B821A3C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC3742AEA1C54EC0911011F7;
+			remoteInfo = ALL_BUILD;
+		};
+		4C8ACE28EFE048649E34CED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA929B9725EA4C60B821A3C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 035FB6405D804C55B4B32BD5;
+			remoteInfo = ZERO_CHECK;
+		};
+		6F63210066EE4907BF4F1D77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA929B9725EA4C60B821A3C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27C87CFFECE848689F12821A;
+			remoteInfo = analogclock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B39B6EAA2D30700500E7EFC7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B39B6EA92D30700500E7EFC7 /* Python.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2444DC719AB94471A2BC5821 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/jottley/dev/revlens_root/revlens_public/src/app/revlens/iOS_XCode/Info.plist; sourceTree = "<absolute>"; };
+		5B4604EDD3BA4D268647198D /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9E8FB652C45C4985BB072014 /* revlens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = revlens.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A6A5D689134DC381EA4E3E /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A5A00EC72CF5416100067468 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		A5A00EC82CF5416100067468 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A5A00ECB2CF651AB00067468 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		A5A00ECD2CF651B400067468 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A5A00ECF2CF651B900067468 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		A5A00ED12CF6520000067468 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A5A00ED32CF652AD00067468 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		A5A00ED52CF652E600067468 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A5A00ED72CF6537D00067468 /* libz.1.2.11.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.11.tbd; path = usr/lib/libz.1.2.11.tbd; sourceTree = SDKROOT; };
+		A5A00ED92CF654DA00067468 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		A5A00EDB2CF8FE2100067468 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		B39B6EA52D306FD100E7EFC7 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = "../../../../../../../../../../../../jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/python/ios/Python.xcframework/ios-arm64/Python.framework"; sourceTree = "<group>"; };
+		B39B6EAB2D30769F00E7EFC7 /* main 2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "main 2.cpp"; sourceTree = "<group>"; };
+		B39B6EB02D30781D00E7EFC7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB54997555C047D581954A43 /* analogclock.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = analogclock.h; sourceTree = SOURCE_ROOT; };
+		F2AE9CDF443540DBBD37A77D /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		226212CD86DD4597A4F97ACA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39B6EA82D30700500E7EFC7 /* Python.framework in Frameworks */,
+				A5A00EDA2CF654E800067468 /* libbz2.tbd in Frameworks */,
+				A5A00EC92CF5416100067468 /* AVFAudio.framework in Frameworks */,
+				A5A00ED42CF652C200067468 /* libiconv.tbd in Frameworks */,
+				A5A00ED02CF651B900067468 /* VideoToolbox.framework in Frameworks */,
+				A5A00ECC2CF651AB00067468 /* AVKit.framework in Frameworks */,
+				A5A00ECA2CF5416100067468 /* AVFoundation.framework in Frameworks */,
+				A5A00ECE2CF651B400067468 /* CoreVideo.framework in Frameworks */,
+				A5A00ED62CF652ED00067468 /* libz.tbd in Frameworks */,
+				A5A00ED22CF6520000067468 /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CA340D85FA04D42B54BEF73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2444DC719AB94471A2BC5821 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		21D8C41BF1904C598798C2E1 /* QtInternalTargets */ = {
+			isa = PBXGroup;
+			children = (
+				405928B740AF45D7AD51BFFE /* analogclock_autogen */,
+			);
+			name = QtInternalTargets;
+			sourceTree = "<group>";
+		};
+		250DDFC669084E638D2837CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E8FB652C45C4985BB072014 /* revlens.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		285C91970702415A94B53F2A /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		3CDE75723D7A4960BE0E1E5B /* analogclock */ = {
+			isa = PBXGroup;
+			children = (
+				57DD07978412410D8DDFA742 /* Source Files */,
+				CD4A61E1215D4E8E9775CB1A /* Header Files */,
+				0CA340D85FA04D42B54BEF73 /* Resources */,
+				A1A6A5D689134DC381EA4E3E /* CMakeLists.txt */,
+			);
+			name = analogclock;
+			sourceTree = "<group>";
+		};
+		3FD13D60698241E798505917 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B39B6EA52D306FD100E7EFC7 /* Python.framework */,
+				A5A00ED92CF654DA00067468 /* libbz2.tbd */,
+				A5A00ED72CF6537D00067468 /* libz.1.2.11.tbd */,
+				A5A00ED52CF652E600067468 /* libz.tbd */,
+				A5A00ED32CF652AD00067468 /* libiconv.tbd */,
+				A5A00ED12CF6520000067468 /* CoreMedia.framework */,
+				A5A00ECF2CF651B900067468 /* VideoToolbox.framework */,
+				A5A00ECD2CF651B400067468 /* CoreVideo.framework */,
+				A5A00ECB2CF651AB00067468 /* AVKit.framework */,
+				A5A00EC72CF5416100067468 /* AVFAudio.framework */,
+				A5A00EC82CF5416100067468 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		405928B740AF45D7AD51BFFE /* analogclock_autogen */ = {
+			isa = PBXGroup;
+			children = (
+				7B239B47715F43A4A01D564B /* CMake Rules */,
+				5B4604EDD3BA4D268647198D /* CMakeLists.txt */,
+			);
+			name = analogclock_autogen;
+			sourceTree = "<group>";
+		};
+		51C3188A83BF49D2A6C805D4 = {
+			isa = PBXGroup;
+			children = (
+				B39B6EB02D30781D00E7EFC7 /* LaunchScreen.storyboard */,
+				A5A00EDB2CF8FE2100067468 /* Media.xcassets */,
+				3CDE75723D7A4960BE0E1E5B /* analogclock */,
+				21D8C41BF1904C598798C2E1 /* QtInternalTargets */,
+				A61C8439BF104DBCAD0C8A33 /* ALL_BUILD */,
+				250DDFC669084E638D2837CE /* Products */,
+				3FD13D60698241E798505917 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		57DD07978412410D8DDFA742 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B39B6EAB2D30769F00E7EFC7 /* main 2.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		7B239B47715F43A4A01D564B /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		A61C8439BF104DBCAD0C8A33 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				285C91970702415A94B53F2A /* CMake Rules */,
+				F2AE9CDF443540DBBD37A77D /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		CD4A61E1215D4E8E9775CB1A /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB54997555C047D581954A43 /* analogclock.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27C87CFFECE848689F12821A /* revlens */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C8C8D683140410F864244B2 /* Build configuration list for PBXNativeTarget "revlens" */;
+			buildPhases = (
+				446177DC75DF47CE9125EAB2 /* Resources */,
+				A56778802CEFFB7700A0D225 /* Install Python Standard Library */,
+				A5A00EC52CF53D9500067468 /* Install Revlens Static Files */,
+				A5A00EC62CF53DD100067468 /* Install Test Media */,
+				4C962618BB6549F6BC881A56 /* Sources */,
+				226212CD86DD4597A4F97ACA /* Frameworks */,
+				B39B6EAA2D30700500E7EFC7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = revlens;
+			productName = analogclock;
+			productReference = 9E8FB652C45C4985BB072014 /* revlens.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA929B9725EA4C60B821A3C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 6B9284355E5C4B8D9149CA4D /* Build configuration list for PBXProject "Revlens" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 51C3188A83BF49D2A6C805D4;
+			projectDirPath = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/analogclock";
+			projectRoot = "";
+			targets = (
+				FC3742AEA1C54EC0911011F7 /* ALL_BUILD */,
+				035FB6405D804C55B4B32BD5 /* ZERO_CHECK */,
+				27C87CFFECE848689F12821A /* revlens */,
+				97D088378DC448A88688B5C2 /* install */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		446177DC75DF47CE9125EAB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39B6EB12D30781D00E7EFC7 /* LaunchScreen.storyboard in Resources */,
+				B39B6EAF2D3077A300E7EFC7 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Install Build Rule\"\n";
+			showEnvVarsInLog = 0;
+		};
+		965BCF2C005AC40F962556EC /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+				"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/CMakeFiles/ZERO_CHECK",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  make -f /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  make -f /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  make -f /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  make -f /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/CMakeScripts/ReRunCMake.make\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A56778802CEFFB7700A0D225 /* Install Python Standard Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Install Python Standard Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"$CODESIGNING_FOLDER_PATH/python/lib\"\nif [ \"$EFFECTIVE_PLATFORM_NAME\" = \"-iphonesimulator\" ]; then\n    echo \"Installing Python modules for iOS Simulator\"\n    rsync -au --delete \"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/python/ios/Python.xcframework/ios-arm64_x86_64-simulator/lib/\" \"$CODESIGNING_FOLDER_PATH/python/lib/\"\nelse\n    echo \"Installing Python modules for iOS Device\"\n    rsync -au --delete \"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/python/ios/Python.xcframework/ios-arm64/lib/\" \"$CODESIGNING_FOLDER_PATH/python/lib/\"\nfi\n";
+		};
+		A5A00EC52CF53D9500067468 /* Install Revlens Static Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Install Revlens Static Files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Installing Revlens static files..\"\nmkdir -p \"$CODESIGNING_FOLDER_PATH/static/revlens/etc\"\nrsync -au --delete \"/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/etc\" \"$CODESIGNING_FOLDER_PATH/static/revlens\"\n\necho \"Installing Revlens python libs..\"\nrsync -au \"/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/python3.11/site-packages\" \"$CODESIGNING_FOLDER_PATH/python/lib/python3.11\"\nrsync -au \"/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/lib/python3.11/site-packages\" \"$CODESIGNING_FOLDER_PATH/python/lib/python3.11\"\nrsync -au \"/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/python3.11/site-packages\" \"$CODESIGNING_FOLDER_PATH/python/lib/python3.11\"\nrsync -au \"/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/python3.11/site-packages\" \"$CODESIGNING_FOLDER_PATH/python/lib/python3.11\"\nrsync -au \"/Users/jottley/dev/revlens_root/revlens_public/inst/ios/prod/lib/python3.11/site-packages\" \"$CODESIGNING_FOLDER_PATH/python/lib/python3.11\"\n\n";
+		};
+		A5A00EC62CF53DD100067468 /* Install Test Media */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Install Test Media";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Installing Test Media..\"\nmkdir -p \"$CODESIGNING_FOLDER_PATH/Videos\"\n\nrsync -au \"/Users/jottley/Movies/bbb_trailer2.rlm\" \"$CODESIGNING_FOLDER_PATH/Videos\"\nrsync -au \"/Users/jottley/Movies/test_media_hls.json\" \"$CODESIGNING_FOLDER_PATH/Videos\"\nrsync -au \"/Users/jottley/Movies/moana_2_trailer.mp4\" \"$CODESIGNING_FOLDER_PATH/Videos\"\n";
+		};
+		BFA567F8E49F0604FA21A00B /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+				"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/CMakeFiles/ALL_BUILD",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS\n  echo Build\\ all\\ projects\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C962618BB6549F6BC881A56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39B6EAC2D30769F00E7EFC7 /* main 2.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AF071C16CD748E097063EAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 035FB6405D804C55B4B32BD5 /* ZERO_CHECK */;
+			targetProxy = 4C8ACE28EFE048649E34CED7 /* PBXContainerItemProxy */;
+		};
+		77F03C5FFDD64B9384E0A495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27C87CFFECE848689F12821A /* revlens */;
+			targetProxy = 6F63210066EE4907BF4F1D77 /* PBXContainerItemProxy */;
+		};
+		F8612F8C9D674AE289DD8B77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC3742AEA1C54EC0911011F7 /* ALL_BUILD */;
+			targetProxy = 34994EFFA24346B882385D7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A014EF06F5A47FB8D5786F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				ENABLE_BITCODE = NO;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					QT_CORE_LIB,
+					QT_SQL_LIB,
+					QT_NETWORK_LIB,
+					QT_WEBSOCKETS_LIB,
+					QT_SVG_LIB,
+					QT_GUI_LIB,
+					QT_WIDGETS_LIB,
+					QT_QUICK_LIB,
+					QT_QML_LIB,
+					QT_QMLINTEGRATION_LIB,
+					QT_QMLMODELS_LIB,
+					QT_OPENGL_LIB,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/analogclock_autogen/include_Debug",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/python/ios/Python.xcframework/ios-arm64/include/python3.11",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/PyBind11/2.10.0/include",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/qnanopainter/6.5.3/ios/include",
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/include,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/include,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/include,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/prod/include,
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = /Users/jottley/dev/revlens_root/revlens_public/src/app/revlens/iOS_XCode/Info.plist;
+				INSTALL_PATH = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DQT_QML_DEBUG",
+					"'-std=gnu++17'",
+				);
+				OTHER_LDFLAGS = (
+					"'-Wl,-e,_qt_main_wrapper'",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/objects-Debug/QSQLiteDriverPlugin_init/QSQLiteDriverPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/objects-Debug/QSCNetworkReachabilityNetworkInformationPlugin_init/QSCNetworkReachabilityNetworkInformationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/objects-Debug/QSecureTransportBackendPlugin_init/QSecureTransportBackendPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QGifPlugin_init/QGifPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QICOPlugin_init/QICOPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/objects-Debug/QIOSIntegrationPlugin_init/QIOSIntegrationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QJpegPlugin_init/QJpegPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/objects-Debug/QSvgIconPlugin_init/QSvgIconPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QSvgPlugin_init/QSvgPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QDebugMessageServiceFactoryPlugin_init/QDebugMessageServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QLocalClientConnectionFactoryPlugin_init/QLocalClientConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlDebugServerFactoryPlugin_init/QQmlDebugServerFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlDebuggerServiceFactoryPlugin_init/QQmlDebuggerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlInspectorServiceFactoryPlugin_init/QQmlInspectorServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlNativeDebugConnectorFactoryPlugin_init/QQmlNativeDebugConnectorFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlNativeDebugServiceFactoryPlugin_init/QQmlNativeDebugServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlPreviewServiceFactoryPlugin_init/QQmlPreviewServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlProfilerServiceFactoryPlugin_init/QQmlProfilerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQuickProfilerAdapterFactoryPlugin_init/QQuickProfilerAdapterFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QTcpServerConnectionFactoryPlugin_init/QTcpServerConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Gui_resources_1/.rcc/qrc_qpdf.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Gui_resources_2/.rcc/qrc_gui_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_1/.rcc/qrc_qstyle.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_2/.rcc/qrc_qstyle1.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_3/.rcc/qrc_qmessagebox.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQuick/objects-Debug/Quick_resources_1/.rcc/qrc_qmake_QtQuick.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Quick_resources_2/.rcc/qrc_scenegraph_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Base/objects-Debug/Qml_resources_1/.rcc/qrc_qmake_QtQml_Base.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Qml_resources_2/.rcc/qrc_qmlMetaQmldir.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Models/objects-Debug/QmlModels_resources_1/.rcc/qrc_qmake_QtQml_Models.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6WebSockets_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Widgets_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/libqsqlite_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/libqscnetworkreachability_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/libqsecuretransportbackend_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqgif_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqico_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/libqios_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqjpeg_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/libqsvgicon_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqsvg_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_messages_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_local_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_server_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_debugger_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_inspector_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_native_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_nativedebugger_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_preview_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_profiler_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_quickprofiler_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_tcp_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql_debug.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					AssetsLibrary,
+					"-framework",
+					UniformTypeIdentifiers,
+					"-framework",
+					Photos,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibjpeg_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Xml_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6PacketProtocol_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6OpenGL_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui_debug.a",
+					"-framework",
+					OpenGLES,
+					"-framework",
+					ImageIO,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreText,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledHarfbuzz_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledFreetype_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibpng_debug.a",
+					"-framework",
+					Metal,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6QmlModels_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Qml_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Multimedia_debug.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network_debug.a",
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core_debug.a",
+					"-lz",
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					Foundation,
+					"-lm",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledPcre2_debug.a",
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					UIKit,
+					"-F/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/python/ios/Python.xcframework/ios-arm64",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/qnanopainter/6.5.3/ios/lib/libqnanopainter.a",
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLFFMPEG.a,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/FFMpeg/ios/FFmpeg-static-master/lib/libswscale.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/FFMpeg/ios/FFmpeg-static-master/lib/libswresample.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/FFMpeg/ios/FFmpeg-static-master/lib/libavutil.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/FFMpeg/ios/FFmpeg-static-master/lib/libavformat.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/FFMpeg/ios/FFmpeg-static-master/lib/libavfilter.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/FFMpeg/ios/FFmpeg-static-master/lib/libavdevice.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/FFMpeg/ios/FFmpeg-static-master/lib/libavcodec.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/libmypaint/6.5.3/ios/lib/libjson-c.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-x86_64-11.7/libmypaint/6.5.3/ios/lib/libmypaint.a",
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCorePY.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreLOG.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreCNTRL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreNET.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCorePATH.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreDS.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreSEQ.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreUTIL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreQTCORE.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/core/lib/libRlpCoreCRYPT.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/lib/libRlpGuiBASE.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/lib/libRlpGuiWIDGET.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/lib/libRlpGuiQTGUI.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/lib/libRlpGuiPANE.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/lib/libRlpGuiMENU.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/gui/lib/libRlpGuiGRID.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/edb/lib/libRlpEdbMEDIA.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/edb/lib/libRlpEdbGUI.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/edb/lib/libRlpEdbCNTRL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/edb/lib/libRlpEdbSTOR_SQL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/edb/lib/libRlpEdbUTIL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/edb/lib/libRlpEdbGRAPH.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/edb/lib/libRlpEdbDS.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensDS.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensAUDIO.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensVIDEO.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensDISP.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensGUI_TL2.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensGUI.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensMEDIA.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/revlens/lib/libRlpRevlensCNTRL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLQTCNTRL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLQTMEDIA.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLQTDISP.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLMEDIA.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLSYNC.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLANN_GUI.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLANN_CNTRL.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLANN_MEDIA.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLANN_MP.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/extrevlens/lib/libRlpExtrevlensRLANN_DS.a,
+					/Users/jottley/dev/revlens_root/revlens_public/inst/ios/prod/lib/libRlpProdGUI.a,
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "rlp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = revlens;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtCore",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/mkspecs/macx-ios-clang",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSql",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtNetwork",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWebSockets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSvg",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtGui",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWidgets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQuick",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQml",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlIntegration",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlModels",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtOpenGL",
+					"$(inherited)",
+				);
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		287C6FC374EA48DDBAC34D95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/build";
+			};
+			name = Debug;
+		};
+		3148EBF6291E48FBB6FF3F26 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				ENABLE_BITCODE = NO;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					QT_CORE_LIB,
+					QT_NO_DEBUG,
+					QT_SQL_LIB,
+					QT_NETWORK_LIB,
+					QT_WEBSOCKETS_LIB,
+					QT_SVG_LIB,
+					QT_GUI_LIB,
+					QT_WIDGETS_LIB,
+					QT_QUICK_LIB,
+					QT_QML_LIB,
+					QT_QMLINTEGRATION_LIB,
+					QT_QMLMODELS_LIB,
+					QT_OPENGL_LIB,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/analogclock_autogen/include_MinSizeRel",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = /Users/jottley/dev/revlens_root/revlens_public/src/app/revlens/iOS_XCode/Info.plist;
+				INSTALL_PATH = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DQT_QML_DEBUG",
+					"-DNDEBUG",
+					"'-std=gnu++17'",
+				);
+				OTHER_LDFLAGS = (
+					"'-Wl,-e,_qt_main_wrapper'",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/objects-Debug/QSQLiteDriverPlugin_init/QSQLiteDriverPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/objects-Debug/QSCNetworkReachabilityNetworkInformationPlugin_init/QSCNetworkReachabilityNetworkInformationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/objects-Debug/QSecureTransportBackendPlugin_init/QSecureTransportBackendPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QGifPlugin_init/QGifPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QICOPlugin_init/QICOPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/objects-Debug/QIOSIntegrationPlugin_init/QIOSIntegrationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QJpegPlugin_init/QJpegPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/objects-Debug/QSvgIconPlugin_init/QSvgIconPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QSvgPlugin_init/QSvgPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QDebugMessageServiceFactoryPlugin_init/QDebugMessageServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QLocalClientConnectionFactoryPlugin_init/QLocalClientConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlDebugServerFactoryPlugin_init/QQmlDebugServerFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlDebuggerServiceFactoryPlugin_init/QQmlDebuggerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlInspectorServiceFactoryPlugin_init/QQmlInspectorServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlNativeDebugConnectorFactoryPlugin_init/QQmlNativeDebugConnectorFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlNativeDebugServiceFactoryPlugin_init/QQmlNativeDebugServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlPreviewServiceFactoryPlugin_init/QQmlPreviewServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlProfilerServiceFactoryPlugin_init/QQmlProfilerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQuickProfilerAdapterFactoryPlugin_init/QQuickProfilerAdapterFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QTcpServerConnectionFactoryPlugin_init/QTcpServerConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Gui_resources_1/.rcc/qrc_qpdf.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Gui_resources_2/.rcc/qrc_gui_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_1/.rcc/qrc_qstyle.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_2/.rcc/qrc_qstyle1.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_3/.rcc/qrc_qmessagebox.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQuick/objects-Debug/Quick_resources_1/.rcc/qrc_qmake_QtQuick.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Quick_resources_2/.rcc/qrc_scenegraph_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Base/objects-Debug/Qml_resources_1/.rcc/qrc_qmake_QtQml_Base.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Qml_resources_2/.rcc/qrc_qmlMetaQmldir.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Models/objects-Debug/QmlModels_resources_1/.rcc/qrc_qmake_QtQml_Models.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6WebSockets.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Widgets.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/libqsqlite.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/libqscnetworkreachability.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/libqsecuretransportbackend.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqgif.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqico.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/libqios.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqjpeg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/libqsvgicon.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqsvg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_messages.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_local.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_server.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_debugger.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_inspector.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_native.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_nativedebugger.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_preview.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_profiler.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_quickprofiler.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_tcp.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					AssetsLibrary,
+					"-framework",
+					UniformTypeIdentifiers,
+					"-framework",
+					Photos,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibjpeg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6PacketProtocol.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6OpenGL.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui.a",
+					"-framework",
+					OpenGLES,
+					"-framework",
+					ImageIO,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreText,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledHarfbuzz.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledFreetype.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibpng.a",
+					"-framework",
+					Metal,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6QmlModels.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Qml.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network.a",
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"-lz",
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					Foundation,
+					"-lm",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledPcre2.a",
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					UIKit,
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "rlp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = revlens;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtCore",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/mkspecs/macx-ios-clang",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSql",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtNetwork",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWebSockets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSvg",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtGui",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWidgets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQuick",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQml",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlIntegration",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlModels",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtOpenGL",
+					"$(inherited)",
+				);
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		394A8811A62E4887B8474C56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		3C998E363FA842548BF69293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		3D19437360A441DE90F1DC73 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		49111E768A5D4FEB8EB8D93A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		59FC8ABDC00E4810BE2E5BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		5CA04928B243457D92ED75AE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/build";
+			};
+			name = RelWithDebInfo;
+		};
+		64523BDE377B4769A479FB9F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		714BDD19E6B742EAA86F3B34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/build";
+			};
+			name = Release;
+		};
+		71B92A30C5D74A3DA673F5C7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		7276E6C136BB4701BE59C405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				ENABLE_BITCODE = NO;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					QT_CORE_LIB,
+					QT_NO_DEBUG,
+					QT_SQL_LIB,
+					QT_NETWORK_LIB,
+					QT_WEBSOCKETS_LIB,
+					QT_SVG_LIB,
+					QT_GUI_LIB,
+					QT_WIDGETS_LIB,
+					QT_QUICK_LIB,
+					QT_QML_LIB,
+					QT_QMLINTEGRATION_LIB,
+					QT_QMLMODELS_LIB,
+					QT_OPENGL_LIB,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/analogclock_autogen/include_Release",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = /Users/jottley/dev/revlens_root/revlens_public/src/app/revlens/iOS_XCode/Info.plist;
+				INSTALL_PATH = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DQT_QML_DEBUG",
+					"-DNDEBUG",
+					"'-std=gnu++17'",
+				);
+				OTHER_LDFLAGS = (
+					"'-Wl,-e,_qt_main_wrapper'",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/objects-Release/QSQLiteDriverPlugin_init/QSQLiteDriverPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/objects-Release/QSCNetworkReachabilityNetworkInformationPlugin_init/QSCNetworkReachabilityNetworkInformationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/objects-Release/QSecureTransportBackendPlugin_init/QSecureTransportBackendPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Release/QGifPlugin_init/QGifPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Release/QICOPlugin_init/QICOPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/objects-Release/QIOSIntegrationPlugin_init/QIOSIntegrationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Release/QJpegPlugin_init/QJpegPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/objects-Release/QSvgIconPlugin_init/QSvgIconPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Release/QSvgPlugin_init/QSvgPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QDebugMessageServiceFactoryPlugin_init/QDebugMessageServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QLocalClientConnectionFactoryPlugin_init/QLocalClientConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQmlDebugServerFactoryPlugin_init/QQmlDebugServerFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQmlDebuggerServiceFactoryPlugin_init/QQmlDebuggerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQmlInspectorServiceFactoryPlugin_init/QQmlInspectorServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQmlNativeDebugConnectorFactoryPlugin_init/QQmlNativeDebugConnectorFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQmlNativeDebugServiceFactoryPlugin_init/QQmlNativeDebugServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQmlPreviewServiceFactoryPlugin_init/QQmlPreviewServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQmlProfilerServiceFactoryPlugin_init/QQmlProfilerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QQuickProfilerAdapterFactoryPlugin_init/QQuickProfilerAdapterFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Release/QTcpServerConnectionFactoryPlugin_init/QTcpServerConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Release/Gui_resources_1/.rcc/qrc_qpdf.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Release/Gui_resources_2/.rcc/qrc_gui_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Release/Widgets_resources_1/.rcc/qrc_qstyle.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Release/Widgets_resources_2/.rcc/qrc_qstyle1.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Release/Widgets_resources_3/.rcc/qrc_qmessagebox.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQuick/objects-Release/Quick_resources_1/.rcc/qrc_qmake_QtQuick.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Release/Quick_resources_2/.rcc/qrc_scenegraph_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Base/objects-Release/Qml_resources_1/.rcc/qrc_qmake_QtQml_Base.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Release/Qml_resources_2/.rcc/qrc_qmlMetaQmldir.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Models/objects-Release/QmlModels_resources_1/.rcc/qrc_qmake_QtQml_Models.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6WebSockets.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Widgets.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/libqsqlite.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/libqscnetworkreachability.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/libqsecuretransportbackend.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqgif.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqico.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/libqios.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqjpeg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/libqsvgicon.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqsvg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_messages.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_local.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_server.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_debugger.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_inspector.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_native.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_nativedebugger.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_preview.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_profiler.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_quickprofiler.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_tcp.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					AssetsLibrary,
+					"-framework",
+					UniformTypeIdentifiers,
+					"-framework",
+					Photos,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibjpeg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6PacketProtocol.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6OpenGL.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui.a",
+					"-framework",
+					OpenGLES,
+					"-framework",
+					ImageIO,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreText,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledHarfbuzz.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledFreetype.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibpng.a",
+					"-framework",
+					Metal,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6QmlModels.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Qml.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network.a",
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"-lz",
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					Foundation,
+					"-lm",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledPcre2.a",
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					UIKit,
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "rlp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = revlens;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtCore",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/mkspecs/macx-ios-clang",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSql",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtNetwork",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWebSockets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSvg",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtGui",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWidgets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQuick",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQml",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlIntegration",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlModels",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtOpenGL",
+					"$(inherited)",
+				);
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		7ED94339354E48EE90A68931 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		8136D83A6D9F4500BF36D948 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		8B6B7B84ADB24BAE814C8C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		9F33C0787D7F4785811F831F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/build";
+			};
+			name = MinSizeRel;
+		};
+		A27C56BC9402488C93AB6DCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		B7BF7D157FE249968A92C97A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		F700B4D957D743CF8DA7DA48 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 4GZG5XZ9A2;
+				ENABLE_BITCODE = NO;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					QT_CORE_LIB,
+					QT_NO_DEBUG,
+					QT_SQL_LIB,
+					QT_NETWORK_LIB,
+					QT_WEBSOCKETS_LIB,
+					QT_SVG_LIB,
+					QT_GUI_LIB,
+					QT_WIDGETS_LIB,
+					QT_QUICK_LIB,
+					QT_QML_LIB,
+					QT_QMLINTEGRATION_LIB,
+					QT_QMLMODELS_LIB,
+					QT_OPENGL_LIB,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS/analogclock_autogen/include_RelWithDebInfo",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = /Users/jottley/dev/revlens_root/revlens_public/src/app/revlens/iOS_XCode/Info.plist;
+				INSTALL_PATH = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DQT_QML_DEBUG",
+					"-DNDEBUG",
+					"'-std=gnu++17'",
+				);
+				OTHER_LDFLAGS = (
+					"'-Wl,-e,_qt_main_wrapper'",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/objects-Debug/QSQLiteDriverPlugin_init/QSQLiteDriverPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/objects-Debug/QSCNetworkReachabilityNetworkInformationPlugin_init/QSCNetworkReachabilityNetworkInformationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/objects-Debug/QSecureTransportBackendPlugin_init/QSecureTransportBackendPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QGifPlugin_init/QGifPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QICOPlugin_init/QICOPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/objects-Debug/QIOSIntegrationPlugin_init/QIOSIntegrationPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QJpegPlugin_init/QJpegPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/objects-Debug/QSvgIconPlugin_init/QSvgIconPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/objects-Debug/QSvgPlugin_init/QSvgPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QDebugMessageServiceFactoryPlugin_init/QDebugMessageServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QLocalClientConnectionFactoryPlugin_init/QLocalClientConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlDebugServerFactoryPlugin_init/QQmlDebugServerFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlDebuggerServiceFactoryPlugin_init/QQmlDebuggerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlInspectorServiceFactoryPlugin_init/QQmlInspectorServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlNativeDebugConnectorFactoryPlugin_init/QQmlNativeDebugConnectorFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlNativeDebugServiceFactoryPlugin_init/QQmlNativeDebugServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlPreviewServiceFactoryPlugin_init/QQmlPreviewServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQmlProfilerServiceFactoryPlugin_init/QQmlProfilerServiceFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QQuickProfilerAdapterFactoryPlugin_init/QQuickProfilerAdapterFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/objects-Debug/QTcpServerConnectionFactoryPlugin_init/QTcpServerConnectionFactoryPlugin_init.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Gui_resources_1/.rcc/qrc_qpdf.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Gui_resources_2/.rcc/qrc_gui_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_1/.rcc/qrc_qstyle.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_2/.rcc/qrc_qstyle1.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Widgets_resources_3/.rcc/qrc_qmessagebox.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQuick/objects-Debug/Quick_resources_1/.rcc/qrc_qmake_QtQuick.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Quick_resources_2/.rcc/qrc_scenegraph_shaders.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Base/objects-Debug/Qml_resources_1/.rcc/qrc_qmake_QtQml_Base.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/objects-Debug/Qml_resources_2/.rcc/qrc_qmlMetaQmldir.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/qml/QtQml/Models/objects-Debug/QmlModels_resources_1/.rcc/qrc_qmake_QtQml_Models.cpp.o",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6WebSockets.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Widgets.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/sqldrivers/libqsqlite.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/networkinformation/libqscnetworkreachability.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/tls/libqsecuretransportbackend.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqgif.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqico.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/platforms/libqios.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqjpeg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/iconengines/libqsvgicon.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/imageformats/libqsvg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_messages.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_local.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_server.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_debugger.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_inspector.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_native.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_nativedebugger.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_preview.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_profiler.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_quickprofiler.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/plugins/qmltooling/libqmldbg_tcp.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Sql.a",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					AssetsLibrary,
+					"-framework",
+					UniformTypeIdentifiers,
+					"-framework",
+					Photos,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibjpeg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Svg.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6PacketProtocol.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Quick.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6OpenGL.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Gui.a",
+					"-framework",
+					OpenGLES,
+					"-framework",
+					ImageIO,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					CoreText,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledHarfbuzz.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledFreetype.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledLibpng.a",
+					"-framework",
+					Metal,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6QmlModels.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Qml.a",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Network.a",
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6Core.a",
+					"-lz",
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					Foundation,
+					"-lm",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/lib/libQt6BundledPcre2.a",
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					UIKit,
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "rlp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = revlens;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/Examples/Qt-6.5.3/widgets/widgets/build-analogclock-Qt_6_5_3_for_iOS";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtCore",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/mkspecs/macx-ios-clang",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSql",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtNetwork",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWebSockets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtSvg",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtGui",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtWidgets",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQuick",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQml",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlIntegration",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtQmlModels",
+					"/Users/jottley/dev/revlens_root/thirdbase/22_09/Darwin-arm64-15.1/Qt/6.5.3/ios/include/QtOpenGL",
+					"$(inherited)",
+				);
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B9284355E5C4B8D9149CA4D /* Build configuration list for PBXProject "Revlens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				287C6FC374EA48DDBAC34D95 /* Debug */,
+				714BDD19E6B742EAA86F3B34 /* Release */,
+				9F33C0787D7F4785811F831F /* MinSizeRel */,
+				5CA04928B243457D92ED75AE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		95B2B7E294D34E73A66D477A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A27C56BC9402488C93AB6DCE /* Debug */,
+				394A8811A62E4887B8474C56 /* Release */,
+				71B92A30C5D74A3DA673F5C7 /* MinSizeRel */,
+				7ED94339354E48EE90A68931 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9C8C8D683140410F864244B2 /* Build configuration list for PBXNativeTarget "revlens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A014EF06F5A47FB8D5786F1 /* Debug */,
+				7276E6C136BB4701BE59C405 /* Release */,
+				3148EBF6291E48FBB6FF3F26 /* MinSizeRel */,
+				F700B4D957D743CF8DA7DA48 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E007804E77ED4004889760EA /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C998E363FA842548BF69293 /* Debug */,
+				8B6B7B84ADB24BAE814C8C10 /* Release */,
+				8136D83A6D9F4500BF36D948 /* MinSizeRel */,
+				3D19437360A441DE90F1DC73 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E1183FD81774446B98073526 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59FC8ABDC00E4810BE2E5BB9 /* Debug */,
+				49111E768A5D4FEB8EB8D93A /* Release */,
+				B7BF7D157FE249968A92C97A /* MinSizeRel */,
+				64523BDE377B4769A479FB9F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA929B9725EA4C60B821A3C5 /* Project object */;
+}

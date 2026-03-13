@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopementRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Revlens</string>
+	<key>CFBundleGetInfoString</key>
+	<string>2026.01.12</string>
+	<key>CFBundleIconFile</key>
+	<string>revlens_logo_only_2025.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.rlp.revlens</string>
+	<key>CFBundleName</key>
+	<string>revlens</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourcesFileMapped</key>
+	<true/>
+	<key>CFBundleShortVersionString</key>
+	<string>2026.01.12</string>
+	<key>CFBundleVersion</key>
+	<string>2026.01</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<string>0</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.8.0</string>
+	<key>NSAppleScriptEnabled</key>
+	<string>0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Justin Ottley</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

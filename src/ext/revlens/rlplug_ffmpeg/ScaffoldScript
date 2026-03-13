@@ -1,0 +1,3 @@
+Product('rlplug_ffmpeg')
+Subdir('lib')
+Build('python')

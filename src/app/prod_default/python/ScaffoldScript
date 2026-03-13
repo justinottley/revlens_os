@@ -1,0 +1,3 @@
+
+benv.build_type = "python_package"
+benv.python_package_dirs = ["revlens_prod"]

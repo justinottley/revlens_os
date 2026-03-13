@@ -1,0 +1,19 @@
+
+import os
+import scaffold.variant
+
+Import('buildsys')
+
+buildsys.build_software_set('core', 'core')
+
+core_packages = \
+'''
+rlp_core
+'''
+
+
+
+for core_package in Split(core_packages):
+    SConscript(os.path.join(core_package, 'SConscript'))
+
+

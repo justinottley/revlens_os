@@ -1,0 +1,57 @@
+{
+    "arrangement": {
+        "orientation": 2,
+        "panes": [
+                    {
+                        "tabHeaderVisibility": true,
+                        "panes": [],
+                        "tabs": [{"name": "Viewer"}]
+                    },
+                    {
+                        "tabHeaderVisibility": true,
+                        "orientation": 1,
+                        "pos": 0.5,
+                        "panes": [
+                            {
+                                "orientation": 2,
+                                "pos": 0.6,
+                                "tabHeaderVisibility": true,
+                                "panes": [
+                                    {
+                                        "panes": [],
+                                        "tabs": [{"name": "Playlist"}]
+                                    },
+                                    {
+                                        "panes": [],
+                                        "tabs": [{"name": "Rooms"}]
+                                    }
+                                ]
+                            },
+                            {
+                                "orientation": 2,
+                                "pos": 0.6,
+                                "tabHeaderVisibility": true,
+                                "panes": [
+                                    {
+                                        "panes": [],
+                                        "tabs": [{"name": "Library"}]
+                                    },
+                                    {
+                                        "panes": [],
+                                        "tabs": [{"name": "Annotate"}]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+        "pos": 0.5,
+        "startup.post": "import revlens;import revlens.gui.menu;revlens.gui.menu.init_menu_default_layout()"
+    },
+    "window": {
+        "size": {
+            "width": 1700,
+            "height": 800
+        }
+    }
+}

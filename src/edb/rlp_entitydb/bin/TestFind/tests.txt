@@ -1,0 +1,36 @@
+
+find(
+    "VideoStream",
+    [["codec_short", "is", "vp8"]],
+    ["frame_count"]
+    )
+
+#
+# entity find
+#
+find("Thumbnail",
+[
+    ["handle", "is", {name: "video_main"}]
+]
+
+
+MediaHandle <-[handle]- Thumbnail
+
+MediaHandle(1)
+  f: [[name, is, video_main]]
+  r: [uuid]
+  
+Thumbnail(2)
+  c: handle:(1)
+  r: image_data
+
+
+------------
+
+[
+{"etype": "MediaHandle", "label": 1, "filters": [["name", "is", "video_main"]]},
+{"etype": "Thumbnail", "edge": ["handle", 1], "return": ["image_data"]}
+]
+
+
+

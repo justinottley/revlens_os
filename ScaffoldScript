@@ -1,0 +1,33 @@
+
+SetGlobals({
+    'site_name': 'rlp',
+    'thirdbase.version': '25_04'
+})
+
+SetBaseVersions({
+    'Qt': '6.8.0',
+    'Python': '3.11',
+    'PyBind11': '2.13.6'
+})
+
+SetExtVersions({
+    'OpenSSL': '0.0',
+    'FFmpeg': '7.1',
+    'OpenEXR': '3.3.3',
+    'OpenColorIO': '2.4.2',
+    'OpenImageIO': '3.0.4.0',
+    'MyPaint': '6.8.0'
+})
+
+
+# TODO FIXME: remove this?
+do_wasm = benv.platform_target == 'wasm_32'
+Export('do_wasm', do_wasm)
+
+# Subdir('src/sclib')
+Subdir('src/core')
+Subdir('src/gui')
+Subdir('src/edb')
+Subdir('src/app/revlens')
+Subdir('src/ext/revlens')
+Subdir('src/app/prod_default')

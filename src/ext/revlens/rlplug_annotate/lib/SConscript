@@ -1,0 +1,16 @@
+
+Import("buildsys")
+Import("sftset_env")
+
+lib_tools = [
+    'RLANN_DS',
+    'RLANN_MEDIA',
+    'RLANN_CNTRL',
+    'RLANN_GUI',
+    'RLANN_PYMODULE'
+]
+
+lib_tools = ['RLANN_DS', 'RLANN_MEDIA', 'RLANN_CNTRL', 'RLANN_GUI']
+
+for lib_name in lib_tools:
+    buildsys.build(sftset_env, 'rlplug_annotate', lib_name)

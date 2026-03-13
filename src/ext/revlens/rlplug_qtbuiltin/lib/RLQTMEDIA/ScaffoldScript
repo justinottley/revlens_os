@@ -1,0 +1,71 @@
+
+benv.build_type = "shared_library"
+benv.lib_name = "RLQTMEDIA"
+
+
+benv.required_thirdparty_libs = \
+    benv.exports['rlp_libs'].values()
+
+benv.required_libs = \
+'''
+core.LOG
+core.PY
+core.SEQ
+core.DS
+core.UTIL
+core.NET
+core.CNTRL
+edb.MEDIA
+revlens.DS
+revlens.MEDIA
+revlens.CNTRL
+revlens.VIDEO
+'''
+
+
+benv.cpp_classes = \
+'''
+Plugin
+VideoReader
+PreviewMakerNode
+DeferredTasks
+DeferredLoadReader
+NetworkReadHandler
+NetworkPool
+NetworkReader
+DeferredLoadPlugin
+'''
+
+benv.header_files = \
+'''
+Global.h
+'''
+
+
+benv.pybind11_info = {
+    'includes': [
+        'QtGui/QImage',
+        'QtGui/QColor',
+        'RlpExtrevlens/RLQTMEDIA/NetworkPool.h'
+    ],
+    'classes': {
+        'Plugin': {
+            'parent': 'MEDIA_Plugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'DeferredLoadPlugin': {
+            'parent': 'MEDIA_Plugin',
+            'bootstrap': {
+                'bind_object': True
+            }
+        },
+        'DeferredLoadReader': {
+            'parent': 'DS_Node',
+            'holder': 'shared_ptr'
+        },
+        'PreviewMakerNode': {
+        }
+    }
+}

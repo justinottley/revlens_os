@@ -1,0 +1,7 @@
+
+if benv.platform_target != 'ios':
+    Build('EdbView')
+    Build('EdbServer')
+    Build('DumpSchema')
+    Build('DumpData')
+    Build('DumpEvents')
